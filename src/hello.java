@@ -8,6 +8,7 @@
 public class hello {
     public static void main(String [] args)
     {
+        //中文注释可以显示？？？
         System.out.println("hello world");
     }
 }
