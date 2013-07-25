@@ -5,7 +5,7 @@ date: 2013-07-23 21:25
 comments: true
 categories: 
 ---
-# mac过滤 #
+## mac过滤 ##
 `ebtables -D INPUT -j mac-filter`
 
 `ebtables -F mac-filter`
@@ -14,12 +14,12 @@ categories:
 
 `ebtables -N mac-filter`
 
-# 黑名单 #
+## 黑名单 ##
 `ebtables -P mac-filter ACCEPT`
 
 `ebtables -I mac-filter -s mac_address -j DROP`
 
-# 白名单 #
+## 白名单 ##
 `ebtables -P mac-filter DROP`
 
 `ebtables -I mac-filter -s mac_address -j ACCEPT`
