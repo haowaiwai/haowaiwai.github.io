@@ -5,7 +5,7 @@ date: 2013-07-25 14:44
 comments: true
 categories: 
 ---
-== APT configuration file method ==
+## APT configuration file method ##
 `gksudo gedit /etc/apt/apt.conf`
 
 `Acquire::http::Proxy "http://yourproxyaddress:proxyport";`
