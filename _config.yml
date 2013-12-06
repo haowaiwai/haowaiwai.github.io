@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://haowaiwai.github.io/hello-haoyy/
+url: http://haowaiwai.github.io/
 title: haowaiwai's Blog
 subtitle: A blogging framework for hackers.
 author: haowaiwai
@@ -26,7 +26,7 @@ email:
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /hello-haoyy
+root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source
 destination: public
