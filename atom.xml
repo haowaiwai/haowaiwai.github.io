@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2013-12-06T11:39:15+08:00</updated>
+  <updated>2013-12-06T13:48:59+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[c hello world]]></title>
+    <link href="http://haowaiwai.github.io/blog/2013/12/06/c-hello-world/"/>
+    <updated>2013-12-06T13:47:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2013/12/06/c-hello-world</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>hello world</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH免密码]]></title>
+    <link href="http://haowaiwai.github.io/blog/2013/12/06/sshmian-mi-ma/"/>
+    <updated>2013-12-06T12:11:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2013/12/06/sshmian-mi-ma</id>
+    <content type="html"><![CDATA[<h2>SSH免密码</h2>
+
+<pre><code>ssh-keygen -t dsa
+ssh root@192.168.0.58
+mkdir -p .ssh
+exit
+scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
+ssh root@192.168.10.58
+cd .ssh
+cat id_dsa.pub &gt;authorized_keys
+exit
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[rake version mismatch]]></title>

@@ -9,8 +9,13 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="gem list rake gem uninstall rake bundle update; rake install
-">
+  <meta name="description" content="hello world1
+2
+3
+4
+int main()
+{ printf(&quot;hello world&quot;);
+} ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +83,98 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/06/c-hello-world/">C Hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>hello world</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>SSH免密码</h2>
+
+<pre><code>ssh-keygen -t dsa
+ssh root@192.168.0.58
+mkdir -p .ssh
+exit
+scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
+ssh root@192.168.10.58
+cd .ssh
+cat id_dsa.pub &gt;authorized_keys
+exit
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -414,6 +511,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/06/c-hello-world/">C Hello World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a>
       </li>
     
@@ -423,14 +528,6 @@
     
       <li class="post">
         <a href="/blog/2013/12/05/change-gem-source/">Change Gem Source</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/25/aptdai-li/">APT代理</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/24/duan-kou-ying-she/">端口映射</a>
       </li>
     
   </ul>
