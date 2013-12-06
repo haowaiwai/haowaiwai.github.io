@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[haowaiwai's Blog]]></title>
-  <link href="http://haowaiwai.github.io//atom.xml" rel="self"/>
-  <link href="http://haowaiwai.github.io//"/>
-  <updated>2013-12-06T11:29:33+08:00</updated>
-  <id>http://haowaiwai.github.io//</id>
+  <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
+  <link href="http://haowaiwai.github.io/"/>
+  <updated>2013-12-06T11:39:15+08:00</updated>
+  <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[rake version mismatch]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/12/06/rake-version-mismatch/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/12/06/rake-version-mismatch/"/>
     <updated>2013-12-06T09:22:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/12/06/rake-version-mismatch</id>
+    <id>http://haowaiwai.github.io/blog/2013/12/06/rake-version-mismatch</id>
     <content type="html"><![CDATA[<p><code>gem list rake</code></p>
 
 <p><code>gem uninstall rake</code></p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress新文章]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/12/06/octopressxin-wen-zhang/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang/"/>
     <updated>2013-12-06T08:44:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/12/06/octopressxin-wen-zhang</id>
+    <id>http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang</id>
     <content type="html"><![CDATA[<p><code>rake new_post["新文章名称"]</code></p>
 
 <p><code>rake generate</code></p>
@@ -47,9 +47,9 @@
   
   <entry>
     <title type="html"><![CDATA[change gem source]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/12/05/change-gem-source/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/12/05/change-gem-source/"/>
     <updated>2013-12-05T22:02:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/12/05/change-gem-source</id>
+    <id>http://haowaiwai.github.io/blog/2013/12/05/change-gem-source</id>
     <content type="html"><![CDATA[<h2>change gem source</h2>
 
 <p><code>gem sources --remove http://rubygems.org/</code></p>
@@ -62,9 +62,9 @@
   
   <entry>
     <title type="html"><![CDATA[APT代理]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/07/25/aptdai-li/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/07/25/aptdai-li/"/>
     <updated>2013-07-25T14:44:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/07/25/aptdai-li</id>
+    <id>http://haowaiwai.github.io/blog/2013/07/25/aptdai-li</id>
     <content type="html"><![CDATA[<h2>APT configuration file method</h2>
 
 <p><code>gksudo gedit /etc/apt/apt.conf</code></p>
@@ -75,9 +75,9 @@
   
   <entry>
     <title type="html"><![CDATA[端口映射]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/07/24/duan-kou-ying-she/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/07/24/duan-kou-ying-she/"/>
     <updated>2013-07-24T14:07:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/07/24/duan-kou-ying-she</id>
+    <id>http://haowaiwai.github.io/blog/2013/07/24/duan-kou-ying-she</id>
     <content type="html"><![CDATA[<h2>DMZ全地址映射</h2>
 
 <p><code>iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1</code></p>
@@ -98,9 +98,9 @@
   
   <entry>
     <title type="html"><![CDATA[tar解压缩]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/07/24/tarjie-ya-suo/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/07/24/tarjie-ya-suo/"/>
     <updated>2013-07-24T09:20:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/07/24/tarjie-ya-suo</id>
+    <id>http://haowaiwai.github.io/blog/2013/07/24/tarjie-ya-suo</id>
     <content type="html"><![CDATA[<h2>解压缩</h2>
 
 <p><code>tar zxvf xxx.tar.gz</code></p>
@@ -115,9 +115,9 @@
   
   <entry>
     <title type="html"><![CDATA[mac过滤]]></title>
-    <link href="http://haowaiwai.github.io//blog/2013/07/23/title/"/>
+    <link href="http://haowaiwai.github.io/blog/2013/07/23/title/"/>
     <updated>2013-07-23T21:25:00+08:00</updated>
-    <id>http://haowaiwai.github.io//blog/2013/07/23/title</id>
+    <id>http://haowaiwai.github.io/blog/2013/07/23/title</id>
     <content type="html"><![CDATA[<h2>mac过滤</h2>
 
 <p><code>ebtables -D INPUT -j mac-filter</code></p>
