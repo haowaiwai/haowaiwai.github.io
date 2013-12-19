@@ -9,13 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="hello world1
-2
-3
-4
-int main()
-{ printf(&quot;hello world&quot;);
-} ">
+  <meta name="description" content="1.修改配置文件 sudo vim /etc/mysql/my.cnf 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行. 2.登录数据库 mysql -u root -p 输入密码
+mysql> use mysql; 3.查询host mysql> &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +78,79 @@ int main()
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/">设置MySQL允许外网访问</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>1.修改配置文件</h2>
+
+<p>sudo vim /etc/mysql/my.cnf</p>
+
+<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+
+<h2>2.登录数据库</h2>
+
+<p>mysql -u root -p</p>
+
+<p>输入密码
+mysql> use mysql;</p>
+
+<h2>3.查询host</h2>
+
+<p>mysql> select user,host from user;</p>
+
+<h2>4.创建host</h2>
+
+<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
+
+<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
+
+<p>mysql> flush privileges;</p>
+
+<h2>5.授权用户</h2>
+
+<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
+
+<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+
+<p>mysql> flush privileges;</p>
+
+<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
+
+<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+
+<p>mysql> flush privileges;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -511,6 +579,10 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/">设置MySQL允许外网访问</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/06/c-hello-world/">C Hello World</a>
       </li>
     
@@ -524,10 +596,6 @@ exit
     
       <li class="post">
         <a href="/blog/2013/12/06/octopressxin-wen-zhang/">Octopress新文章</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/05/change-gem-source/">Change Gem Source</a>
       </li>
     
   </ul>

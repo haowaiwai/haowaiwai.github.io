@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2013-12-06T13:48:59+08:00</updated>
+  <updated>2013-12-19T20:07:28+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[设置MySQL允许外网访问]]></title>
+    <link href="http://haowaiwai.github.io/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/"/>
+    <updated>2013-12-19T20:01:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen</id>
+    <content type="html"><![CDATA[<h2>1.修改配置文件</h2>
+
+<p>sudo vim /etc/mysql/my.cnf</p>
+
+<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+
+<h2>2.登录数据库</h2>
+
+<p>mysql -u root -p</p>
+
+<p>输入密码
+mysql> use mysql;</p>
+
+<h2>3.查询host</h2>
+
+<p>mysql> select user,host from user;</p>
+
+<h2>4.创建host</h2>
+
+<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
+
+<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
+
+<p>mysql> flush privileges;</p>
+
+<h2>5.授权用户</h2>
+
+<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
+
+<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+
+<p>mysql> flush privileges;</p>
+
+<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
+
+<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+
+<p>mysql> flush privileges;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[c hello world]]></title>
