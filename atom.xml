@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2013-12-19T21:41:37+08:00</updated>
+  <updated>2014-01-03T15:28:58+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Django admin locale format]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/01/03/django-admin-locale-format/"/>
+    <updated>2014-01-03T15:27:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/01/03/django-admin-locale-format</id>
+    <content type="html"><![CDATA[<p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mysql常用命令大全]]></title>
