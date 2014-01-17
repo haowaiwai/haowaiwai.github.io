@@ -9,8 +9,13 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="rake new_post["新文章名称"] rake generate git add . git commit -m "article：Github page + Octopress" git push rake deploy
-">
+  <meta name="description" content="SSH免密码 ssh-keygen -t dsa
+ssh root@192.168.0.58
+mkdir -p .ssh
+exit
+scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
+ssh root@192.168.10.58
+cd . &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +89,93 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>SSH免密码</h2>
+
+<pre><code>ssh-keygen -t dsa
+ssh root@192.168.0.58
+mkdir -p .ssh
+exit
+scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
+ssh root@192.168.10.58
+cd .ssh
+cat id_dsa.pub &gt;authorized_keys
+exit
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T09:22:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><code>gem list rake</code></p>
+
+<p><code>gem uninstall rake</code></p>
+
+<p><code>bundle update; rake install</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/12/06/octopressxin-wen-zhang/">Octopress新文章</a></h1>
     
     
@@ -100,7 +192,7 @@
   
 
 
-<time datetime="2013-12-06T08:44:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+<time datetime="2013-12-06T08:44:00+08:00" pubdate data-updated="true">2013年12月06日</time>
         
       </p>
     
@@ -146,7 +238,7 @@
   
 
 
-<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">Dec 5<span>th</span>, 2013</time>
+<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
         
       </p>
     
@@ -188,7 +280,7 @@
   
 
 
-<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
+<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
         
       </p>
     
@@ -228,7 +320,7 @@
   
 
 
-<time datetime="2013-07-24T14:07:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+<time datetime="2013-07-24T14:07:00+08:00" pubdate data-updated="true">2013年07月24日</time>
         
       </p>
     
@@ -278,7 +370,7 @@
   
 
 
-<time datetime="2013-07-24T09:20:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2013</time>
+<time datetime="2013-07-24T09:20:00+08:00" pubdate data-updated="true">2013年07月24日</time>
         
       </p>
     
@@ -322,7 +414,7 @@
   
 
 
-<time datetime="2013-07-23T21:25:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2013</time>
+<time datetime="2013-07-23T21:25:00+08:00" pubdate data-updated="true">2013年07月23日</time>
         
       </p>
     
@@ -376,6 +468,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a>
       </li>
     
@@ -385,14 +485,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a>
       </li>
     
   </ul>

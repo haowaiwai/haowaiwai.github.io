@@ -9,14 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="安装GNOME主题 1
-2
-3
-4
-sudo add-apt-repository ppa:tiheum/equinox
-sudo apt-get update
-sudo apt-get install faience-theme
-sudo apt-get install faience-icon &hellip;">
+  <meta name="description" content="设置系统时间与网络时间同步 1
+ntpdate cn.pool.ntp.org ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +84,88 @@ sudo apt-get install faience-icon &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T10:56:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置系统时间与网络时间同步</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T15:10:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置自启动</h2>
+
+<p>sudo update-rc.d -f mysql defaults</p>
+
+<h2>设置不启动</h2>
+
+<p>sudo update-rc.d -f mysql remove</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a></h1>
     
     
@@ -106,7 +182,7 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
+<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">2014年01月16日</time>
         
       </p>
     
@@ -152,7 +228,7 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2014</time>
+<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">2014年01月14日</time>
         
       </p>
     
@@ -190,7 +266,7 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
+<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">2014年01月05日</time>
         
       </p>
     
@@ -237,7 +313,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2014</time>
+<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">2014年01月03日</time>
         
       </p>
     
@@ -273,7 +349,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
         
       </p>
     
@@ -313,7 +389,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
         
       </p>
     
@@ -349,7 +425,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
         
       </p>
     
@@ -422,7 +498,7 @@ mysql> use mysql;</p>
   
 
 
-<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
+<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">2013年12月06日</time>
         
       </p>
     
@@ -446,93 +522,6 @@ mysql> use mysql;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>SSH免密码</h2>
-
-<pre><code>ssh-keygen -t dsa
-ssh root@192.168.0.58
-mkdir -p .ssh
-exit
-scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
-ssh root@192.168.10.58
-cd .ssh
-cat id_dsa.pub &gt;authorized_keys
-exit
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T09:22:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><code>gem list rake</code></p>
-
-<p><code>gem uninstall rake</code></p>
-
-<p><code>bundle update; rake install</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -548,6 +537,14 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a>
       </li>
     
@@ -557,14 +554,6 @@ exit
     
       <li class="post">
         <a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a>
       </li>
     
   </ul>
