@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>设置MySQL允许外网访问 - haowaiwai's Blog</title>
+  <title>django upload UnicodeEncodeError - haowaiwai's Blog</title>
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1.修改配置文件 sudo vim /etc/mysql/my.cnf 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行. 2.登录数据库 mysql -u root -p 输入密码
-mysql> use mysql; 3.查询host mysql> &hellip;">
+  <meta name="description" content="摘自django官方文档 If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ mysql> use mysql; 3.查询host mysql> &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://haowaiwai.github.io/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen">
+  <link rel="canonical" href="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="haowaiwai's Blog" type="application/atom+xml">
@@ -81,7 +80,7 @@ mysql> use mysql; 3.查询host mysql> &hellip;">
   
   <header>
     
-      <h1 class="entry-title">设置MySQL允许外网访问</h1>
+      <h1 class="entry-title">Django Upload UnicodeEncodeError</h1>
     
     
       <p class="meta">
@@ -97,51 +96,24 @@ mysql> use mysql; 3.查询host mysql> &hellip;">
   
 
 
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>1.修改配置文件</h2>
+<div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
 
-<p>sudo vim /etc/mysql/my.cnf</p>
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
 
-<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
 
-<h2>2.登录数据库</h2>
 
-<p>mysql -u root -p</p>
-
-<p>输入密码
-mysql> use mysql;</p>
-
-<h2>3.查询host</h2>
-
-<p>mysql> select user,host from user;</p>
-
-<h2>4.创建host</h2>
-
-<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
-
-<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
-
-<p>mysql> flush privileges;</p>
-
-<h2>5.授权用户</h2>
-
-<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
-
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
-
-<p>mysql> flush privileges;</p>
-
-<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
-
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
-
-<p>mysql> flush privileges;</p>
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
 </div>
 
 
@@ -164,7 +136,7 @@ mysql> use mysql;</p>
   
 
 
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
       
 
 
@@ -172,7 +144,7 @@ mysql> use mysql;</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/" >Tweet</a>
   
   
   
@@ -181,10 +153,8 @@ mysql> use mysql;</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/12/06/c-hello-world/" title="Previous Post: c hello world">&laquo; c hello world</a>
+        <a class="basic-alignment left" href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/" title="Previous Post: NTP同步服务器">&laquo; NTP同步服务器</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/" title="Next Post: django ubuntu 12.04 安装目录">django ubuntu 12.04 安装目录 &raquo;</a>
       
     </p>
   </footer>

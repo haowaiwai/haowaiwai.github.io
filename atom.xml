@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-01-17T10:57:22+08:00</updated>
+  <updated>2014-01-17T14:13:03+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[django upload UnicodeEncodeError]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/"/>
+    <updated>2014-01-17T14:06:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror</id>
+    <content type="html"><![CDATA[<p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
+
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[NTP同步服务器]]></title>

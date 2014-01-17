@@ -9,8 +9,7 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="设置系统时间与网络时间同步 1
-ntpdate cn.pool.ntp.org ">
+  <meta name="description" content="摘自django官方文档 If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +77,52 @@ ntpdate cn.pool.ntp.org ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
+
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -477,51 +522,6 @@ mysql> use mysql;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/c-hello-world/">C Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">2013年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><figcaption><span>hello world</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -537,6 +537,10 @@ mysql> use mysql;</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
       </li>
     
@@ -550,10 +554,6 @@ mysql> use mysql;</p>
     
       <li class="post">
         <a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a>
       </li>
     
   </ul>
