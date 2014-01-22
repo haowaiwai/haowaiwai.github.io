@@ -5,18 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>安装GNOME主题 - haowaiwai's Blog</title>
+  <title>django upload UnicodeEncodeError - haowaiwai's Blog</title>
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="安装GNOME主题 1
-2
-3
-4
-sudo add-apt-repository ppa:tiheum/equinox
-sudo apt-get update
-sudo apt-get install faience-theme
-sudo apt-get install faience-icon &hellip;">
+  <meta name="description" content="摘自django官方文档 If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -25,7 +18,7 @@ sudo apt-get install faience-icon &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://haowaiwai.github.io/blog/2014/01/16/an-zhuang-gnomezhu-ti">
+  <link rel="canonical" href="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="haowaiwai's Blog" type="application/atom+xml">
@@ -87,7 +80,7 @@ sudo apt-get install faience-icon &hellip;">
   
   <header>
     
-      <h1 class="entry-title">安装GNOME主题</h1>
+      <h1 class="entry-title">Django Upload UnicodeEncodeError</h1>
     
     
       <p class="meta">
@@ -103,24 +96,24 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>安装GNOME主题</h2>
+<div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
+
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:tiheum/equinox
-</span><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get install faience-theme
-</span><span class='line'>sudo apt-get install faience-icon-theme faenza-icon-theme</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
 
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
 </div>
 
 
@@ -143,7 +136,7 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
       
 
 
@@ -151,7 +144,7 @@ sudo apt-get install faience-icon &hellip;">
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2014/01/16/an-zhuang-gnomezhu-ti/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2014/01/16/an-zhuang-gnomezhu-ti/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/" >Tweet</a>
   
   
   
@@ -160,10 +153,10 @@ sudo apt-get install faience-icon &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/01/14/goagentdao-ru-zheng-shu/" title="Previous Post: goagent导入证书">&laquo; goagent导入证书</a>
+        <a class="basic-alignment left" href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/" title="Previous Post: NTP同步服务器">&laquo; NTP同步服务器</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/" title="Next Post: 设置mysql自启动">设置mysql自启动 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/01/22/centos6-dot-5pei-zhi/" title="Next Post: CentOS6.5配置">CentOS6.5配置 &raquo;</a>
       
     </p>
   </footer>

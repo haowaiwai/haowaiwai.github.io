@@ -9,14 +9,12 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="安装GNOME主题 1
+  <meta name="description" content="添加服务端口 根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令： 1
 2
 3
 4
-sudo add-apt-repository ppa:tiheum/equinox
-sudo apt-get update
-sudo apt-get install faience-theme
-sudo apt-get install faience-icon &hellip;">
+5
+sudo yum -y install policycoreutils- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -90,6 +88,218 @@ sudo apt-get install faience-icon &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-22T23:24:00+08:00" pubdate data-updated="true">2014年01月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>添加服务端口</h2>
+
+<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
+</span><span class='line'>#list
+</span><span class='line'>sudo semanage port -l | grep -w http_port_t
+</span><span class='line'>#add
+</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Set Apache environment</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
+</span><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安装MariaDB</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
+</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>临时关闭SELinux</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>设置服务自启动</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
+</span><span class='line'>chkconfig mysql on
+</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
+
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T10:56:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置系统时间与网络时间同步</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T15:10:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置自启动</h2>
+
+<p>sudo update-rc.d -f mysql defaults</p>
+
+<h2>设置不启动</h2>
+
+<p>sudo update-rc.d -f mysql remove</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a></h1>
     
     
@@ -106,7 +316,7 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">Jan 16<span>th</span>, 2014</time>
+<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">2014年01月16日</time>
         
       </p>
     
@@ -152,15 +362,16 @@ sudo apt-get install faience-icon &hellip;">
   
 
 
-<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2014</time>
+<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">2014年01月14日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。
-Chrome->设置->管理证书->授权中心->导入</p>
+  <div class="entry-content"><p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
+
+<p>Chrome->设置->管理证书->授权中心->导入。</p>
 </div>
   
   
@@ -189,7 +400,7 @@ Chrome->设置->管理证书->授权中心->导入</p>
   
 
 
-<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
+<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">2014年01月05日</time>
         
       </p>
     
@@ -236,7 +447,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2014</time>
+<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">2014年01月03日</time>
         
       </p>
     
@@ -272,7 +483,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
         
       </p>
     
@@ -312,7 +523,7 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   
 
 
-<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
         
       </p>
     
@@ -320,211 +531,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
 
 
   <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/">设置MySQL允许外网访问</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>1.修改配置文件</h2>
-
-<p>sudo vim /etc/mysql/my.cnf</p>
-
-<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
-
-<h2>2.登录数据库</h2>
-
-<p>mysql -u root -p</p>
-
-<p>输入密码
-mysql> use mysql;</p>
-
-<h2>3.查询host</h2>
-
-<p>mysql> select user,host from user;</p>
-
-<h2>4.创建host</h2>
-
-<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
-
-<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
-
-<p>mysql> flush privileges;</p>
-
-<h2>5.授权用户</h2>
-
-<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
-
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
-
-<p>mysql> flush privileges;</p>
-
-<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
-
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
-
-<p>mysql> flush privileges;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/c-hello-world/">C Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><figcaption><span>hello world</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>SSH免密码</h2>
-
-<pre><code>ssh-keygen -t dsa
-ssh root@192.168.0.58
-mkdir -p .ssh
-exit
-scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
-ssh root@192.168.10.58
-cd .ssh
-cat id_dsa.pub &gt;authorized_keys
-exit
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T09:22:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><code>gem list rake</code></p>
-
-<p><code>gem uninstall rake</code></p>
-
-<p><code>bundle update; rake install</code></p>
 </div>
   
   
@@ -547,23 +553,23 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a>
       </li>
     
   </ul>

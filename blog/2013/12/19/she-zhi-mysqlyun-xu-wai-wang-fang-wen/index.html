@@ -9,8 +9,10 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1.修改配置文件 sudo vim /etc/mysql/my.cnf 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行. 2.登录数据库 mysql -u root -p 输入密码
-mysql> use mysql; 3.查询host mysql> &hellip;">
+  <meta name="description" content="1.修改配置文件 1
+sudo vim /etc/mysql/my.cnf 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行. 2.登录数据库 1
+mysql -u root -p 输入密码 1
+mysql&gt; use mysql; 3.查询host &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,7 +99,7 @@ mysql> use mysql; 3.查询host mysql> &hellip;">
   
 
 
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
         
       </p>
     
@@ -106,42 +108,57 @@ mysql> use mysql; 3.查询host mysql> &hellip;">
 
 <div class="entry-content"><h2>1.修改配置文件</h2>
 
-<p>sudo vim /etc/mysql/my.cnf</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/mysql/my.cnf</span></code></pre></td></tr></table></div></figure>
+
 
 <p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
 
 <h2>2.登录数据库</h2>
 
-<p>mysql -u root -p</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql -u root -p</span></code></pre></td></tr></table></div></figure>
 
-<p>输入密码
-mysql> use mysql;</p>
+
+<p>输入密码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; use mysql;</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>3.查询host</h2>
 
-<p>mysql> select user,host from user;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; select user,host from user;</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>4.创建host</h2>
 
 <p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
 
-<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; update user set host='%' where user='root';
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
 
-<p>mysql> flush privileges;</p>
 
 <h2>5.授权用户</h2>
 
 <p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
 
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
 
-<p>mysql> flush privileges;</p>
 
 <p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
 
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.102' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
 
-<p>mysql> flush privileges;</p>
 </div>
 
 
@@ -164,7 +181,7 @@ mysql> use mysql;</p>
   
 
 
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
       
 
 
@@ -199,23 +216,23 @@ mysql> use mysql;</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a>
       </li>
     
   </ul>

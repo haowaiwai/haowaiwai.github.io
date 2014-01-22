@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-01-16T13:57:58+08:00</updated>
+  <updated>2014-01-22T23:43:30+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CentOS6.5配置]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/01/22/centos6-dot-5pei-zhi/"/>
+    <updated>2014-01-22T23:24:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/01/22/centos6-dot-5pei-zhi</id>
+    <content type="html"><![CDATA[<h2>添加服务端口</h2>
+
+<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
+</span><span class='line'>#list
+</span><span class='line'>sudo semanage port -l | grep -w http_port_t
+</span><span class='line'>#add
+</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Set Apache environment</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
+</span><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安装MariaDB</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
+</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>临时关闭SELinux</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>设置服务自启动</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
+</span><span class='line'>chkconfig mysql on
+</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[django upload UnicodeEncodeError]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/"/>
+    <updated>2014-01-17T14:06:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror</id>
+    <content type="html"><![CDATA[<p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
+
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NTP同步服务器]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/01/17/ntptong-bu-fu-wu-qi/"/>
+    <updated>2014-01-17T10:56:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/01/17/ntptong-bu-fu-wu-qi</id>
+    <content type="html"><![CDATA[<h2>设置系统时间与网络时间同步</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[设置mysql自启动]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/"/>
+    <updated>2014-01-16T15:10:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/01/16/she-zhi-mysqlzi-qi-dong</id>
+    <content type="html"><![CDATA[<h2>设置自启动</h2>
+
+<p>sudo update-rc.d -f mysql defaults</p>
+
+<h2>设置不启动</h2>
+
+<p>sudo update-rc.d -f mysql remove</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[安装GNOME主题]]></title>
@@ -37,8 +141,9 @@
     <link href="http://haowaiwai.github.io/blog/2014/01/14/goagentdao-ru-zheng-shu/"/>
     <updated>2014-01-14T10:56:00+08:00</updated>
     <id>http://haowaiwai.github.io/blog/2014/01/14/goagentdao-ru-zheng-shu</id>
-    <content type="html"><![CDATA[<p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。
-Chrome->设置->管理证书->授权中心->导入</p>
+    <content type="html"><![CDATA[<p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
+
+<p>Chrome->设置->管理证书->授权中心->导入。</p>
 ]]></content>
   </entry>
   
@@ -100,42 +205,57 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
     <id>http://haowaiwai.github.io/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen</id>
     <content type="html"><![CDATA[<h2>1.修改配置文件</h2>
 
-<p>sudo vim /etc/mysql/my.cnf</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/mysql/my.cnf</span></code></pre></td></tr></table></div></figure>
+
 
 <p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
 
 <h2>2.登录数据库</h2>
 
-<p>mysql -u root -p</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql -u root -p</span></code></pre></td></tr></table></div></figure>
 
-<p>输入密码
-mysql> use mysql;</p>
+
+<p>输入密码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; use mysql;</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>3.查询host</h2>
 
-<p>mysql> select user,host from user;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; select user,host from user;</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>4.创建host</h2>
 
 <p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
 
-<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; update user set host='%' where user='root';
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
 
-<p>mysql> flush privileges;</p>
 
 <h2>5.授权用户</h2>
 
 <p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
 
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
 
-<p>mysql> flush privileges;</p>
 
 <p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
 
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.102' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
 
-<p>mysql> flush privileges;</p>
 ]]></content>
   </entry>
   
@@ -182,11 +302,13 @@ exit
     <link href="http://haowaiwai.github.io/blog/2013/12/06/rake-version-mismatch/"/>
     <updated>2013-12-06T09:22:00+08:00</updated>
     <id>http://haowaiwai.github.io/blog/2013/12/06/rake-version-mismatch</id>
-    <content type="html"><![CDATA[<p><code>gem list rake</code></p>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem list rake
+</span><span class='line'>gem uninstall rake
+</span><span class='line'>bundle update; rake install</span></code></pre></td></tr></table></div></figure>
 
-<p><code>gem uninstall rake</code></p>
-
-<p><code>bundle update; rake install</code></p>
 ]]></content>
   </entry>
   
@@ -195,17 +317,19 @@ exit
     <link href="http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang/"/>
     <updated>2013-12-06T08:44:00+08:00</updated>
     <id>http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang</id>
-    <content type="html"><![CDATA[<p><code>rake new_post["新文章名称"]</code></p>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["新文章名称"]
+</span><span class='line'>rake generate
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m "article：Github page + Octopress"
+</span><span class='line'>git push
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
-<p><code>rake generate</code></p>
-
-<p><code>git add .</code></p>
-
-<p><code>git commit -m "article：Github page + Octopress"</code></p>
-
-<p><code>git push</code></p>
-
-<p><code>rake deploy</code></p>
 ]]></content>
   </entry>
   
