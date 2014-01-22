@@ -9,7 +9,12 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="摘自django官方文档 If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, &hellip;">
+  <meta name="description" content="添加服务端口 根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令： 1
+2
+3
+4
+5
+sudo yum -y install policycoreutils- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +82,90 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-22T23:24:00+08:00" pubdate data-updated="true">2014年01月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>添加服务端口</h2>
+
+<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
+</span><span class='line'>#list
+</span><span class='line'>sudo semanage port -l | grep -w http_port_t
+</span><span class='line'>#add
+</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Set Apache environment</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
+</span><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安装MariaDB</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
+</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>临时关闭SELinux</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>设置服务自启动</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
+</span><span class='line'>chkconfig mysql on
+</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -449,79 +538,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/">设置MySQL允许外网访问</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>1.修改配置文件</h2>
-
-<p>sudo vim /etc/mysql/my.cnf</p>
-
-<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
-
-<h2>2.登录数据库</h2>
-
-<p>mysql -u root -p</p>
-
-<p>输入密码
-mysql> use mysql;</p>
-
-<h2>3.查询host</h2>
-
-<p>mysql> select user,host from user;</p>
-
-<h2>4.创建host</h2>
-
-<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
-
-<p>mysql> update user set host=&lsquo;%&rsquo; where user=&lsquo;root&rsquo;;</p>
-
-<p>mysql> flush privileges;</p>
-
-<h2>5.授权用户</h2>
-
-<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
-
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
-
-<p>mysql> flush privileges;</p>
-
-<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
-
-<p>mysql> GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;myuser&rsquo;@&lsquo;192.168.1.102&rsquo; IDENTIFIED BY &lsquo;mypwd&rsquo; WITH GRANT OPTION;</p>
-
-<p>mysql> flush privileges;</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -537,6 +553,10 @@ mysql> use mysql;</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
       </li>
     
@@ -550,10 +570,6 @@ mysql> use mysql;</p>
     
       <li class="post">
         <a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a>
       </li>
     
   </ul>
