@@ -85,15 +85,21 @@
         <lastmod>2014-01-27T13:25:56+08:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://haowaiwai.github.io/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/
+        </loc>
+        <lastmod>2014-02-08T11:40:09+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://haowaiwai.github.io/robots.txt</loc>
         <lastmod>2013-12-05T22:01:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://haowaiwai.github.io/blog/archives/</loc>
-        <lastmod>2014-01-27T13:25:56+08:00</lastmod>
+        <lastmod>2014-02-08T11:40:09+08:00</lastmod>
     </url>
     <url>
         <loc>http://haowaiwai.github.io/</loc>
-        <lastmod>2014-01-27T13:25:56+08:00</lastmod>
+        <lastmod>2014-02-08T11:40:09+08:00</lastmod>
     </url>
 </urlset>
