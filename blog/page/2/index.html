@@ -9,10 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1.修改配置文件 1
-sudo vim /etc/mysql/my.cnf 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行. 2.登录数据库 1
-mysql -u root -p 输入密码 1
-mysql&gt; use mysql; 3.查询host &hellip;">
+  <meta name="description" content="/usr/local/lib/python2.7/dist-packages
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +78,42 @@ mysql&gt; use mysql; 3.查询host &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/">Django Ubuntu 12.04 安装目录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -527,67 +561,9 @@ exit
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/23/title/">Mac过滤</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-23T21:25:00+08:00" pubdate data-updated="true">2013年07月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>mac过滤</h2>
-
-<p><code>ebtables -D INPUT -j mac-filter</code></p>
-
-<p><code>ebtables -F mac-filter</code></p>
-
-<p><code>ebtables -X mac-filter</code></p>
-
-<p><code>ebtables -N mac-filter</code></p>
-
-<h2>黑名单</h2>
-
-<p><code>ebtables -P mac-filter ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j DROP</code></p>
-
-<h2>白名单</h2>
-
-<p><code>ebtables -P mac-filter DROP</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -d wan_mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I INPUT -j mac-filter</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -600,6 +576,10 @@ exit
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
@@ -615,10 +595,6 @@ exit
     
       <li class="post">
         <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a>
       </li>
     
   </ul>

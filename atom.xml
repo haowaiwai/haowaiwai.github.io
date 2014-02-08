@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-01-27T14:25:38+08:00</updated>
+  <updated>2014-02-08T11:40:56+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[redmine 2.0 not working with mod_passenger]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/"/>
+    <updated>2014-02-08T11:37:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger</id>
+    <content type="html"><![CDATA[<p><a href="http://www.redmine.org/boards/2/topics/30624">摘自redmine官方</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install passenger 
+</span><span class='line'>sudo passenger-install-apache2-module</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CentOS6.5配置]]></title>
@@ -444,39 +459,6 @@ exit
 <p><code>tar Jxvf xxx.tar.xz</code></p>
 
 <p><code>tar Zxvf xxx.tar.Z</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[mac过滤]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/07/23/title/"/>
-    <updated>2013-07-23T21:25:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/07/23/title</id>
-    <content type="html"><![CDATA[<h2>mac过滤</h2>
-
-<p><code>ebtables -D INPUT -j mac-filter</code></p>
-
-<p><code>ebtables -F mac-filter</code></p>
-
-<p><code>ebtables -X mac-filter</code></p>
-
-<p><code>ebtables -N mac-filter</code></p>
-
-<h2>黑名单</h2>
-
-<p><code>ebtables -P mac-filter ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j DROP</code></p>
-
-<h2>白名单</h2>
-
-<p><code>ebtables -P mac-filter DROP</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -d wan_mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I INPUT -j mac-filter</code></p>
 ]]></content>
   </entry>
   
