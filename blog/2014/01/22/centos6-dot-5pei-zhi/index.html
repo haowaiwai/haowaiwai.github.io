@@ -136,6 +136,24 @@ sudo yum -y install policycoreutils- &hellip;">
 
 <h2>安装MariaDB</h2>
 
+<p>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See &ldquo;Installing MariaDB with yum&rdquo; for detailed information.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC
+</span><span class='line'># http://mariadb.org/mariadb/repositories/
+</span><span class='line'>[mariadb]
+</span><span class='line'>name = MariaDB
+</span><span class='line'>baseurl = http://yum.mariadb.org/5.5/centos6-amd64
+</span><span class='line'>gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+</span><span class='line'>gpgcheck=1</span></code></pre></td></tr></table></div></figure>
+
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
@@ -148,6 +166,14 @@ sudo yum -y install policycoreutils- &hellip;">
 </pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
 
 
+<h2>彻底关闭SELinux</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/selinux/config
+</span><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
+
+
 <h2>设置服务自启动</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -156,6 +182,26 @@ sudo yum -y install policycoreutils- &hellip;">
 </pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
 </span><span class='line'>chkconfig mysql on
 </span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安装pip</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>yum install python-setuptools
+</span><span class='line'>easy_install pip
+</span><span class='line'>pip install Django==1.6.1
+</span><span class='line'>pip install --upgrade setuptools</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>XX 不在 sudoers 文件中。此事将被报告。</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>visudo
+</span><span class='line'>xxxx    ALL=(ALL)       ALL</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
