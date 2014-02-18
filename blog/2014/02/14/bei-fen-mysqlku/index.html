@@ -9,9 +9,7 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="&lsquo;&rsquo;&lsquo;
-/usr/bin/mysqldump -u -p &lt;redmine_database> | gzip > /path/to/backup/db/redmine_date +%y_%m_%d.gz
-&rsquo;&lsquo;&rsquo;
+  <meta name="description" content="/usr/bin/mysqldump -u -p | gzip > /path/produce_`date +%Y%m%d`.gz
 ">
   
 
@@ -106,9 +104,7 @@
   </header>
 
 
-<div class="entry-content"><p>&lsquo;&rsquo;&lsquo;
-/usr/bin/mysqldump -u <username> -p<password> &lt;redmine_database> | gzip > /path/to/backup/db/redmine_<code>date +%y_%m_%d</code>.gz
-&rsquo;&lsquo;&rsquo;</p>
+<div class="entry-content"><p>/usr/bin/mysqldump -u <username> -p<password> <database> | gzip > /path/produce_`date +%Y%m%d`.gz</p>
 </div>
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-18T17:10:36+08:00</updated>
+  <updated>2014-02-18T23:08:13+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -18,9 +18,7 @@
     <link href="http://haowaiwai.github.io/blog/2014/02/14/bei-fen-mysqlku/"/>
     <updated>2014-02-14T11:03:00+08:00</updated>
     <id>http://haowaiwai.github.io/blog/2014/02/14/bei-fen-mysqlku</id>
-    <content type="html"><![CDATA[<p>&lsquo;&rsquo;&lsquo;
-/usr/bin/mysqldump -u <username> -p<password> &lt;redmine_database> | gzip > /path/to/backup/db/redmine_<code>date +%y_%m_%d</code>.gz
-&rsquo;&lsquo;&rsquo;</p>
+    <content type="html"><![CDATA[<p>/usr/bin/mysqldump -u <username> -p<password> <database> | gzip > /path/produce_`date +%Y%m%d`.gz</p>
 ]]></content>
   </entry>
   
