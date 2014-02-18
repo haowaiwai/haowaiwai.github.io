@@ -9,9 +9,10 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="摘自redmine官方 1
-2
-sudo gem install passenger sudo passenger-install-apache2-module ">
+  <meta name="description" content="&lsquo;&rsquo;&lsquo;
+/usr/bin/mysqldump -u -p &lt;redmine_database> | gzip > /path/to/backup/db/redmine_date +%y_%m_%d.gz
+&rsquo;&lsquo;&rsquo;
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +80,44 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/14/bei-fen-mysqlku/">备份MySQL库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-14T11:03:00+08:00" pubdate data-updated="true">2014年02月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&lsquo;&rsquo;&lsquo;
+/usr/bin/mysqldump -u <username> -p<password> &lt;redmine_database> | gzip > /path/to/backup/db/redmine_<code>date +%y_%m_%d</code>.gz
+&rsquo;&lsquo;&rsquo;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -547,46 +586,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>创建数据库</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -602,6 +601,10 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/14/bei-fen-mysqlku/">备份MySQL库</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a>
       </li>
     
@@ -615,10 +618,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
     
       <li class="post">
         <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
       </li>
     
   </ul>

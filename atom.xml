@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-08T11:40:56+08:00</updated>
+  <updated>2014-02-18T17:10:36+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[备份MySQL库]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/14/bei-fen-mysqlku/"/>
+    <updated>2014-02-14T11:03:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/14/bei-fen-mysqlku</id>
+    <content type="html"><![CDATA[<p>&lsquo;&rsquo;&lsquo;
+/usr/bin/mysqldump -u <username> -p<password> &lt;redmine_database> | gzip > /path/to/backup/db/redmine_<code>date +%y_%m_%d</code>.gz
+&rsquo;&lsquo;&rsquo;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[redmine 2.0 not working with mod_passenger]]></title>
@@ -442,23 +453,6 @@ exit
 <h2>查看配置</h2>
 
 <p><code>iptables -t nat -L</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[tar解压缩]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/07/24/tarjie-ya-suo/"/>
-    <updated>2013-07-24T09:20:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/07/24/tarjie-ya-suo</id>
-    <content type="html"><![CDATA[<h2>解压缩</h2>
-
-<p><code>tar zxvf xxx.tar.gz</code></p>
-
-<p><code>tar jxvf xxx.tar.bz2</code></p>
-
-<p><code>tar Jxvf xxx.tar.xz</code></p>
-
-<p><code>tar Zxvf xxx.tar.Z</code></p>
 ]]></content>
   </entry>
   
