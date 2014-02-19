@@ -9,8 +9,10 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN
-">
+  <meta name="description" content="for 8M flash rm firmware.bin
+dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
+#128 u-boot-env
+dd if=ap121-2.6.31-squashfs of=firmware.bin bs= &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +80,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">2014年01月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>for 8M flash</h1>
+
+<pre><code>rm firmware.bin
+dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
+#128 u-boot-env
+dd if=ap121-2.6.31-squashfs of=firmware.bin bs=512 count=6144 seek=640
+dd if=vmlinux.lzma.uImage of=firmware.bin bs=512 count=2944 seek=6784
+#128 NVRAM
+dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=9856
+dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=13056
+dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -503,46 +552,6 @@ exit
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/25/aptdai-li/">APT代理</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>APT configuration file method</h2>
-
-<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
-
-<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -560,6 +569,10 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">Windows7笔记本做热点</a>
       </li>
     
@@ -573,10 +586,6 @@ exit
     
       <li class="post">
         <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
       </li>
     
   </ul>

@@ -9,7 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="DMZ全地址映射 iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1 iptables -t nat -I PREROUTING -d 201.1.1.2 -j DNAT --to-destination &hellip;">
+  <meta name="description" content="APT configuration file method gksudo gedit /etc/apt/apt.conf Acquire::http::Proxy "http://yourproxyaddress:proxyport";
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +78,46 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/25/aptdai-li/">APT代理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>APT configuration file method</h2>
+
+<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
+
+<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -247,6 +288,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">Windows7笔记本做热点</a>
       </li>
     
@@ -260,10 +305,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-19T07:49:51+08:00</updated>
+  <updated>2014-02-19T16:53:42+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[No module named wsgi]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi/"/>
+    <updated>2014-02-19T15:48:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi</id>
+    <content type="html"><![CDATA[<h2>CentOS django ImportError: No module named wsgi</h2>
+
+<h3>错误日志</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: generating secret for digest authentication ...
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: done
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Apache/2.2.15 (Unix) DAV/2 mod_wsgi/3.2 Python/2.6.6 configured -- resuming normal operations
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Target WSGI script '/var/www/produce/produce/wsgi.py' cannot be loaded as Python module.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Exception occurred processing WSGI script '/var/www/produce/produce/wsgi.py'.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] Traceback (most recent call last):
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]   File "/var/www/produce/produce/wsgi.py", line 14, in 
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]     from django.core.wsgi import get_wsgi_application
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] ImportError: No module named wsgi</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>解决方法</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chcon -v --type=httpd_sys_content_t /var/www/produce/produce/wsgi.py</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[windows7笔记本做热点]]></title>
@@ -434,19 +475,6 @@ exit
 <p><code>gem sources -a http://ruby.taobao.org/</code></p>
 
 <p><code>gem sources -l</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[APT代理]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/07/25/aptdai-li/"/>
-    <updated>2013-07-25T14:44:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/07/25/aptdai-li</id>
-    <content type="html"><![CDATA[<h2>APT configuration file method</h2>
-
-<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
-
-<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
 ]]></content>
   </entry>
   
