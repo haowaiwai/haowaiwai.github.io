@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-19T16:53:42+08:00</updated>
+  <updated>2014-02-22T00:21:31+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu命令行进入图形界面]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/"/>
+    <updated>2014-02-22T00:16:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian</id>
+    <content type="html"><![CDATA[<h2>方法一</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service lightdm start</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>方法二</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>startx</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[sudo startx切换到普通用户时无法显示图形界面]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/"/>
+    <updated>2014-02-22T00:10:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chown user:user .Xauthority</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/"/>
+    <updated>2014-02-22T00:02:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-,</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install gtk2-engines-pixbuf </span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL维护]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/19/mysqlwei-hu/"/>
+    <updated>2014-02-19T18:22:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/19/mysqlwei-hu</id>
+    <content type="html"><![CDATA[<h2>查询分区信息</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>EXPLAIN PARTITIONS SELECT * FROM TABLE;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查询当前数据库用户连接情况</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>show processlist;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>MySQL运行状态</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>show status;</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[No module named wsgi]]></title>
@@ -404,77 +470,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SSH免密码]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/12/06/sshmian-mi-ma/"/>
-    <updated>2013-12-06T12:11:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/12/06/sshmian-mi-ma</id>
-    <content type="html"><![CDATA[<h2>SSH免密码</h2>
-
-<pre><code>ssh-keygen -t dsa
-ssh root@192.168.0.58
-mkdir -p .ssh
-exit
-scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
-ssh root@192.168.10.58
-cd .ssh
-cat id_dsa.pub &gt;authorized_keys
-exit
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[rake version mismatch]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/12/06/rake-version-mismatch/"/>
-    <updated>2013-12-06T09:22:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/12/06/rake-version-mismatch</id>
-    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem list rake
-</span><span class='line'>gem uninstall rake
-</span><span class='line'>bundle update; rake install</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress新文章]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang/"/>
-    <updated>2013-12-06T08:44:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang</id>
-    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["新文章名称"]
-</span><span class='line'>rake generate
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m "article：Github page + Octopress"
-</span><span class='line'>git push
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[change gem source]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/12/05/change-gem-source/"/>
-    <updated>2013-12-05T22:02:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/12/05/change-gem-source</id>
-    <content type="html"><![CDATA[<h2>change gem source</h2>
-
-<p><code>gem sources --remove http://rubygems.org/</code></p>
-
-<p><code>gem sources -a http://ruby.taobao.org/</code></p>
-
-<p><code>gem sources -l</code></p>
 ]]></content>
   </entry>
   

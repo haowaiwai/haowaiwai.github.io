@@ -9,10 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="for 8M flash rm firmware.bin
-dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
-#128 u-boot-env
-dd if=ap121-2.6.31-squashfs of=firmware.bin bs= &hellip;">
+  <meta name="description" content="设置系统时间与网络时间同步 1
+ntpdate cn.pool.ntp.org ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +78,172 @@ dd if=ap121-2.6.31-squashfs of=firmware.bin bs= &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T10:56:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置系统时间与网络时间同步</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T15:10:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置自启动</h2>
+
+<p>sudo update-rc.d -f mysql defaults</p>
+
+<h2>设置不启动</h2>
+
+<p>sudo update-rc.d -f mysql remove</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>安装GNOME主题</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:tiheum/equinox
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install faience-theme
+</span><span class='line'>sudo apt-get install faience-icon-theme faenza-icon-theme</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">2014年01月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
+
+<p>Chrome->设置->管理证书->授权中心->导入。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -373,185 +537,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">2013年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>SSH免密码</h2>
-
-<pre><code>ssh-keygen -t dsa
-ssh root@192.168.0.58
-mkdir -p .ssh
-exit
-scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
-ssh root@192.168.10.58
-cd .ssh
-cat id_dsa.pub &gt;authorized_keys
-exit
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T09:22:00+08:00" pubdate data-updated="true">2013年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem list rake
-</span><span class='line'>gem uninstall rake
-</span><span class='line'>bundle update; rake install</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/octopressxin-wen-zhang/">Octopress新文章</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T08:44:00+08:00" pubdate data-updated="true">2013年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["新文章名称"]
-</span><span class='line'>rake generate
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m "article：Github page + Octopress"
-</span><span class='line'>git push
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/05/change-gem-source/">Change Gem Source</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>change gem source</h2>
-
-<p><code>gem sources --remove http://rubygems.org/</code></p>
-
-<p><code>gem sources -a http://ruby.taobao.org/</code></p>
-
-<p><code>gem sources -l</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -569,23 +554,23 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/">Sudo Startx切换到普通用户时无法显示图形界面</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/19/mysqlwei-hu/">MySQL维护</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">Windows7笔记本做热点</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/14/bei-fen-mysqlku/">备份MySQL库</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
       </li>
     
   </ul>
