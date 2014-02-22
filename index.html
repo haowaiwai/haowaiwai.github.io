@@ -9,9 +9,10 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="方法一 1
-sudo service lightdm start 方法二 1
-startx ">
+  <meta name="description" content="1
+2
+git log --pretty=oneline 文件名
+git show 356f6def9d3fb7f3b9032ff5aa4b9110d4cca87e ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +80,104 @@ startx ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T13:07:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git log --pretty=oneline 文件名
+</span><span class='line'>git show 356f6def9d3fb7f3b9032ff5aa4b9110d4cca87e</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/">通过代理下载android代码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T00:34:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
+</span><span class='line'>cd WORKING_DIRECTORY
+</span><span class='line'>export http_proxy="127.0.0.1:8087"
+</span><span class='line'>export https_proxy="127.0.0.1:8087"
+</span><span class='line'>echo "======start repo sync======"
+</span><span class='line'>~/bin/repo sync
+</span><span class='line'>while [ $? == 1 ]; do
+</span><span class='line'>echo "======sync failed, re-sync again======"
+</span><span class='line'>sleep 3
+</span><span class='line'>~/bin/repo sync
+</span><span class='line'>done</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -446,182 +545,6 @@ startx ">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-22T23:24:00+08:00" pubdate data-updated="true">2014年01月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>添加服务端口</h2>
-
-<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
-</span><span class='line'>#list
-</span><span class='line'>sudo semanage port -l | grep -w http_port_t
-</span><span class='line'>#add
-</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Set Apache environment</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
-</span><span class='line'>export LANG='en_US.UTF-8'
-</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安装MariaDB</h2>
-
-<p>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See &ldquo;Installing MariaDB with yum&rdquo; for detailed information.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC
-</span><span class='line'># http://mariadb.org/mariadb/repositories/
-</span><span class='line'>[mariadb]
-</span><span class='line'>name = MariaDB
-</span><span class='line'>baseurl = http://yum.mariadb.org/5.5/centos6-amd64
-</span><span class='line'>gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-</span><span class='line'>gpgcheck=1</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
-</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>临时关闭SELinux</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>彻底关闭SELinux</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/selinux/config
-</span><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>设置服务自启动</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
-</span><span class='line'>chkconfig mysql on
-</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安装pip</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install python-setuptools
-</span><span class='line'>easy_install pip
-</span><span class='line'>pip install Django==1.6.1
-</span><span class='line'>pip install --upgrade setuptools</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>XX 不在 sudoers 文件中。此事将被报告。</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>visudo
-</span><span class='line'>xxxx    ALL=(ALL)       ALL</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
-
-<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
-</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -637,6 +560,14 @@ startx ">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/">通过代理下载android代码</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
       </li>
     
@@ -646,14 +577,6 @@ startx ">
     
       <li class="post">
         <a href="/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/19/mysqlwei-hu/">MySQL维护</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a>
       </li>
     
   </ul>
