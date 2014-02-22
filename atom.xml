@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-22T17:10:58+08:00</updated>
+  <updated>2014-02-22T21:58:21+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu update Perl]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/22/ubuntu-update-perl/"/>
+    <updated>2014-02-22T21:50:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/22/ubuntu-update-perl</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo perl -MCPAN -e 'upgrade'</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MPlayer没有声音]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/22/mplayermei-you-sheng-yin/"/>
+    <updated>2014-02-22T17:59:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/22/mplayermei-you-sheng-yin</id>
+    <content type="html"><![CDATA[<h2>[AO OSS] audio_setup: Can&rsquo;t open audio device /dev/dsp: No such file or directory</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>padsp mplayer /path/to/your/file</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[git查看某个文件的修改历史]]></title>
@@ -413,28 +437,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
     <updated>2014-01-03T15:27:00+08:00</updated>
     <id>http://haowaiwai.github.io/blog/2014/01/03/django-admin-locale-format</id>
     <content type="html"><![CDATA[<p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mysql常用命令大全]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/"/>
-    <updated>2013-12-19T21:35:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan</id>
-    <content type="html"><![CDATA[<h2>创建数据库</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[django ubuntu 12.04 安装目录]]></title>
-    <link href="http://haowaiwai.github.io/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/"/>
-    <updated>2013-12-19T21:32:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu</id>
-    <content type="html"><![CDATA[<p>/usr/local/lib/python2.7/dist-packages</p>
 ]]></content>
   </entry>
   

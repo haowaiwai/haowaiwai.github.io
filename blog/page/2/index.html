@@ -9,12 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="添加服务端口 根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令： 1
-2
-3
-4
-5
-sudo yum -y install policycoreutils- &hellip;">
+  <meta name="description" content="1
+/usr/bin/mysqldump -u &lt;username&gt; -p &lt;password&gt; &lt;database&gt; | gzip &gt; /path/produce_`date +%Y%m%d`.gz ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +78,86 @@ sudo yum -y install policycoreutils- &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/14/bei-fen-mysqlku/">备份MySQL库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-14T11:03:00+08:00" pubdate data-updated="true">2014年02月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/usr/bin/mysqldump -u &lt;username&gt; -p &lt;password&gt; &lt;database&gt; | gzip &gt; /path/produce_`date +%Y%m%d`.gz</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-08T11:37:00+08:00" pubdate data-updated="true">2014年02月08日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.redmine.org/boards/2/topics/30624">摘自redmine官方</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install passenger 
+</span><span class='line'>sudo passenger-install-apache2-module</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -508,82 +584,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>创建数据库</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/">Django Ubuntu 12.04 安装目录</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -601,6 +601,14 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/mplayermei-you-sheng-yin/">MPlayer没有声音</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
       </li>
     
@@ -610,14 +618,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
     
       <li class="post">
         <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/">Sudo Startx切换到普通用户时无法显示图形界面</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a>
       </li>
     
   </ul>

@@ -9,10 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1.修改配置文件 1
-sudo vim /etc/mysql/my.cnf 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行. 2.登录数据库 1
-mysql -u root -p 输入密码 1
-mysql&gt; use mysql; 3.查询host &hellip;">
+  <meta name="description" content="创建数据库 1
+CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ; ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +78,82 @@ mysql&gt; use mysql; 3.查询host &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>创建数据库</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/">Django Ubuntu 12.04 安装目录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -483,111 +557,9 @@ exit
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/24/tarjie-ya-suo/">Tar解压缩</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-24T09:20:00+08:00" pubdate data-updated="true">2013年07月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>解压缩</h2>
-
-<p><code>tar zxvf xxx.tar.gz</code></p>
-
-<p><code>tar jxvf xxx.tar.bz2</code></p>
-
-<p><code>tar Jxvf xxx.tar.xz</code></p>
-
-<p><code>tar Zxvf xxx.tar.Z</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/23/title/">Mac过滤</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-23T21:25:00+08:00" pubdate data-updated="true">2013年07月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>mac过滤</h2>
-
-<p><code>ebtables -D INPUT -j mac-filter</code></p>
-
-<p><code>ebtables -F mac-filter</code></p>
-
-<p><code>ebtables -X mac-filter</code></p>
-
-<p><code>ebtables -N mac-filter</code></p>
-
-<h2>黑名单</h2>
-
-<p><code>ebtables -P mac-filter ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j DROP</code></p>
-
-<h2>白名单</h2>
-
-<p><code>ebtables -P mac-filter DROP</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -d wan_mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I INPUT -j mac-filter</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -602,6 +574,14 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/22/mplayermei-you-sheng-yin/">MPlayer没有声音</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
       </li>
     
@@ -611,14 +591,6 @@ exit
     
       <li class="post">
         <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/">Sudo Startx切换到普通用户时无法显示图形界面</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a>
       </li>
     
   </ul>
