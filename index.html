@@ -9,8 +9,14 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1
-sudo perl -MCPAN -e 'upgrade' ">
+  <meta name="description" content="查看当前监听80端口的程序 1
+lsof -i :80 查看当前网卡的物理地址 1
+ifconfig eth0 | head -1 | awk '{print $5}' 同一个网卡增加第二个IP地址 1
+2
+3
+4
+#在网卡eth0上增加一个1.2.3.4的IP：
+sudo ifconfig &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +84,140 @@ sudo perl -MCPAN -e 'upgrade' ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-24T18:09:00+08:00" pubdate data-updated="true">2014年02月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>查看当前监听80端口的程序</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lsof -i :80</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查看当前网卡的物理地址</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ifconfig eth0 | head -1 | awk '{print $5}'</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>同一个网卡增加第二个IP地址</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#在网卡eth0上增加一个1.2.3.4的IP：
+</span><span class='line'>sudo ifconfig eth0:0 1.2.3.4 netmask 255.255.255.0
+</span><span class='line'>#删除增加的IP：
+</span><span class='line'>sudo ifconfig eth0:0 down</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>立即让网络支持nat</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+</span><span class='line'>sudo iptables -t nat -I POSTROUTING -j MASQUERADE</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查看路由信息</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netstat -rn
+</span><span class='line'>sudo route -n</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>增加和删除路由</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1
+</span><span class='line'>sudo route del -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>统计当前IP连接的个数</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netstat -na|grep ESTABLISHED|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -r -n
+</span><span class='line'>netstat -na|grep SYN|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -r -n
+</span><span class='line'>netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-24T18:01:00+08:00" pubdate data-updated="true">2014年02月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -s http://ns1.dnspod.net:6666</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl ifconfig.me</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -429,118 +569,6 @@ sudo perl -MCPAN -e 'upgrade' ">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-19T15:48:00+08:00" pubdate data-updated="true">2014年02月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>CentOS django ImportError: No module named wsgi</h2>
-
-<h3>错误日志</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: generating secret for digest authentication ...
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: done
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Apache/2.2.15 (Unix) DAV/2 mod_wsgi/3.2 Python/2.6.6 configured -- resuming normal operations
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Target WSGI script '/var/www/produce/produce/wsgi.py' cannot be loaded as Python module.
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Exception occurred processing WSGI script '/var/www/produce/produce/wsgi.py'.
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] Traceback (most recent call last):
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]   File "/var/www/produce/produce/wsgi.py", line 14, in 
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]     from django.core.wsgi import get_wsgi_application
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] ImportError: No module named wsgi</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>解决方法</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chcon -v --type=httpd_sys_content_t /var/www/produce/produce/wsgi.py</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">Windows7笔记本做热点</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-19T00:11:00+08:00" pubdate data-updated="true">2014年02月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>netsh wlan set hostednetwork mode=allow ssid=abcde key=87654321
-</span><span class='line'>netsh wlan start hostednetwork
-</span><span class='line'>netsh wlan stop hostednetwork
-</span><span class='line'>netsh wlan show drivers</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -556,6 +584,14 @@ sudo perl -MCPAN -e 'upgrade' ">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
       </li>
     
@@ -565,14 +601,6 @@ sudo perl -MCPAN -e 'upgrade' ">
     
       <li class="post">
         <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/">通过代理下载android代码</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
       </li>
     
   </ul>

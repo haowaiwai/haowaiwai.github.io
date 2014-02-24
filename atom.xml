@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-22T21:58:21+08:00</updated>
+  <updated>2014-02-24T18:26:38+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[LINUX常用网络命令]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/"/>
+    <updated>2014-02-24T18:09:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling</id>
+    <content type="html"><![CDATA[<h2>查看当前监听80端口的程序</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lsof -i :80</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查看当前网卡的物理地址</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ifconfig eth0 | head -1 | awk '{print $5}'</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>同一个网卡增加第二个IP地址</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#在网卡eth0上增加一个1.2.3.4的IP：
+</span><span class='line'>sudo ifconfig eth0:0 1.2.3.4 netmask 255.255.255.0
+</span><span class='line'>#删除增加的IP：
+</span><span class='line'>sudo ifconfig eth0:0 down</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>立即让网络支持nat</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+</span><span class='line'>sudo iptables -t nat -I POSTROUTING -j MASQUERADE</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查看路由信息</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netstat -rn
+</span><span class='line'>sudo route -n</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>增加和删除路由</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1
+</span><span class='line'>sudo route del -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>统计当前IP连接的个数</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netstat -na|grep ESTABLISHED|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -r -n
+</span><span class='line'>netstat -na|grep SYN|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -r -n
+</span><span class='line'>netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[获取计算机外网ip的写法]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/"/>
+    <updated>2014-02-24T18:01:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -s http://ns1.dnspod.net:6666</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl ifconfig.me</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ubuntu update Perl]]></title>
@@ -408,35 +488,6 @@
     <content type="html"><![CDATA[<p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
 
 <p>Chrome->设置->管理证书->授权中心->导入。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[生产 8M firmware]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/05/sheng-chan-8mfirmware/"/>
-    <updated>2014-01-05T10:01:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/05/sheng-chan-8mfirmware</id>
-    <content type="html"><![CDATA[<h1>for 8M flash</h1>
-
-<pre><code>rm firmware.bin
-dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
-#128 u-boot-env
-dd if=ap121-2.6.31-squashfs of=firmware.bin bs=512 count=6144 seek=640
-dd if=vmlinux.lzma.uImage of=firmware.bin bs=512 count=2944 seek=6784
-#128 NVRAM
-dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=9856
-dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=13056
-dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Django admin locale format]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/03/django-admin-locale-format/"/>
-    <updated>2014-01-03T15:27:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/03/django-admin-locale-format</id>
-    <content type="html"><![CDATA[<p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
 ]]></content>
   </entry>
   

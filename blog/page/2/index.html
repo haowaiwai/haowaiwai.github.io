@@ -9,8 +9,18 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1
-/usr/bin/mysqldump -u &lt;username&gt; -p &lt;password&gt; &lt;database&gt; | gzip &gt; /path/produce_`date +%Y%m%d`.gz ">
+  <meta name="description" content="CentOS django ImportError: No module named wsgi 错误日志 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +88,118 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-19T15:48:00+08:00" pubdate data-updated="true">2014年02月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>CentOS django ImportError: No module named wsgi</h2>
+
+<h3>错误日志</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: generating secret for digest authentication ...
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: done
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Apache/2.2.15 (Unix) DAV/2 mod_wsgi/3.2 Python/2.6.6 configured -- resuming normal operations
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Target WSGI script '/var/www/produce/produce/wsgi.py' cannot be loaded as Python module.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Exception occurred processing WSGI script '/var/www/produce/produce/wsgi.py'.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] Traceback (most recent call last):
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]   File "/var/www/produce/produce/wsgi.py", line 14, in 
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]     from django.core.wsgi import get_wsgi_application
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] ImportError: No module named wsgi</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>解决方法</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chcon -v --type=httpd_sys_content_t /var/www/produce/produce/wsgi.py</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">Windows7笔记本做热点</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-19T00:11:00+08:00" pubdate data-updated="true">2014年02月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netsh wlan set hostednetwork mode=allow ssid=abcde key=87654321
+</span><span class='line'>netsh wlan start hostednetwork
+</span><span class='line'>netsh wlan stop hostednetwork
+</span><span class='line'>netsh wlan show drivers</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -501,89 +623,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">2014年01月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>for 8M flash</h1>
-
-<pre><code>rm firmware.bin
-dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
-#128 u-boot-env
-dd if=ap121-2.6.31-squashfs of=firmware.bin bs=512 count=6144 seek=640
-dd if=vmlinux.lzma.uImage of=firmware.bin bs=512 count=2944 seek=6784
-#128 NVRAM
-dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=9856
-dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=13056
-dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">2014年01月03日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -601,6 +640,14 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
       </li>
     
@@ -610,14 +657,6 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
     
       <li class="post">
         <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/">通过代理下载android代码</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
       </li>
     
   </ul>

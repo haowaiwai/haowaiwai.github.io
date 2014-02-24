@@ -9,7 +9,7 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="解压缩 tar zxvf xxx.tar.gz tar jxvf xxx.tar.bz2 tar Jxvf xxx.tar.xz tar Zxvf xxx.tar.Z
+  <meta name="description" content="APT configuration file method gksudo gedit /etc/apt/apt.conf Acquire::http::Proxy "http://yourproxyaddress:proxyport";
 ">
   
 
@@ -78,6 +78,96 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/25/aptdai-li/">APT代理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>APT configuration file method</h2>
+
+<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
+
+<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/24/duan-kou-ying-she/">端口映射</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T14:07:00+08:00" pubdate data-updated="true">2013年07月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>DMZ全地址映射</h2>
+
+<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1</code></p>
+
+<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -j DNAT --to-destination 10.1.1.2</code></p>
+
+<h2>TELNET服务器映射</h2>
+
+<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.3 -p tcp --sport 23 -j SNAT --to-source 201.1.1.1</code></p>
+
+<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -p tcp --dport 23 -j DNAT --to-destination 10.1.1.3</code></p>
+
+<h2>查看配置</h2>
+
+<p><code>iptables -t nat -L</code></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -198,6 +288,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
       </li>
     
@@ -207,14 +305,6 @@
     
       <li class="post">
         <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/">通过代理下载android代码</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a>
       </li>
     
   </ul>
