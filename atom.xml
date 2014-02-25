@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-24T18:26:38+08:00</updated>
+  <updated>2014-02-25T21:26:04+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[设置ubuntu 默认不启动图形界面]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/"/>
+    <updated>2014-02-25T16:42:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/default/grub
+</span><span class='line'>#增加text
+</span><span class='line'>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+</span><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vmware Easy Install ubuntu12.04 无法切换到图形界面]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/"/>
+    <updated>2014-02-25T15:06:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Vmware Easy Install
+</span><span class='line'>
+</span><span class='line'>PLEASE WAIT! VMware Tools is currently being 
+</span><span class='line'>installed on your system. Depending on the 
+</span><span class='line'>version of Ubuntu you are installing, you may 
+</span><span class='line'>log in below and use the system during 
+</span><span class='line'>intallation. Otherwise, please wait for the 
+</span><span class='line'>graphical environment to launch. Thank you.</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mv /etc/issue.backup /etc/issue
+</span><span class='line'>sudo mv /etc/rc.local.backup /etc/rc.local
+</span><span class='line'>sudo mv /opt/vmware-tools-installer/lightdm.conf /etc/init</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[LINUX常用网络命令]]></title>
@@ -458,36 +508,6 @@
 <h2>设置不启动</h2>
 
 <p>sudo update-rc.d -f mysql remove</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[安装GNOME主题]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/16/an-zhuang-gnomezhu-ti/"/>
-    <updated>2014-01-16T13:55:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/16/an-zhuang-gnomezhu-ti</id>
-    <content type="html"><![CDATA[<h2>安装GNOME主题</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:tiheum/equinox
-</span><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get install faience-theme
-</span><span class='line'>sudo apt-get install faience-icon-theme faenza-icon-theme</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[goagent导入证书]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/14/goagentdao-ru-zheng-shu/"/>
-    <updated>2014-01-14T10:56:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/14/goagentdao-ru-zheng-shu</id>
-    <content type="html"><![CDATA[<p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
-
-<p>Chrome->设置->管理证书->授权中心->导入。</p>
 ]]></content>
   </entry>
   

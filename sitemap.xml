@@ -155,15 +155,27 @@
         <lastmod>2014-02-24T18:17:15+08:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://haowaiwai.github.io/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/
+        </loc>
+        <lastmod>2014-02-25T15:07:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://haowaiwai.github.io/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/
+        </loc>
+        <lastmod>2014-02-25T16:51:03+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://haowaiwai.github.io/robots.txt</loc>
         <lastmod>2013-12-05T22:01:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://haowaiwai.github.io/blog/archives/</loc>
-        <lastmod>2014-02-24T18:17:15+08:00</lastmod>
+        <lastmod>2014-02-25T16:51:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://haowaiwai.github.io/</loc>
-        <lastmod>2014-02-24T18:17:15+08:00</lastmod>
+        <lastmod>2014-02-25T16:51:03+08:00</lastmod>
     </url>
 </urlset>

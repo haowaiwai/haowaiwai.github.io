@@ -9,14 +9,14 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="查看当前监听80端口的程序 1
-lsof -i :80 查看当前网卡的物理地址 1
-ifconfig eth0 | head -1 | awk '{print $5}' 同一个网卡增加第二个IP地址 1
+  <meta name="description" content="1
 2
 3
 4
-#在网卡eth0上增加一个1.2.3.4的IP：
-sudo ifconfig &hellip;">
+/etc/default/grub
+#增加text
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+sudo update-grub ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,110 @@ sudo ifconfig &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/">设置ubuntu 默认不启动图形界面</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-25T16:42:00+08:00" pubdate data-updated="true">2014年02月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/default/grub
+</span><span class='line'>#增加text
+</span><span class='line'>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+</span><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/">Vmware Easy Install ubuntu12.04 无法切换到图形界面</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-25T15:06:00+08:00" pubdate data-updated="true">2014年02月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Vmware Easy Install
+</span><span class='line'>
+</span><span class='line'>PLEASE WAIT! VMware Tools is currently being 
+</span><span class='line'>installed on your system. Depending on the 
+</span><span class='line'>version of Ubuntu you are installing, you may 
+</span><span class='line'>log in below and use the system during 
+</span><span class='line'>intallation. Otherwise, please wait for the 
+</span><span class='line'>graphical environment to launch. Thank you.</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mv /etc/issue.backup /etc/issue
+</span><span class='line'>sudo mv /etc/rc.local.backup /etc/rc.local
+</span><span class='line'>sudo mv /opt/vmware-tools-installer/lightdm.conf /etc/init</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -479,96 +583,6 @@ sudo ifconfig &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-22T00:02:00+08:00" pubdate data-updated="true">2014年02月22日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install gtk2-engines-pixbuf </span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/19/mysqlwei-hu/">MySQL维护</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-19T18:22:00+08:00" pubdate data-updated="true">2014年02月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>查询分区信息</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>EXPLAIN PARTITIONS SELECT * FROM TABLE;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>查询当前数据库用户连接情况</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>show processlist;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>MySQL运行状态</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>show status;</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -584,6 +598,14 @@ sudo ifconfig &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/">设置ubuntu 默认不启动图形界面</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/">Vmware Easy Install ubuntu12.04 无法切换到图形界面</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
       </li>
     
@@ -593,14 +615,6 @@ sudo ifconfig &hellip;">
     
       <li class="post">
         <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/mplayermei-you-sheng-yin/">MPlayer没有声音</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a>
       </li>
     
   </ul>
