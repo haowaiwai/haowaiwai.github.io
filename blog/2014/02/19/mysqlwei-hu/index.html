@@ -10,9 +10,12 @@
 
   
   <meta name="description" content="查询分区信息 1
-EXPLAIN PARTITIONS SELECT * FROM TABLE; 查询当前数据库用户连接情况 1
-show processlist; MySQL运行状态 1
-show status; ">
+2
+3
+4
+explain partitions select * from 表名;
+show create table 表名;
+select partition_name part,partition_expression expr,partition_description &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -109,7 +112,13 @@ show status; ">
 <div class="entry-content"><h2>查询分区信息</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>EXPLAIN PARTITIONS SELECT * FROM TABLE;</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>explain partitions select * from 表名;
+</span><span class='line'>show create table 表名;
+</span><span class='line'>select partition_name part,partition_expression expr,partition_description descr,table_rows from information_schema.partitions where table_schema = schema() and table_name='表名';
+</span><span class='line'>alter table 表名 partition by hash ( year(time) ) partitions 分区数;</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>查询当前数据库用户连接情况</h2>
