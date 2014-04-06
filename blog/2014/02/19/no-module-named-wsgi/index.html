@@ -5,12 +5,22 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>change gem source - haowaiwai's Blog</title>
+  <title>No module named wsgi - haowaiwai's Blog</title>
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="change gem source gem sources --remove http://rubygems.org/ gem sources -a http://ruby.taobao.org/ gem sources -l
-">
+  <meta name="description" content="CentOS django ImportError: No module named wsgi 错误日志 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +29,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://haowaiwai.github.io/blog/2013/12/05/change-gem-source">
+  <link rel="canonical" href="http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="haowaiwai's Blog" type="application/atom+xml">
@@ -81,7 +91,7 @@
   
   <header>
     
-      <h1 class="entry-title">Change Gem Source</h1>
+      <h1 class="entry-title">No Module Named Wsgi</h1>
     
     
       <p class="meta">
@@ -97,20 +107,46 @@
   
 
 
-<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
+<time datetime="2014-02-19T15:48:00+08:00" pubdate data-updated="true">2014年02月19日</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>change gem source</h2>
+<div class="entry-content"><h2>CentOS django ImportError: No module named wsgi</h2>
 
-<p><code>gem sources --remove http://rubygems.org/</code></p>
+<h3>错误日志</h3>
 
-<p><code>gem sources -a http://ruby.taobao.org/</code></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: generating secret for digest authentication ...
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: done
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Apache/2.2.15 (Unix) DAV/2 mod_wsgi/3.2 Python/2.6.6 configured -- resuming normal operations
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Target WSGI script '/var/www/produce/produce/wsgi.py' cannot be loaded as Python module.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Exception occurred processing WSGI script '/var/www/produce/produce/wsgi.py'.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] Traceback (most recent call last):
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]   File "/var/www/produce/produce/wsgi.py", line 14, in 
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]     from django.core.wsgi import get_wsgi_application
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] ImportError: No module named wsgi</span></code></pre></td></tr></table></div></figure>
 
-<p><code>gem sources -l</code></p>
+
+<h3>解决方法</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chcon -v --type=httpd_sys_content_t /var/www/produce/produce/wsgi.py</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -133,7 +169,7 @@
   
 
 
-<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
+<time datetime="2014-02-19T15:48:00+08:00" pubdate data-updated="true">2014年02月19日</time>
       
 
 
@@ -141,7 +177,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2013/12/05/change-gem-source/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2013/12/05/change-gem-source/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi/" >Tweet</a>
   
   
   
@@ -150,10 +186,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/25/aptdai-li/" title="Previous Post: APT代理">&laquo; APT代理</a>
+        <a class="basic-alignment left" href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/" title="Previous Post: windows7笔记本做热点">&laquo; windows7笔记本做热点</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/12/06/octopressxin-wen-zhang/" title="Next Post: Octopress新文章">Octopress新文章 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/02/19/mysqlwei-hu/" title="Next Post: MySQL维护">MySQL维护 &raquo;</a>
       
     </p>
   </footer>

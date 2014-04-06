@@ -9,8 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="/usr/local/lib/python2.7/dist-packages
-">
+  <meta name="description" content="1
+sudo apt-get install gtk2-engines-pixbuf ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,7 +84,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/">Django Ubuntu 12.04 安装目录</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-%3A-pixmap-%2C/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a></h1>
     
     
       <p class="meta">
@@ -100,223 +100,7 @@
   
 
 
-<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/">设置MySQL允许外网访问</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>1.修改配置文件</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/mysql/my.cnf</span></code></pre></td></tr></table></div></figure>
-
-
-<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
-
-<h2>2.登录数据库</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysql -u root -p</span></code></pre></td></tr></table></div></figure>
-
-
-<p>输入密码</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; use mysql;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>3.查询host</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; select user,host from user;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>4.创建host</h2>
-
-<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; update user set host='%' where user='root';
-</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>5.授权用户</h2>
-
-<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
-</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.102' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
-</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/c-hello-world/">C Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">2013年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><figcaption><span>hello world</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">2013年12月06日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>SSH免密码</h2>
-
-<pre><code>ssh-keygen -t dsa
-ssh root@192.168.0.58
-mkdir -p .ssh
-exit
-scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
-ssh root@192.168.10.58
-cd .ssh
-cat id_dsa.pub &gt;authorized_keys
-exit
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T09:22:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+<time datetime="2014-02-22T00:02:00+08:00" pubdate data-updated="true">2014年02月22日</time>
         
       </p>
     
@@ -324,11 +108,7 @@ exit
 
 
   <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem list rake
-</span><span class='line'>gem uninstall rake
-</span><span class='line'>bundle update; rake install</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install gtk2-engines-pixbuf </span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -342,7 +122,7 @@ exit
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/06/octopressxin-wen-zhang/">Octopress新文章</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/19/mysqlwei-hu/">MySQL维护</a></h1>
     
     
       <p class="meta">
@@ -358,25 +138,39 @@ exit
   
 
 
-<time datetime="2013-12-06T08:44:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+<time datetime="2014-02-19T18:22:00+08:00" pubdate data-updated="true">2014年02月19日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+  <div class="entry-content"><h2>查询分区信息</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["新文章名称"]
-</span><span class='line'>rake generate
-</span><span class='line'>git add .
-</span><span class='line'>git commit -m "article：Github page + Octopress"
-</span><span class='line'>git push
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>explain partitions select * from 表名;
+</span><span class='line'>show create table 表名;
+</span><span class='line'>#查询所在分区
+</span><span class='line'>select partition_name part,partition_expression expr,partition_description descr,table_rows from information_schema.partitions where table_schema = schema() and table_name='表名';
+</span><span class='line'>#重新定义分区
+</span><span class='line'>alter table 表名 partition by hash ( year(time) ) partitions 分区数;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查询当前数据库用户连接情况</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>show processlist;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>MySQL运行状态</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>show status;</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -390,7 +184,7 @@ exit
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/05/change-gem-source/">Change Gem Source</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/19/no-module-named-wsgi/">No Module Named Wsgi</a></h1>
     
     
       <p class="meta">
@@ -406,20 +200,46 @@ exit
   
 
 
-<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
+<time datetime="2014-02-19T15:48:00+08:00" pubdate data-updated="true">2014年02月19日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>change gem source</h2>
+  <div class="entry-content"><h2>CentOS django ImportError: No module named wsgi</h2>
 
-<p><code>gem sources --remove http://rubygems.org/</code></p>
+<h3>错误日志</h3>
 
-<p><code>gem sources -a http://ruby.taobao.org/</code></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: generating secret for digest authentication ...
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: done
+</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Apache/2.2.15 (Unix) DAV/2 mod_wsgi/3.2 Python/2.6.6 configured -- resuming normal operations
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Target WSGI script '/var/www/produce/produce/wsgi.py' cannot be loaded as Python module.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Exception occurred processing WSGI script '/var/www/produce/produce/wsgi.py'.
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] Traceback (most recent call last):
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]   File "/var/www/produce/produce/wsgi.py", line 14, in 
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]     from django.core.wsgi import get_wsgi_application
+</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] ImportError: No module named wsgi</span></code></pre></td></tr></table></div></figure>
 
-<p><code>gem sources -l</code></p>
+
+<h3>解决方法</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chcon -v --type=httpd_sys_content_t /var/www/produce/produce/wsgi.py</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
@@ -432,7 +252,7 @@ exit
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/07/25/aptdai-li/">APT代理</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">Windows7笔记本做热点</a></h1>
     
     
       <p class="meta">
@@ -448,18 +268,22 @@ exit
   
 
 
-<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
+<time datetime="2014-02-19T00:11:00+08:00" pubdate data-updated="true">2014年02月19日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>APT configuration file method</h2>
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netsh wlan set hostednetwork mode=allow ssid=abcde key=87654321
+</span><span class='line'>netsh wlan start hostednetwork
+</span><span class='line'>netsh wlan stop hostednetwork
+</span><span class='line'>netsh wlan show drivers</span></code></pre></td></tr></table></div></figure>
 
-<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
-
-<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
 </div>
   
   
@@ -472,7 +296,7 @@ exit
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/07/24/duan-kou-ying-she/">端口映射</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/14/bei-fen-mysqlku/">备份MySQL库</a></h1>
     
     
       <p class="meta">
@@ -488,28 +312,16 @@ exit
   
 
 
-<time datetime="2013-07-24T14:07:00+08:00" pubdate data-updated="true">2013年07月24日</time>
+<time datetime="2014-02-14T11:03:00+08:00" pubdate data-updated="true">2014年02月14日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>DMZ全地址映射</h2>
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/usr/bin/mysqldump -u &lt;username&gt; -p &lt;password&gt; &lt;database&gt; | gzip &gt; /path/produce_`date +%Y%m%d`.gz</span></code></pre></td></tr></table></div></figure>
 
-<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1</code></p>
-
-<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -j DNAT --to-destination 10.1.1.2</code></p>
-
-<h2>TELNET服务器映射</h2>
-
-<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.3 -p tcp --sport 23 -j SNAT --to-source 201.1.1.1</code></p>
-
-<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -p tcp --dport 23 -j DNAT --to-destination 10.1.1.3</code></p>
-
-<h2>查看配置</h2>
-
-<p><code>iptables -t nat -L</code></p>
 </div>
   
   
@@ -522,7 +334,7 @@ exit
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/07/24/tarjie-ya-suo/">Tar解压缩</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a></h1>
     
     
       <p class="meta">
@@ -538,22 +350,278 @@ exit
   
 
 
-<time datetime="2013-07-24T09:20:00+08:00" pubdate data-updated="true">2013年07月24日</time>
+<time datetime="2014-02-08T11:37:00+08:00" pubdate data-updated="true">2014年02月08日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>解压缩</h2>
+  <div class="entry-content"><p><a href="http://www.redmine.org/boards/2/topics/30624">摘自redmine官方</a></p>
 
-<p><code>tar zxvf xxx.tar.gz</code></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install passenger 
+</span><span class='line'>sudo passenger-install-apache2-module</span></code></pre></td></tr></table></div></figure>
 
-<p><code>tar jxvf xxx.tar.bz2</code></p>
+</div>
+  
+  
 
-<p><code>tar Jxvf xxx.tar.xz</code></p>
 
-<p><code>tar Zxvf xxx.tar.Z</code></p>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-22T23:24:00+08:00" pubdate data-updated="true">2014年01月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>添加服务端口</h2>
+
+<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
+</span><span class='line'>#list
+</span><span class='line'>sudo semanage port -l | grep -w http_port_t
+</span><span class='line'>#add
+</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Set Apache environment</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
+</span><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安装MariaDB</h2>
+
+<p>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See &ldquo;Installing MariaDB with yum&rdquo; for detailed information.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC
+</span><span class='line'># http://mariadb.org/mariadb/repositories/
+</span><span class='line'>[mariadb]
+</span><span class='line'>name = MariaDB
+</span><span class='line'>baseurl = http://yum.mariadb.org/5.5/centos6-amd64
+</span><span class='line'>gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+</span><span class='line'>gpgcheck=1</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
+</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>临时关闭SELinux</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>彻底关闭SELinux</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/selinux/config
+</span><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>设置服务自启动</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
+</span><span class='line'>chkconfig mysql on
+</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>安装pip</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>yum install python-setuptools
+</span><span class='line'>easy_install pip
+</span><span class='line'>pip install Django==1.6.1
+</span><span class='line'>pip install --upgrade setuptools</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>XX 不在 sudoers 文件中。此事将被报告。</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>visudo
+</span><span class='line'>xxxx    ALL=(ALL)       ALL</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
+
+<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
+</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-17T10:56:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置系统时间与网络时间同步</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T15:10:00+08:00" pubdate data-updated="true">2014年01月16日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>设置自启动</h2>
+
+<p>sudo update-rc.d -f mysql defaults</p>
+
+<h2>设置不启动</h2>
+
+<p>sudo update-rc.d -f mysql remove</p>
 </div>
   
   
@@ -578,23 +646,23 @@ exit
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a>
+        <a href="/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/">设置ubuntu 默认不启动图形界面</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
+        <a href="/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/">Vmware Easy Install ubuntu12.04 无法切换到图形界面</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
+        <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
+        <a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
+        <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
       </li>
     
   </ul>

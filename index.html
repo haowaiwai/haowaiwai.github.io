@@ -9,9 +9,14 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="摘自redmine官方 1
+  <meta name="description" content="1
 2
-sudo gem install passenger sudo passenger-install-apache2-module ">
+3
+4
+/etc/default/grub
+#增加text
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+sudo update-grub ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +90,7 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/">设置ubuntu 默认不启动图形界面</a></h1>
     
     
       <p class="meta">
@@ -101,19 +106,21 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
   
 
 
-<time datetime="2014-02-08T11:37:00+08:00" pubdate data-updated="true">2014年02月08日</time>
+<time datetime="2014-02-25T16:42:00+08:00" pubdate data-updated="true">2014年02月25日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://www.redmine.org/boards/2/topics/30624">摘自redmine官方</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install passenger 
-</span><span class='line'>sudo passenger-install-apache2-module</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/default/grub
+</span><span class='line'>#增加text
+</span><span class='line'>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+</span><span class='line'>sudo update-grub</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -127,7 +134,7 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/">Vmware Easy Install ubuntu12.04 无法切换到图形界面</a></h1>
     
     
       <p class="meta">
@@ -143,107 +150,37 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
   
 
 
-<time datetime="2014-01-22T23:24:00+08:00" pubdate data-updated="true">2014年01月22日</time>
+<time datetime="2014-02-25T15:06:00+08:00" pubdate data-updated="true">2014年02月25日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>添加服务端口</h2>
-
-<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
-</span><span class='line'>#list
-</span><span class='line'>sudo semanage port -l | grep -w http_port_t
-</span><span class='line'>#add
-</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Set Apache environment</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
-</span><span class='line'>export LANG='en_US.UTF-8'
-</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安装MariaDB</h2>
-
-<p>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See &ldquo;Installing MariaDB with yum&rdquo; for detailed information.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC
-</span><span class='line'># http://mariadb.org/mariadb/repositories/
-</span><span class='line'>[mariadb]
-</span><span class='line'>name = MariaDB
-</span><span class='line'>baseurl = http://yum.mariadb.org/5.5/centos6-amd64
-</span><span class='line'>gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-</span><span class='line'>gpgcheck=1</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Vmware Easy Install
+</span><span class='line'>
+</span><span class='line'>PLEASE WAIT! VMware Tools is currently being 
+</span><span class='line'>installed on your system. Depending on the 
+</span><span class='line'>version of Ubuntu you are installing, you may 
+</span><span class='line'>log in below and use the system during 
+</span><span class='line'>intallation. Otherwise, please wait for the 
+</span><span class='line'>graphical environment to launch. Thank you.</span></code></pre></td></tr></table></div></figure>
 
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
-</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>临时关闭SELinux</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>彻底关闭SELinux</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/selinux/config
-</span><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>设置服务自启动</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
-</span><span class='line'>chkconfig mysql on
-</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安装pip</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install python-setuptools
-</span><span class='line'>easy_install pip
-</span><span class='line'>pip install Django==1.6.1
-</span><span class='line'>pip install --upgrade setuptools</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>XX 不在 sudoers 文件中。此事将被报告。</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>visudo
-</span><span class='line'>xxxx    ALL=(ALL)       ALL</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mv /etc/issue.backup /etc/issue
+</span><span class='line'>sudo mv /etc/rc.local.backup /etc/rc.local
+</span><span class='line'>sudo mv /opt/vmware-tools-installer/lightdm.conf /etc/init</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -257,7 +194,7 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a></h1>
     
     
       <p class="meta">
@@ -273,312 +210,371 @@ sudo gem install passenger sudo passenger-install-apache2-module ">
   
 
 
-<time datetime="2014-01-17T14:06:00+08:00" pubdate data-updated="true">2014年01月17日</time>
+<time datetime="2014-02-24T18:09:00+08:00" pubdate data-updated="true">2014年02月24日</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
-
-<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+  <div class="entry-content"><h2>查看当前监听80端口的程序</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
-</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>lsof -i :80</span></code></pre></td></tr></table></div></figure>
 
 
-<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-17T10:56:00+08:00" pubdate data-updated="true">2014年01月17日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>设置系统时间与网络时间同步</h2>
+<h2>查看当前网卡的物理地址</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
+</pre></td><td class='code'><pre><code class=''><span class='line'>ifconfig eth0 | head -1 | awk '{print $5}'</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-16T15:10:00+08:00" pubdate data-updated="true">2014年01月16日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>设置自启动</h2>
-
-<p>sudo update-rc.d -f mysql defaults</p>
-
-<h2>设置不启动</h2>
-
-<p>sudo update-rc.d -f mysql remove</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/16/an-zhuang-gnomezhu-ti/">安装GNOME主题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-16T13:55:00+08:00" pubdate data-updated="true">2014年01月16日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>安装GNOME主题</h2>
+<h2>同一个网卡增加第二个IP地址</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo add-apt-repository ppa:tiheum/equinox
-</span><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get install faience-theme
-</span><span class='line'>sudo apt-get install faience-icon-theme faenza-icon-theme</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
+</pre></td><td class='code'><pre><code class=''><span class='line'>#在网卡eth0上增加一个1.2.3.4的IP：
+</span><span class='line'>sudo ifconfig eth0:0 1.2.3.4 netmask 255.255.255.0
+</span><span class='line'>#删除增加的IP：
+</span><span class='line'>sudo ifconfig eth0:0 down</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">2014年01月14日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
-
-<p>Chrome->设置->管理证书->授权中心->导入。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">2014年01月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>for 8M flash</h1>
-
-<pre><code>rm firmware.bin
-dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
-#128 u-boot-env
-dd if=ap121-2.6.31-squashfs of=firmware.bin bs=512 count=6144 seek=640
-dd if=vmlinux.lzma.uImage of=firmware.bin bs=512 count=2944 seek=6784
-#128 NVRAM
-dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=9856
-dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=13056
-dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">2014年01月03日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>创建数据库</h2>
+<h2>立即让网络支持nat</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+</span><span class='line'>sudo iptables -t nat -I POSTROUTING -j MASQUERADE</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查看路由信息</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netstat -rn
+</span><span class='line'>sudo route -n</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>增加和删除路由</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1
+</span><span class='line'>sudo route del -net 192.168.0.0 netmask 255.255.255.0 gw 172.16.0.1</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>统计当前IP连接的个数</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>netstat -na|grep ESTABLISHED|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -r -n
+</span><span class='line'>netstat -na|grep SYN|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -r -n
+</span><span class='line'>netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-24T18:01:00+08:00" pubdate data-updated="true">2014年02月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -s http://ns1.dnspod.net:6666</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl ifconfig.me</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T21:50:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo perl -MCPAN -e 'upgrade'</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/mplayermei-you-sheng-yin/">MPlayer没有声音</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T17:59:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>[AO OSS] audio_setup: Can&rsquo;t open audio device /dev/dsp: No such file or directory</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>padsp mplayer /path/to/your/file</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/">Git查看某个文件的修改历史</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T13:07:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git log --pretty=oneline 文件名
+</span><span class='line'>git show 356f6def9d3fb7f3b9032ff5aa4b9110d4cca87e</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/">通过代理下载android代码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T00:34:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
+</span><span class='line'>cd WORKING_DIRECTORY
+</span><span class='line'>export http_proxy="127.0.0.1:8087"
+</span><span class='line'>export https_proxy="127.0.0.1:8087"
+</span><span class='line'>echo "======start repo sync======"
+</span><span class='line'>~/bin/repo sync
+</span><span class='line'>while [ $? == 1 ]; do
+</span><span class='line'>echo "======sync failed, re-sync again======"
+</span><span class='line'>sleep 3
+</span><span class='line'>~/bin/repo sync
+</span><span class='line'>done</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">Ubuntu命令行进入图形界面</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T00:16:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>方法一</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service lightdm start</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>方法二</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>startx</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/">Sudo Startx切换到普通用户时无法显示图形界面</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T00:10:00+08:00" pubdate data-updated="true">2014年02月22日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo chown user:user .Xauthority</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
@@ -602,23 +598,23 @@ dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">Redmine 2.0 Not Working With Mod_passenger</a>
+        <a href="/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/">设置ubuntu 默认不启动图形界面</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
+        <a href="/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/">Vmware Easy Install ubuntu12.04 无法切换到图形界面</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/17/django-upload-unicodeencodeerror/">Django Upload UnicodeEncodeError</a>
+        <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/17/ntptong-bu-fu-wu-qi/">NTP同步服务器</a>
+        <a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/">设置mysql自启动</a>
+        <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
       </li>
     
   </ul>

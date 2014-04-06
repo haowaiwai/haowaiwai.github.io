@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress新文章 - haowaiwai's Blog</title>
+  <title>haowaiwai's Blog</title>
   <meta name="author" content="haowaiwai">
 
   
@@ -29,7 +29,7 @@ rake deploy ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang">
+  <link rel="canonical" href="http://haowaiwai.github.io/blog/page/4">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="haowaiwai's Blog" type="application/atom+xml">
@@ -86,12 +86,15 @@ rake deploy ">
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Octopress新文章</h1>
+      <h1 class="entry-title"><a href="/blog/2013/12/06/octopressxin-wen-zhang/">Octopress新文章</a></h1>
     
     
       <p class="meta">
@@ -114,7 +117,7 @@ rake deploy ">
   </header>
 
 
-<div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -128,55 +131,256 @@ rake deploy ">
 </span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">haowaiwai</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2013-12-06T08:44:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+    </article>
+  
+  
+    <article>
       
-
-
-    </p>
+  <header>
     
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang/" data-via="" data-counturl="http://haowaiwai.github.io/blog/2013/12/06/octopressxin-wen-zhang/" >Tweet</a>
-  
-  
-  
-</div>
-
+      <h1 class="entry-title"><a href="/blog/2013/12/05/change-gem-source/">Change Gem Source</a></h1>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/12/05/change-gem-source/" title="Previous Post: change gem source">&laquo; change gem source</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/12/06/rake-version-mismatch/" title="Next Post: rake version mismatch">rake version mismatch &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
+    
+      <p class="meta">
+        
 
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>change gem source</h2>
+
+<p><code>gem sources --remove http://rubygems.org/</code></p>
+
+<p><code>gem sources -a http://ruby.taobao.org/</code></p>
+
+<p><code>gem sources -l</code></p>
 </div>
+  
+  
 
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/25/aptdai-li/">APT代理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>APT configuration file method</h2>
+
+<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
+
+<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/24/duan-kou-ying-she/">端口映射</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T14:07:00+08:00" pubdate data-updated="true">2013年07月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>DMZ全地址映射</h2>
+
+<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1</code></p>
+
+<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -j DNAT --to-destination 10.1.1.2</code></p>
+
+<h2>TELNET服务器映射</h2>
+
+<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.3 -p tcp --sport 23 -j SNAT --to-source 201.1.1.1</code></p>
+
+<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -p tcp --dport 23 -j DNAT --to-destination 10.1.1.3</code></p>
+
+<h2>查看配置</h2>
+
+<p><code>iptables -t nat -L</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/24/tarjie-ya-suo/">Tar解压缩</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-24T09:20:00+08:00" pubdate data-updated="true">2013年07月24日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>解压缩</h2>
+
+<p><code>tar zxvf xxx.tar.gz</code></p>
+
+<p><code>tar jxvf xxx.tar.bz2</code></p>
+
+<p><code>tar Jxvf xxx.tar.xz</code></p>
+
+<p><code>tar Zxvf xxx.tar.Z</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/23/title/">Mac过滤</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-23T21:25:00+08:00" pubdate data-updated="true">2013年07月23日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>mac过滤</h2>
+
+<p><code>ebtables -D INPUT -j mac-filter</code></p>
+
+<p><code>ebtables -F mac-filter</code></p>
+
+<p><code>ebtables -X mac-filter</code></p>
+
+<p><code>ebtables -N mac-filter</code></p>
+
+<h2>黑名单</h2>
+
+<p><code>ebtables -P mac-filter ACCEPT</code></p>
+
+<p><code>ebtables -I mac-filter -s mac_address -j DROP</code></p>
+
+<h2>白名单</h2>
+
+<p><code>ebtables -P mac-filter DROP</code></p>
+
+<p><code>ebtables -I mac-filter -s mac_address -j ACCEPT</code></p>
+
+<p><code>ebtables -I mac-filter -d wan_mac_address -j ACCEPT</code></p>
+
+<p><code>ebtables -I INPUT -j mac-filter</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
 <aside class="sidebar">
   
     <section>
@@ -212,7 +416,6 @@ rake deploy ">
 
   
 </aside>
-
 
     </div>
   </div>
