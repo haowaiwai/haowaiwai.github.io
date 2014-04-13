@@ -9,18 +9,8 @@
   <meta name="author" content="haowaiwai">
 
   
-  <meta name="description" content="1
-2
-3
-4
-5
-6
-rake new_post["新文章名称"]
-rake generate
-git add .
-git commit -m "article：Github page + Octopress"
-git push
-rake deploy ">
+  <meta name="description" content="FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。 Chrome->设置->管理证书->授权中心->导入。
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,6 +84,425 @@ rake deploy ">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/01/14/goagentdao-ru-zheng-shu/">Goagent导入证书</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-14T10:56:00+08:00" pubdate data-updated="true">2014年01月14日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>FireFox->选项->高级->加密->查看证书->证书机构->导入证书, 选择local\ca.crt, 勾选所有项，导入。</p>
+
+<p>Chrome->设置->管理证书->授权中心->导入。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/05/sheng-chan-8mfirmware/">生产 8M Firmware</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-05T10:01:00+08:00" pubdate data-updated="true">2014年01月05日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>for 8M flash</h1>
+
+<pre><code>rm firmware.bin
+dd if=tuboot.bin of=firmware.bin bs=512 count=512 seek=0
+#128 u-boot-env
+dd if=ap121-2.6.31-squashfs of=firmware.bin bs=512 count=6144 seek=640
+dd if=vmlinux.lzma.uImage of=firmware.bin bs=512 count=2944 seek=6784
+#128 NVRAM
+dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=9856
+dd if=app.squashfs of=firmware.bin bs=512 count=3200 seek=13056
+dd if=caldata of=firmware.bin bs=512 count=128 seek=16256
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/03/django-admin-locale-format/">Django Admin Locale Format</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-03T15:27:00+08:00" pubdate data-updated="true">2014年01月03日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/mysqlchang-yong-ming-ling-da-quan/">Mysql常用命令大全</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T21:35:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>创建数据库</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/">Django Ubuntu 12.04 安装目录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T21:32:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>/usr/local/lib/python2.7/dist-packages</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/">设置MySQL允许外网访问</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-19T20:01:00+08:00" pubdate data-updated="true">2013年12月19日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>1.修改配置文件</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo vim /etc/mysql/my.cnf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+
+<h2>2.登录数据库</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql -u root -p</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输入密码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; use mysql;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>3.查询host</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; select user,host from user;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>4.创建host</h2>
+
+<p>如果没有&#8221;%&ldquo;这个host值,就执行下面这两句:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; update user set host='%' where user='root';
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>5.授权用户</h2>
+
+<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.102' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+</span><span class='line'>mysql&gt; flush privileges;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/06/c-hello-world/">C Hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T13:47:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>hello world</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/06/sshmian-mi-ma/">SSH免密码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T12:11:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>SSH免密码</h2>
+
+<pre><code>ssh-keygen -t dsa
+ssh root@192.168.0.58
+mkdir -p .ssh
+exit
+scp /root/.ssh/id_dsa.pub root@192.168.0.58:/root/.ssh
+ssh root@192.168.10.58
+cd .ssh
+cat id_dsa.pub &gt;authorized_keys
+exit
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/06/rake-version-mismatch/">Rake Version Mismatch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T09:22:00+08:00" pubdate data-updated="true">2013年12月06日</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem list rake
+</span><span class='line'>gem uninstall rake
+</span><span class='line'>bundle update; rake install</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/12/06/octopressxin-wen-zhang/">Octopress新文章</a></h1>
     
     
@@ -137,243 +546,9 @@ rake deploy ">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/05/change-gem-source/">Change Gem Source</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-05T22:02:00+08:00" pubdate data-updated="true">2013年12月05日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>change gem source</h2>
-
-<p><code>gem sources --remove http://rubygems.org/</code></p>
-
-<p><code>gem sources -a http://ruby.taobao.org/</code></p>
-
-<p><code>gem sources -l</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/25/aptdai-li/">APT代理</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-25T14:44:00+08:00" pubdate data-updated="true">2013年07月25日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>APT configuration file method</h2>
-
-<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
-
-<p><code>Acquire::http::Proxy "http://yourproxyaddress:proxyport";</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/24/duan-kou-ying-she/">端口映射</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-24T14:07:00+08:00" pubdate data-updated="true">2013年07月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>DMZ全地址映射</h2>
-
-<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1</code></p>
-
-<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -j DNAT --to-destination 10.1.1.2</code></p>
-
-<h2>TELNET服务器映射</h2>
-
-<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.3 -p tcp --sport 23 -j SNAT --to-source 201.1.1.1</code></p>
-
-<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -p tcp --dport 23 -j DNAT --to-destination 10.1.1.3</code></p>
-
-<h2>查看配置</h2>
-
-<p><code>iptables -t nat -L</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/24/tarjie-ya-suo/">Tar解压缩</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-24T09:20:00+08:00" pubdate data-updated="true">2013年07月24日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>解压缩</h2>
-
-<p><code>tar zxvf xxx.tar.gz</code></p>
-
-<p><code>tar jxvf xxx.tar.bz2</code></p>
-
-<p><code>tar Jxvf xxx.tar.xz</code></p>
-
-<p><code>tar Zxvf xxx.tar.Z</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/23/title/">Mac过滤</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-23T21:25:00+08:00" pubdate data-updated="true">2013年07月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>mac过滤</h2>
-
-<p><code>ebtables -D INPUT -j mac-filter</code></p>
-
-<p><code>ebtables -F mac-filter</code></p>
-
-<p><code>ebtables -X mac-filter</code></p>
-
-<p><code>ebtables -N mac-filter</code></p>
-
-<h2>黑名单</h2>
-
-<p><code>ebtables -P mac-filter ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j DROP</code></p>
-
-<h2>白名单</h2>
-
-<p><code>ebtables -P mac-filter DROP</code></p>
-
-<p><code>ebtables -I mac-filter -s mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I mac-filter -d wan_mac_address -j ACCEPT</code></p>
-
-<p><code>ebtables -I INPUT -j mac-filter</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/5/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -388,23 +563,23 @@ rake deploy ">
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/">设置ubuntu 默认不启动图形界面</a>
+        <a href="/blog/2014/04/13/centosbu-shu-gitliab/">Centos部署gitliab</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/">Vmware Easy Install ubuntu12.04 无法切换到图形界面</a>
+        <a href="/blog/2014/04/13/openwrt-goagent-opensslcuo-wu/">Openwrt Goagent Openssl错误</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/24/linuxchang-yong-wang-luo-ming-ling/">LINUX常用网络命令</a>
+        <a href="/blog/2014/04/13/ubuntubian-yi-an-zhuang-svn/">Ubuntu编译安装svn</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/">获取计算机外网ip的写法</a>
+        <a href="/blog/2014/04/13/gsoap-openwrtjiao-cha-bian-yi-cuo-wu/">Gsoap Openwrt交叉编译错误</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/02/22/ubuntu-update-perl/">Ubuntu Update Perl</a>
+        <a href="/blog/2014/04/13/wgetshu-chu-dao-kong-zhi-tai/">Wget输出到控制台</a>
       </li>
     
   </ul>
