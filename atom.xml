@@ -4,7 +4,7 @@
   <title><![CDATA[haowaiwai's Blog]]></title>
   <link href="http://haowaiwai.github.io/atom.xml" rel="self"/>
   <link href="http://haowaiwai.github.io/"/>
-  <updated>2014-02-26T17:03:29+08:00</updated>
+  <updated>2014-04-13T10:43:15+08:00</updated>
   <id>http://haowaiwai.github.io/</id>
   <author>
     <name><![CDATA[haowaiwai]]></name>
@@ -12,6 +12,191 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[centos部署gitliab]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/13/centosbu-shu-gitliab/"/>
+    <updated>2014-04-13T10:34:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/13/centosbu-shu-gitliab</id>
+    <content type="html"><![CDATA[<p>下载地址：<a href="https://www.gitlab.com/downloads/">https://www.gitlab.com/downloads/</a></p>
+
+<p>参考文档：<a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md">https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install openssh-server
+</span><span class='line'>sudo yum install postfix # sendmail or exim is also OK
+</span><span class='line'>sudo rpm -i gitlab-x.y.z_omnibus-x.el6.x86_64.rpm # this is the .rpm you downloaded
+</span><span class='line'>sudo gitlab-ctl reconfigure
+</span><span class='line'>sudo lokkit -s http -s ssh # open up the firewall for HTTP and SSH requests</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看运行状态</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gitlab-ctl status</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[openwrt goagent openssl错误]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/13/openwrt-goagent-opensslcuo-wu/"/>
+    <updated>2014-04-13T10:32:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/13/openwrt-goagent-opensslcuo-wu</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>python: md_rand.c: 316: ssleay_rand_add: Assertion `md_c[1] == md_count[1]' failed.</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu编译安装svn]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/13/ubuntubian-yi-an-zhuang-svn/"/>
+    <updated>2014-04-13T10:29:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/13/ubuntubian-yi-an-zhuang-svn</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar xf apr-1.5.0.tar.gz
+</span><span class='line'>cd apr-1.5.0
+</span><span class='line'>./configure --prefix=/usr/local/apr
+</span><span class='line'>make && make install
+</span><span class='line'>tar xf apr-util-1.5.3.tar.gz
+</span><span class='line'>cd apr-util-1.5.3
+</span><span class='line'>./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr
+</span><span class='line'>make && make install</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[gsoap openwrt交叉编译错误]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/13/gsoap-openwrtjiao-cha-bian-yi-cuo-wu/"/>
+    <updated>2014-04-13T10:27:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/13/gsoap-openwrtjiao-cha-bian-yi-cuo-wu</id>
+    <content type="html"><![CDATA[<p>stdsoap2.c:(.text+0x1b04c): undefined reference to `isnan&#8217;的错误。</p>
+
+<p>stdsoap.h</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#  define soap_isnan(n) isnan(0) </span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#  define soap_isnan(n) (0)</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[wget输出到控制台]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/13/wgetshu-chu-dao-kong-zhi-tai/"/>
+    <updated>2014-04-13T10:24:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/13/wgetshu-chu-dao-kong-zhi-tai</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://127.0.0.1:1337 -O - 2&gt;/dev/null</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu安装chrome]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/13/ubuntuan-zhuang-chrome/"/>
+    <updated>2014-04-13T10:20:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/13/ubuntuan-zhuang-chrome</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+</span><span class='line'>
+</span><span class='line'>sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" &gt;&gt; /etc/apt/sources.list.d/google.list'
+</span><span class='line'>
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install google-chrome-stable</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress和zsh不兼容[转]]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/12/octopresshe-zshbu-jian-rong/"/>
+    <updated>2014-04-12T21:40:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/12/octopresshe-zshbu-jian-rong</id>
+    <content type="html"><![CDATA[<p>引用：<a href="http://fancyoung.com/blog/use-octopress-new-post-function-with-zsh/">http://fancyoung.com/blog/use-octopress-new-post-function-with-zsh/</a></p>
+
+<p>执行：$ rake new_post[&ldquo;arch-linux-reinstall-glibc.markdown&rdquo;]</p>
+
+<p>报错：zsh: no matches found: new_post[arch-linux-reinstall-glibc]</p>
+
+<p>原因：zsh中若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，则将其识别为查找文件名的通配符</p>
+
+<p>快速解决：用引号括起来$ rake &ldquo;new_post[arch-linux-reinstall-glibc.markdown]&rdquo;</p>
+
+<p>彻底解决：取消zsh的通配(GLOB), 在.zshrc中加入alias rake=&ldquo;noglob rake&rdquo;</p>
+
+<p>PS：在git回滚操作git reset &mdash;soft HEAD^时出现报错： zsh: no matches found HEAD^，</p>
+
+<p>也为同样原因，因为^也为正则中的符号， 需要转义为git reset &mdash;soft HEAD^。</p>
+
+<p>官方：<a href="https://github.com/imathis/octopress/issues/117">https://github.com/imathis/octopress/issues/117</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu 12.04安装nodejs]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/04/12/ubuntu-12-dot-04an-zhuang-nodejs/"/>
+    <updated>2014-04-12T21:31:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/04/12/ubuntu-12-dot-04an-zhuang-nodejs</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install python-software-properties python g++ make
+</span><span class='line'>sudo add-apt-repository ppa:chris-lea/node.js
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install nodejs</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[lightdm不能自启动]]></title>
+    <link href="http://haowaiwai.github.io/blog/2014/03/08/lightdmbu-neng-zi-qi-dong/"/>
+    <updated>2014-03-08T18:47:00+08:00</updated>
+    <id>http://haowaiwai.github.io/blog/2014/03/08/lightdmbu-neng-zi-qi-dong</id>
+    <content type="html"><![CDATA[<h2>卸载xubuntu之后，lightdm不能自启动</h2>
+
+<h3>需要手动启动</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo service lightdm start</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>可能删除下面的软件</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install lightdm-gtk-greeter</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[设置ubuntu 默认不启动图形界面]]></title>
@@ -249,275 +434,6 @@
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install gtk2-engines-pixbuf </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[MySQL维护]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/02/19/mysqlwei-hu/"/>
-    <updated>2014-02-19T18:22:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/02/19/mysqlwei-hu</id>
-    <content type="html"><![CDATA[<h2>查询分区信息</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>explain partitions select * from 表名;
-</span><span class='line'>show create table 表名;
-</span><span class='line'>#查询所在分区
-</span><span class='line'>select partition_name part,partition_expression expr,partition_description descr,table_rows from information_schema.partitions where table_schema = schema() and table_name='表名';
-</span><span class='line'>#重新定义分区
-</span><span class='line'>alter table 表名 partition by hash ( year(time) ) partitions 分区数;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>查询当前数据库用户连接情况</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>show processlist;</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>MySQL运行状态</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>show status;</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[No module named wsgi]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi/"/>
-    <updated>2014-02-19T15:48:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/02/19/no-module-named-wsgi</id>
-    <content type="html"><![CDATA[<h2>CentOS django ImportError: No module named wsgi</h2>
-
-<h3>错误日志</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] SELinux policy enabled; httpd running as context unconfined_u:system_r:httpd_t:s0
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: generating secret for digest authentication ...
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Digest: done
-</span><span class='line'>[Wed Jan 22 18:43:47 2014] [notice] Apache/2.2.15 (Unix) DAV/2 mod_wsgi/3.2 Python/2.6.6 configured -- resuming normal operations
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Target WSGI script '/var/www/produce/produce/wsgi.py' cannot be loaded as Python module.
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] mod_wsgi (pid=4709): Exception occurred processing WSGI script '/var/www/produce/produce/wsgi.py'.
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] Traceback (most recent call last):
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]   File "/var/www/produce/produce/wsgi.py", line 14, in 
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113]     from django.core.wsgi import get_wsgi_application
-</span><span class='line'>[Wed Jan 22 18:43:51 2014] [error] [client 192.168.18.113] ImportError: No module named wsgi</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>解决方法</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chcon -v --type=httpd_sys_content_t /var/www/produce/produce/wsgi.py</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[windows7笔记本做热点]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian/"/>
-    <updated>2014-02-19T00:11:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/02/19/windows7bi-ji-ben-zuo-re-dian</id>
-    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>netsh wlan set hostednetwork mode=allow ssid=abcde key=87654321
-</span><span class='line'>netsh wlan start hostednetwork
-</span><span class='line'>netsh wlan stop hostednetwork
-</span><span class='line'>netsh wlan show drivers</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[备份MySQL库]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/02/14/bei-fen-mysqlku/"/>
-    <updated>2014-02-14T11:03:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/02/14/bei-fen-mysqlku</id>
-    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/usr/bin/mysqldump -u &lt;username&gt; -p &lt;password&gt; &lt;database&gt; | gzip &gt; /path/produce_`date +%Y%m%d`.gz</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[redmine 2.0 not working with mod_passenger]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/"/>
-    <updated>2014-02-08T11:37:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger</id>
-    <content type="html"><![CDATA[<p><a href="http://www.redmine.org/boards/2/topics/30624">摘自redmine官方</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo gem install passenger 
-</span><span class='line'>sudo passenger-install-apache2-module</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CentOS6.5配置]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/22/centos6-dot-5pei-zhi/"/>
-    <updated>2014-01-22T23:24:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/22/centos6-dot-5pei-zhi</id>
-    <content type="html"><![CDATA[<h2>添加服务端口</h2>
-
-<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum -y install policycoreutils-python
-</span><span class='line'>#list
-</span><span class='line'>sudo semanage port -l | grep -w http_port_t
-</span><span class='line'>#add
-</span><span class='line'>sudo semanage port -a -t http_port_t -p tcp 8888</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Set Apache environment</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gedit /etc/sysconfig/httpd
-</span><span class='line'>export LANG='en_US.UTF-8'
-</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安装MariaDB</h2>
-
-<p>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See &ldquo;Installing MariaDB with yum&rdquo; for detailed information.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC
-</span><span class='line'># http://mariadb.org/mariadb/repositories/
-</span><span class='line'>[mariadb]
-</span><span class='line'>name = MariaDB
-</span><span class='line'>baseurl = http://yum.mariadb.org/5.5/centos6-amd64
-</span><span class='line'>gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-</span><span class='line'>gpgcheck=1</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install MariaDB-server MariaDB-client
-</span><span class='line'>sudo yum install MySQL-python</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>临时关闭SELinux</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>setenforce 0</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>彻底关闭SELinux</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/selinux/config
-</span><span class='line'>SELINUX=disabled</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>设置服务自启动</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>chkconfig --list
-</span><span class='line'>chkconfig mysql on
-</span><span class='line'>chkconfig httpd on</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>安装pip</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install python-setuptools
-</span><span class='line'>easy_install pip
-</span><span class='line'>pip install Django==1.6.1
-</span><span class='line'>pip install --upgrade setuptools</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>XX 不在 sudoers 文件中。此事将被报告。</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>visudo
-</span><span class='line'>xxxx    ALL=(ALL)       ALL</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[django upload UnicodeEncodeError]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror/"/>
-    <updated>2014-01-17T14:06:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/17/django-upload-unicodeencodeerror</id>
-    <content type="html"><![CDATA[<p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi">摘自django官方文档</a></p>
-
-<p>If you&rsquo;re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG='en_US.UTF-8'
-</span><span class='line'>export LC_ALL='en_US.UTF-8'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[NTP同步服务器]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/17/ntptong-bu-fu-wu-qi/"/>
-    <updated>2014-01-17T10:56:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/17/ntptong-bu-fu-wu-qi</id>
-    <content type="html"><![CDATA[<h2>设置系统时间与网络时间同步</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ntpdate cn.pool.ntp.org</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[设置mysql自启动]]></title>
-    <link href="http://haowaiwai.github.io/blog/2014/01/16/she-zhi-mysqlzi-qi-dong/"/>
-    <updated>2014-01-16T15:10:00+08:00</updated>
-    <id>http://haowaiwai.github.io/blog/2014/01/16/she-zhi-mysqlzi-qi-dong</id>
-    <content type="html"><![CDATA[<h2>设置自启动</h2>
-
-<p>sudo update-rc.d -f mysql defaults</p>
-
-<h2>设置不启动</h2>
-
-<p>sudo update-rc.d -f mysql remove</p>
 ]]></content>
   </entry>
   
