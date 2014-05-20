@@ -9,6 +9,7 @@ categories:
 git clone -b source https://github.com/haowaiwai/haowaiwai.github.io.git octopress
 cd octopress
 rake setup_github_pages
+git clone -b master https://github.com/haowaiwai/haowaiwai.github.io.git _deploy
 ```
 
 重装的系统安装
