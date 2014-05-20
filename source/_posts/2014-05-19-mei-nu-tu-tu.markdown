@@ -5,4 +5,4 @@ date: 2014-05-19 18:12
 comments: true
 categories: 
 ---
-![Alt text](/images/shenjiayi.jpg "沈佳宜")
+![Alt text](/images/mm/shenjiayi.jpg "沈佳宜")
