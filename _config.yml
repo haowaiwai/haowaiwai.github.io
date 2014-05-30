@@ -81,8 +81,7 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-#theme: landscape
-theme: pacman
+theme: landscape
 exclude_generator:
 
 # Deployment
@@ -90,4 +89,4 @@ exclude_generator:
 deploy:
   type: github
   repository: https://github.com/haowaiwai/haowaiwai.github.io.git
-  branch: gh-pages
+  branch: master
