@@ -7,8 +7,8 @@ title: haowaiwai's Blog
 subtitle:
 description:
 author: haowaiwai
-email:
-language:
+email: haowaiwai@gmail.com
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -67,8 +67,8 @@ logger_format:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: MMM D YYYY
-time_format: H:mm:ss
+date_format: YYYY年MM月DD日
+time_format: HH时mm分ss秒
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -81,7 +81,8 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: landscape
+# theme: landscape
+theme: pacman
 exclude_generator:
 
 # Deployment
