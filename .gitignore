@@ -3,6 +3,8 @@
 .sass-cache
 .gist-cache
 .pygments-cache
+.deploy
+themes/pacman
 _deploy
 public
 sass.old
