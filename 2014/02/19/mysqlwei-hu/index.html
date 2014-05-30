@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL维护 | haowaiwai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="查询分区信息
+1
+2
+3
+4
+5
+6
+explain partitions select * from 表名;
+show create table 表名;
+#查询所在分区
+select partition_name part,partition_expression expr,partition_description descr,table_rows from information_schem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL维护">
+<meta property="og:url" content="http://haowaiwai.github.io/2014/02/19/mysqlwei-hu/">
+<meta property="og:image">
+<meta property="og:site_name" content="haowaiwai's Blog">
+<meta property="og:description" content="查询分区信息
+1
+2
+3
+4
+5
+6
+explain partitions select * from 表名;
+show create table 表名;
+#查询所在分区
+select partition_name part,partition_expression expr,partition_description descr,table_rows from information_schem">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL维护">
+<meta name="twitter:description" content="查询分区信息
+1
+2
+3
+4
+5
+6
+explain partitions select * from 表名;
+show create table 表名;
+#查询所在分区
+select partition_name part,partition_expression expr,partition_description descr,table_rows from information_schem">
+  
+    <link rel="alternative" href="/atom.xml" title="haowaiwai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">haowaiwai&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://haowaiwai.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mysqlwei-hu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/19/mysqlwei-hu/" class="article-date">
+  <time datetime="2014-02-19T10:22:00.000Z" itemprop="datePublished">Feb 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL维护
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查询分区信息">查询分区信息</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>explain partitions <span class="operator"><span class="keyword">select</span> * <span class="keyword">from</span> 表名;</span>
+<span class="operator"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名;</span>
+#查询所在分区
+<span class="operator"><span class="keyword">select</span> partition_name part,partition_expression expr,partition_description descr,table_rows <span class="keyword">from</span> information_schema.partitions <span class="keyword">where</span> table_schema = <span class="keyword">schema</span>() <span class="keyword">and</span> table_name=<span class="string">'表名'</span>;</span>
+#重新定义分区
+<span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 partition <span class="keyword">by</span> hash ( <span class="keyword">year</span>(<span class="keyword">time</span>) ) partitions 分区数;</span>
+</pre></td></tr></table></figure><br>## 查询当前数据库用户连接情况 ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="operator"><span class="keyword">show</span> processlist;</span>
+</pre></td></tr></table></figure><br>## MySQL运行状态 ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="operator"><span class="keyword">show</span> status;</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/19/mysqlwei-hu/" data-id="lpdz1z0xhvtvgg23" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-,/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/19/no-module-named-wsgi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">No module named wsgi</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/05/21/ubuntu-apache2-servername-error/">ubuntu apache2 servername error</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/21/ubuntu-apache2-httpsda-jian/">ubuntu apache2 https搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/20/hui-fu-octopress/">恢复octopress</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/20/vikuai-jie-jian-zheng-li/">VI快捷键整理</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/19/mei-nu-tu-tu/">美女图图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 haowaiwai<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

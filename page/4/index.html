@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>haowaiwai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="haowaiwai's Blog">
+<meta property="og:url" content="http://haowaiwai.github.io/page/4/">
+<meta property="og:image">
+<meta property="og:site_name" content="haowaiwai's Blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="haowaiwai's Blog">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="haowaiwai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">haowaiwai&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://haowaiwai.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/" class="article-date">
+  <time datetime="2014-02-21T16:16:00.000Z" itemprop="datePublished">Feb 22 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/">ubuntu命令行进入图形界面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="方法一">方法一</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> service lightdm start
+</pre></td></tr></table></figure><br>## 方法二 ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>startx
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/" data-id="6xns9fn7c3uf9zqj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/" class="article-date">
+  <time datetime="2014-02-21T16:10:00.000Z" itemprop="datePublished">Feb 22 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/">sudo startx切换到普通用户时无法显示图形界面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> chown user:user .Xauthority
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/" data-id="jkg5v8ymg5eld4i2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-," class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-,/" class="article-date">
+  <time datetime="2014-02-21T16:02:00.000Z" itemprop="datePublished">Feb 22 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-,/">Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>sudo apt<span class="attribute">-get</span> install gtk2<span class="attribute">-engines</span><span class="attribute">-pixbuf</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-,/" data-id="ynq12x973s8smfnj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysqlwei-hu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/19/mysqlwei-hu/" class="article-date">
+  <time datetime="2014-02-19T10:22:00.000Z" itemprop="datePublished">Feb 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/19/mysqlwei-hu/">MySQL维护</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查询分区信息">查询分区信息</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>explain partitions <span class="operator"><span class="keyword">select</span> * <span class="keyword">from</span> 表名;</span>
+<span class="operator"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名;</span>
+#查询所在分区
+<span class="operator"><span class="keyword">select</span> partition_name part,partition_expression expr,partition_description descr,table_rows <span class="keyword">from</span> information_schema.partitions <span class="keyword">where</span> table_schema = <span class="keyword">schema</span>() <span class="keyword">and</span> table_name=<span class="string">'表名'</span>;</span>
+#重新定义分区
+<span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 partition <span class="keyword">by</span> hash ( <span class="keyword">year</span>(<span class="keyword">time</span>) ) partitions 分区数;</span>
+</pre></td></tr></table></figure><br>## 查询当前数据库用户连接情况 ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="operator"><span class="keyword">show</span> processlist;</span>
+</pre></td></tr></table></figure><br>## MySQL运行状态 ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="operator"><span class="keyword">show</span> status;</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/19/mysqlwei-hu/" data-id="lpdz1z0xhvtvgg23" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-no-module-named-wsgi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/19/no-module-named-wsgi/" class="article-date">
+  <time datetime="2014-02-19T07:48:00.000Z" itemprop="datePublished">Feb 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/19/no-module-named-wsgi/">No module named wsgi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CentOS_django_ImportError:_No_module_named_wsgi">CentOS django ImportError: No module named wsgi</h2>
+<h3 id="错误日志">错误日志</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre>[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] SELinux policy enabled; httpd <span class="property">running</span> <span class="keyword">as</span> context unconfined_u:system_r:httpd_t:s0
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] Digest: generating secret <span class="keyword">for</span> digest authentication ...
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] Digest: done
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] Apache/<span class="number">2.2</span><span class="number">.15</span> (Unix) DAV/<span class="number">2</span> mod_wsgi/<span class="number">3.2</span> Python/<span class="number">2.6</span><span class="number">.6</span> configured <span class="comment">-- resuming normal operations</span>
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] mod_wsgi (pid=<span class="number">4709</span>): Target WSGI <span class="keyword">script</span> '/var/www/produce/produce/wsgi.py' cannot be loaded <span class="keyword">as</span> Python module.
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] mod_wsgi (pid=<span class="number">4709</span>): Exception occurred processing WSGI <span class="keyword">script</span> '/var/www/produce/produce/wsgi.py'.
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] Traceback (most recent call <span class="keyword">last</span>):
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>]   File <span class="string">"/var/www/produce/produce/wsgi.py"</span>, line <span class="number">14</span>, <span class="keyword">in</span> 
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>]     <span class="keyword">from</span> django.core.wsgi import get_wsgi_application
+[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] ImportError: No module named wsgi
+</pre></td></tr></table></figure><br>### 解决方法 ###<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>chcon <span class="attribute">-v</span> <span class="subst">--</span><span class="keyword">type</span><span class="subst">=</span>httpd_sys_content_t /<span class="built_in">var</span>/www/produce/produce/wsgi<span class="built_in">.</span>py
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/19/no-module-named-wsgi/" data-id="fqnscjl6kpkejhwu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-windows7bi-ji-ben-zuo-re-dian" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/19/windows7bi-ji-ben-zuo-re-dian/" class="article-date">
+  <time datetime="2014-02-18T16:11:00.000Z" itemprop="datePublished">Feb 19 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/19/windows7bi-ji-ben-zuo-re-dian/">windows7笔记本做热点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>netsh wlan <span class="operator"><span class="keyword">set</span> hostednetwork mode=allow ssid=abcde <span class="keyword">key</span>=<span class="number">87654321</span>
+netsh wlan <span class="keyword">start</span> hostednetwork
+netsh wlan stop hostednetwork
+netsh wlan <span class="keyword">show</span> drivers</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/19/windows7bi-ji-ben-zuo-re-dian/" data-id="r72212isfiw54o21" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bei-fen-mysqlku" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/14/bei-fen-mysqlku/" class="article-date">
+  <time datetime="2014-02-14T03:03:00.000Z" itemprop="datePublished">Feb 14 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/14/bei-fen-mysqlku/">备份MySQL库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>/usr/bin/mysqldump -u <span class="tag">&lt;<span class="title">username</span>&gt;</span> -p <span class="tag">&lt;<span class="title">password</span>&gt;</span> <span class="tag">&lt;<span class="title">database</span>&gt;</span> | gzip &gt; /path/produce_`date +%Y%m%d`.gz
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/14/bei-fen-mysqlku/" data-id="uwiykhl3jx91iyww" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-redmine-2-dot-0-not-working-with-mod-passenger" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/" class="article-date">
+  <time datetime="2014-02-08T03:37:00.000Z" itemprop="datePublished">Feb 8 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/">redmine 2.0 not working with mod_passenger</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.redmine.org/boards/2/topics/30624" target="_blank">摘自redmine官方</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>sudo gem install passenger 
+sudo passenger<span class="attribute">-install</span><span class="attribute">-apache2</span><span class="attribute">-module</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/" data-id="l7erm06t2hbp6oz1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-centos6-dot-5pei-zhi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/01/22/centos6-dot-5pei-zhi/" class="article-date">
+  <time datetime="2014-01-22T15:24:00.000Z" itemprop="datePublished">Jan 22 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/22/centos6-dot-5pei-zhi/">CentOS6.5配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="添加服务端口">添加服务端口</h2>
+<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>sudo yum <span class="attribute">-y</span> install policycoreutils<span class="attribute">-python</span>
+<span class="variable">#list</span>
+sudo semanage port <span class="attribute">-l</span> <span class="subst">|</span> grep <span class="attribute">-w</span> http_port_t
+<span class="variable">#add</span>
+sudo semanage port <span class="attribute">-a</span> <span class="attribute">-t</span> http_port_t <span class="attribute">-p</span> tcp <span class="number">8888</span>
+</pre></td></tr></table></figure><br>## Set Apache environment ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>gedit /etc/sysconfig/httpd
+<span class="keyword">export</span> LANG=<span class="string">'en_US.UTF-8'</span>
+<span class="keyword">export</span> LC_ALL=<span class="string">'en_US.UTF-8'</span>
+</pre></td></tr></table></figure><br>## 安装MariaDB ##<br>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See “Installing MariaDB with yum” for detailed information.<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="preprocessor"># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC</span>
+<span class="preprocessor"># http://mariadb.org/mariadb/repositories/</span>
+[mariadb]
+name = MariaDB
+baseurl = http:<span class="comment">//yum.mariadb.org/5.5/centos6-amd64</span>
+gpgkey=https:<span class="comment">//yum.mariadb.org/RPM-GPG-KEY-MariaDB</span>
+gpgcheck=<span class="number">1</span>
+</pre></td></tr></table></figure><br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>sudo yum install MariaDB<span class="attribute">-server</span> MariaDB<span class="attribute">-client</span>
+sudo yum install MySQL<span class="attribute">-python</span>
+</pre></td></tr></table></figure>
+
+<h2 id="临时关闭SELinux">临时关闭SELinux</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>setenforce 0
+</pre></td></tr></table></figure><br>## 彻底关闭SELinux ##<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="attribute">/etc/selinux/config
+SELINUX</span>=<span class="string">disabled</span>
+</pre></td></tr></table></figure>
+
+<h2 id="设置服务自启动">设置服务自启动</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>chkconfig <span class="comment">--list</span>
+chkconfig mysql <span class="command"><span class="keyword">on</span></span>
+chkconfig httpd <span class="command"><span class="keyword">on</span></span>
+</pre></td></tr></table></figure>
+
+<h2 id="安装pip">安装pip</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>yum <span class="keyword">install</span> python-setuptools
+easy_install pip
+pip <span class="keyword">install</span> Django==<span class="number">1.6</span>.<span class="number">1</span>
+pip <span class="keyword">install</span> --upgrade setuptools
+</pre></td></tr></table></figure>
+
+<h2 id="XX_不在_sudoers_文件中。此事将被报告。">XX 不在 sudoers 文件中。此事将被报告。</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>visudo
+xxxx    <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>)       <span class="keyword">ALL</span>
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/01/22/centos6-dot-5pei-zhi/" data-id="gaye5vbpqytplsoe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-django-upload-unicodeencodeerror" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/01/17/django-upload-unicodeencodeerror/" class="article-date">
+  <time datetime="2014-01-17T06:06:00.000Z" itemprop="datePublished">Jan 17 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/17/django-upload-unicodeencodeerror/">django upload UnicodeEncodeError</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi" target="_blank">摘自django官方文档</a></p>
+<p>If you’re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword">export</span> LANG=<span class="string">'en_US.UTF-8'</span>
+<span class="keyword">export</span> LC_ALL=<span class="string">'en_US.UTF-8'</span>
+</pre></td></tr></table></figure>
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://haowaiwai.github.io/2014/01/17/django-upload-unicodeencodeerror/" data-id="kgs29se7imlfkpsm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01">January 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07">July 2013</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/05/21/ubuntu-apache2-servername-error/">ubuntu apache2 servername error</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/21/ubuntu-apache2-httpsda-jian/">ubuntu apache2 https搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/20/hui-fu-octopress/">恢复octopress</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/20/vikuai-jie-jian-zheng-li/">VI快捷键整理</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/19/mei-nu-tu-tu/">美女图图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 haowaiwai<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>
