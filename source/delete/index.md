@@ -1,12 +1,25 @@
-title: delete
+title: 常用
 date: 2014-06-17 16:35:05
 ---
 ```
+#设置缺省路由
+route add default gw 10.0.0.254
+route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.0.0.254
+#创建VLAN
 sudo apt-get install vlan
 sudo vconfig add eth0 4082
 sudo ip address add 10.10.10.3/24 dev eth0.4082
 sudo ip link set dev eth0.4082 up
+#创建桥
+brctl addbr br0
+brctl addif br0 eth0
+ifconfig br0 192.168.1.1 up
+brctl delif ena eth0
+```
 
+以下内容未整理
+
+```
 iptables -A INPUT -p tcp --dport 80 -m connlimit ! --connlimit-above 10 -j ACCEPT
 
 iptables -P INPUT DROP
