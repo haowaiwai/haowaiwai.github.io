@@ -15,6 +15,10 @@ brctl addbr br0
 brctl addif br0 eth0
 ifconfig br0 192.168.1.1 up
 brctl delif ena eth0
+#将所有的 chain 的计数与流量统计都归零
+iptables -t nat -Z
+#列出更多的资讯，包括通过该规则的封包总位元数、相关的网路介面等
+iptables -t nat -nvL
 ```
 
 以下内容未整理
