@@ -4,36 +4,61 @@ tags:
 ---
 ## Demo code ##
 ```
-class Test :  public ICfmObserver , public IBootContext {
+class Test :  public ICfmObserver , public IBootContext , public IEventObserver{
 private:
 	IContext* mContext;
 	ICfm* mCfm;
+	IEvent* mEvent;
+	boolean mChanged;
 public:
-	Test(IContext* ctx):ICfmObserver() {
+	Test(IContext* ctx):ICfmObserver():IBootContext():IEventObserver() {
 		mContext = ctx;
+		mChanged = true;
 		if(mContext){
 			mCfm = mContext->cfmFactory();
+			mEvent = mContext->eventFactory();
 		}
 	}
 	~Test() {
 	}
+
+	status update(string event_owner, string event, string data) {
+		if(event == E_CFG_APPLY){
+			if(mChanged){
+			}
+		}
+	}
+
 	status update(int id, string full_name, int opt_flag, string value){
-		mContext->systemCall("echo \"%s--%s\" > /tmp/111",string2char(full_name),string2char(value));
+		if(id == UID_IGD_DI_XQCALIMIT_FUN1_FUN1){
+			mChanged = true;
+		}
+		if(id == UID_IGD_DI_XQCALIMIT_FUN3_FUN3){
+			mChanged = true;
+		}
 		return s_ok;
 	}
 
 	status onStart() {
-		mCfm->registObserver(UID_IGD_P_I_R_Role,this);
+		mCfm->registObserver(UID_IGD_DI_XQCALIMIT_FUN1_FUN1,this);
+		mCfm->registObserver(UID_IGD_DI_XQCALIMIT_FUN3_FUN3,this);
 		return s_ok;
 	}
 
 	status onStop() {
-		mCfm->unregistObserver(UID_IGD_P_I_R_Role,this);
+		mCfm->unregistObserver(UID_IGD_DI_XQCALIMIT_FUN1_FUN1,this);
+		mCfm->unregistObserver(UID_IGD_DI_XQCALIMIT_FUN3_FUN3,this);
 		return s_ok;
 	}
 	status onLoad() {
+		mEvent->registObserver(E_CFG_APPLY,this);
 		return s_ok;
 	}
+
+	status onUnload() {
+		mEvent->unregistObserver(E_CFG_APPLY,this);
+	}
+
 	status onRun() {
 		return s_ok;
 	}
