@@ -19,6 +19,11 @@ brctl delif ena eth0
 iptables -t nat -Z
 #列出更多的资讯，包括通过该规则的封包总位元数、相关的网路介面等
 iptables -t nat -nvL
+#生成SSH公钥
+ssh-keygen -t rsa -C "haoyy@mail.com"
+cat ~/.ssh/id_rsa.pub
+#复制文件内容到web ssh key
+ssh -T git@github.com
 ```
 
 以下内容未整理
