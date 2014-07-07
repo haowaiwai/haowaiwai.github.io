@@ -10,6 +10,10 @@ private:
 	ICfm* mCfm;
 	IEvent* mEvent;
 	boolean mChanged;
+	string new_fun1;
+	string old_fun1;
+	string new_fun3;
+	string old_fun3;
 public:
 	Test(IContext* ctx):ICfmObserver():IBootContext():IEventObserver() {
 		mContext = ctx;
@@ -22,19 +26,30 @@ public:
 	~Test() {
 	}
 
+	status cfgChanged() {
+		//for example:iptables -D / iptables -A
+		old_fun1 = new_fun1;
+		old_fun3 = new_fun3;
+	}
+	
 	status update(string event_owner, string event, string data) {
 		if(event == E_CFG_APPLY){
 			if(mChanged){
+				cfgChanged();
 			}
 		}
 	}
 
-	status update(int id, string full_name, int opt_flag, string value){
-		if(id == UID_IGD_DI_XQCALIMIT_FUN1_FUN1){
-			mChanged = true;
+	status update(int id, string full_name, int opt_flag, string value) {
+		if(id == UID_IGD_DI_XQCALIMIT_FUN1_FUN1) {
+			if(new_fun1 != value) {
+				mChanged = true;
+			}
 		}
-		if(id == UID_IGD_DI_XQCALIMIT_FUN3_FUN3){
-			mChanged = true;
+		if(id == UID_IGD_DI_XQCALIMIT_FUN3_FUN3) {
+			if(new_fun3 != value) {
+				mChanged = true;
+			}
 		}
 		return s_ok;
 	}
