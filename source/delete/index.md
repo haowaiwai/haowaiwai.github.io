@@ -28,6 +28,13 @@ ssh -T git@github.com
 svn propset svn:executable on *
 #git修改文件属性
 git update-index --chmod=+x build
+#ip route
+ip route show
+ip route list table table_number
+ip rule add fwmark 10 table 10
+ip route add table 10 default via 192.168.1.1
+ip route add table 10 192.168.0.0/24 192.168.1.2
+ip route flush cache
 ```
 
 以下内容未整理
