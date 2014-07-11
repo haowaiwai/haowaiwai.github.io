@@ -30,6 +30,7 @@ public:
 		//for example:iptables -D / iptables -A
 		old_fun1 = new_fun1;
 		old_fun3 = new_fun3;
+		mChanged = false;
 	}
 	
 	status update(string event_owner, string event, string data) {

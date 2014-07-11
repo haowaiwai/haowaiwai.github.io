@@ -24,6 +24,10 @@ ssh-keygen -t rsa -C "haoyy@mail.com"
 cat ~/.ssh/id_rsa.pub
 #复制文件内容到web ssh key
 ssh -T git@github.com
+#svn修改文件属性
+svn propset svn:executable on *
+#git修改文件属性
+git update-index --chmod=+x build
 ```
 
 以下内容未整理
