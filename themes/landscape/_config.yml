@@ -2,6 +2,8 @@
 menu:
   Home: /
   Archives: /archives
+  Delete: /delete
+  MM: /mm
 rss: /atom.xml
 
 # Content
@@ -20,8 +22,7 @@ widgets:
 
 # Links
 links:
-  热前端: http://reqianduan.com
-  西瓜宝宝主题站: http://xiguabaobao.com
+  博客: http://hi.baidu.com/haowaiwai
 
 # Miscellaneous
 google_analytics:
