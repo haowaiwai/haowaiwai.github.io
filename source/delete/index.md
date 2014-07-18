@@ -37,6 +37,8 @@ ip route add table 10 192.168.0.0/24 192.168.1.2
 ip route flush cache
 #切换Lightdm和gdm
 sudo dpkg-reconfigure gdm
+#创建32m的内存文件系统
+mount tmpfs /dev/shm -t tmpfs -o size=32m
 ```
 
 以下内容未整理
