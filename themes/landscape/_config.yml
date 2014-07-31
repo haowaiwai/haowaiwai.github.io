@@ -2,8 +2,6 @@
 menu:
   Home: /
   Archives: /archives
-  Delete: /delete
-  MM: /mm
 rss: /atom.xml
 
 # Content
@@ -18,16 +16,11 @@ widgets:
 - tagcloud
 - archive
 - recent_posts
-- links
-
-# Links
-links:
-  博客: http://hi.baidu.com/haowaiwai
 
 # Miscellaneous
 google_analytics:
 favicon: /favicon.png
 twitter:
 google_plus:
-fb_admins: 
+fb_admins:
 fb_app_id:

@@ -27,14 +27,14 @@ html, body, #container
 
 body
   background: color-background
-  font: font-size/line-height font-sans
+  font: font-size font-sans
   -webkit-text-size-adjust: 100%
 
 .outer
   clearfix()
   max-width: (column-width + gutter-width) * columns + gutter-width
   margin: 0 auto
-  padding: 0 10px
+  padding: 0 gutter-width
 
 .inner
   column(columns)
