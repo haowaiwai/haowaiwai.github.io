@@ -39,6 +39,8 @@ ip route flush cache
 sudo dpkg-reconfigure gdm
 #创建32m的内存文件系统
 mount tmpfs /dev/shm -t tmpfs -o size=32m
+#添加PATH环境变量
+export PATH=/bin/appweb:$PATH
 ```
 
 以下内容未整理
