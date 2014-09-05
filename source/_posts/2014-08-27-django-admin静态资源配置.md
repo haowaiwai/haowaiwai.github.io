@@ -9,6 +9,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #shell
 python manage.py collectstatic
 ```
+
 ## nginx ##
 ```
 location  ~/static/  {
