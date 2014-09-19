@@ -25,6 +25,12 @@ tar jxvf serf-1.3.5.tar.bz2
 cd serf-1.3.5
 scons APR=/usr/local/apr  APU=/usr/local/apr-util
 sudo scons install
+#sqlite
+tar zxvf sqlite-autoconf-3080600.tar.gz 
+cd sqlite-autoconf-3080600/
+./configure 
+make
+sudo make install
 #subversion
 tar jxvf subversion-1.8.9.tar.bz2
 cd subversion-1.8.9
