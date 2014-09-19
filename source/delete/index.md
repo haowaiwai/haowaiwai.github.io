@@ -28,6 +28,8 @@ ssh -T git@github.com
 svn propset svn:executable on *
 #git修改文件属性
 git update-index --chmod=+x build
+#git保存密码
+git config --global credential.helper store
 #ip route
 ip route show
 ip route list table table_number
