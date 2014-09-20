@@ -43,6 +43,11 @@ sudo dpkg-reconfigure gdm
 mount tmpfs /dev/shm -t tmpfs -o size=32m
 #添加PATH环境变量
 export PATH=/bin/appweb:$PATH
+#安装oh-my-zsh
+sudo apt-get install zsh
+curl -L http://install.ohmyz.sh | sh
+#安装setuptools
+wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 ```
 
 以下内容未整理
