@@ -1,6 +1,6 @@
 title: JAVA和TOMCAT环境变量
 date: 2014-09-28 11:03:11
-tags:java
+tags: java
 ---
 ## window平台 ##
 ### JAVA环境变量 ###
