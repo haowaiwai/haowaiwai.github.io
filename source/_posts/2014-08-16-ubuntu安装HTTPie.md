@@ -14,4 +14,7 @@ pip install --upgrade httpie
 http -a username:password example.org
 #Post data
 http POST http://192.168.9.163:9090/soap < 1.xml
+#With session
+http --session=user1 POST http://192.168.9.163:9090/soap < 1.xml
+http --session=user1 POST http://192.168.9.163:9090/soap
 ```
