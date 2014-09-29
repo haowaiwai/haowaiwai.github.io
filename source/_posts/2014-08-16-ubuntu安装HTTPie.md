@@ -12,4 +12,6 @@ pip install --upgrade httpie
 ```
 #Basic auth
 http -a username:password example.org
+#Post data
+http POST http://192.168.9.163:9090/soap < 1.xml
 ```
