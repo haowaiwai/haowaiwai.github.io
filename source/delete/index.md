@@ -48,6 +48,8 @@ sudo apt-get install zsh
 curl -L http://install.ohmyz.sh | sh
 #安装setuptools
 wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+#服务管理
+sudo apt-get install sysv-rc-conf
 ```
 
 以下内容未整理
