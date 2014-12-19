@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[haowaiwai's Blog]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://haowaiwai.github.io/"/>
+  <updated>2014-12-19T07:07:36.022Z</updated>
+  <id>http://haowaiwai.github.io/</id>
+  
+  <author>
+    <name><![CDATA[haowaiwai]]></name>
+    <email><![CDATA[haowaiwai@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[JAVA和TOMCAT环境变量]]></title>
+    <link href="http://haowaiwai.github.io/2014/09/28/JAVA%E5%92%8CTOMCAT%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <id>http://haowaiwai.github.io/2014/09/28/JAVA和TOMCAT环境变量/</id>
+    <published>2014-09-28T03:03:11.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="window平台">window平台</h2>
+<h3 id="JAVA环境变量">JAVA环境变量</h3>
+<p>1，新建JAVA_HOME=C:\Program Files\Java\jdk1.8.0<br>2，添加PATH：;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<br>3，新建CLASSPATH=.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
+<h3 id="TOMCAT环境变量">TOMCAT环境变量</h3>
+<p>1，新建CATALINA_BASE=C:\tomcat<br>2，新建CATALINA_HOME=C:\tomcat</p>
+<h2 id="linux平台">linux平台</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#编辑增加</span></div><div class="line">vi /etc/profile</div><div class="line"><span class="keyword">export</span> JAVA_HOME=/usr/java/jdk1.<span class="number">6.0</span>_23</div><div class="line"><span class="keyword">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JAVA_HOME</span>/jre/bin:<span class="variable">$PATH</span></div><div class="line"><span class="keyword">export</span> CLASSPATH=.:/usr/java/jdk1.<span class="number">6.0</span>_23/lib:/usr/java/jdk1.<span class="number">6.0</span>_23/jre/lib:<span class="variable">$CLASSPATH</span></div><div class="line"><span class="keyword">export</span> CATALINA_BASE=/usr/local/apache-tomcat-<span class="number">6.0</span>.<span class="number">29</span> </div><div class="line"><span class="keyword">export</span> CATALINA_HOME=/usr/local/apache-tomcat-<span class="number">6.0</span>.<span class="number">29</span></div><div class="line"><span class="comment">#生效</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="window平台">window平台</h2>
+<h3 id="JAVA环境变量">JAVA环境变量</h3>
+<p>1，新建JAVA_HOME=C:\Program Files\Java\jdk1.8.0<br>2，添加PATH：;%JAVA_HOME%\bin]]>
+    </summary>
+    
+      <category term="java" scheme="http://haowaiwai.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[搭建编译环境]]></title>
+    <link href="http://haowaiwai.github.io/2014/09/16/%E6%90%AD%E5%BB%BA%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://haowaiwai.github.io/2014/09/16/搭建编译环境/</id>
+    <published>2014-09-15T18:24:25.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="安装samba">安装samba</h2>
+<p>sudo apt-get install samba<br>sudo apt-get install smbfs<br>sudo apt-get install system-config-samba</p>
+<h2 id="gcc降级">gcc降级</h2>
+<p>sudo apt-get install gcc-4.4 g++-4.4 g++-4.4-multilib<br>cd /usr/bin<br>sudo mv gcc gcc.bak<br>sudo ln -s gcc-4.4 gcc<br>sudo mv g++ g++.bak<br>sudo ln -s g++-4.4 g++</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="安装samba">安装samba</h2>
+<p>sudo apt-get install samba<br>sudo apt-get install smbfs<br>sudo apt-get install system-config-samba</p>
+<h]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[sublime主题安装]]></title>
+    <link href="http://haowaiwai.github.io/2014/09/13/sublime%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/"/>
+    <id>http://haowaiwai.github.io/2014/09/13/sublime主题安装/</id>
+    <published>2014-09-12T18:35:35.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Spacegray">Spacegray</h2>
+<p>主题主页：<a href="http://kkga.github.io/spacegray" target="_blank" rel="external">http://kkga.github.io/spacegray</a></p>
+<h3 id="安装方法">安装方法</h3>
+<ol>
+<li>Open Command Palette using menu item Tools -&gt; Command Palette… </li>
+<li>Choose Package Control: Install Package</li>
+<li>Find Theme - Spacegray and hit Enter</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Spacegray">Spacegray</h2>
+<p>主题主页：<a href="http://kkga.github.io/spacegray" target="_blank" rel="external">http://kkga.github.io/spa]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[vmware增加新硬盘]]></title>
+    <link href="http://haowaiwai.github.io/2014/09/05/vmware%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%A1%AC%E7%9B%98/"/>
+    <id>http://haowaiwai.github.io/2014/09/05/vmware增加新硬盘/</id>
+    <published>2014-09-05T15:50:22.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="分区">分区</h2>
+<p>fdisk /dev/sdb</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">输入m</div><div class="line">输入n:<span class="built_in">add</span> <span class="operator">a</span> <span class="built_in">new</span> partition</div><div class="line">输入p:primary partition (<span class="number">1</span>-<span class="number">4</span>)</div><div class="line">输入<span class="number">1</span>:Partition (<span class="number">1</span>-<span class="number">4</span>)</div><div class="line">输入w:<span class="built_in">write</span> table <span class="built_in">to</span> disk <span class="operator">and</span> exit</div></pre></td></tr></table></figure>
+
+<h2 id="格式化">格式化</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkfs -t ext4 <span class="regexp">/dev/</span>sdb1</div></pre></td></tr></table></figure>
+
+<h2 id="挂载">挂载</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount <span class="regexp">/dev/</span>sdb1 <span class="regexp">/tmp/</span>disk2</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="分区">分区</h2>
+<p>fdisk /dev/sdb</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[syntax error word unexpected (expecting ) )]]></title>
+    <link href="http://haowaiwai.github.io/2014/09/03/syntax-error-word-unexpected-(expecting-)-)/"/>
+    <id>http://haowaiwai.github.io/2014/09/03/syntax-error-word-unexpected-(expecting-)-)/</id>
+    <published>2014-09-03T12:53:21.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Wrong:</div><div class="line"></div><div class="line">target:</div><div class="line">    ifeq (foo, bar)</div><div class="line">        <span class="keyword">...</span></div><div class="line">    endif</div><div class="line">Correct:</div><div class="line"></div><div class="line">target:</div><div class="line">ifeq (foo, bar)</div><div class="line">    <span class="keyword">...</span></div><div class="line">endif</div></pre></td></tr></table></figure>
+
+<p>the conditional statements should be written without indention<br>摘自：<a href="http://stackoverflow.com/questions/4483313/make-error-for-ifeq-syntax-error-near-unexpected-token" target="_blank" rel="external">http://stackoverflow.com/questions/4483313/make-error-for-ifeq-syntax-error-near-unexpected-token</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu安装mongodb]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/28/ubuntu%E5%AE%89%E8%A3%85mongodb/"/>
+    <id>http://haowaiwai.github.io/2014/08/28/ubuntu安装mongodb/</id>
+    <published>2014-08-27T16:04:44.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-key adv --keyserver hkp://keyserver.ubuntu.com:<span class="number">80</span> --recv <span class="number">7</span>F0CEB10</div><div class="line"><span class="built_in">echo</span> <span class="string">'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'</span> | <span class="built_in">sudo</span> tee /etc/apt/sources.list.d/mongodb.list</div><div class="line"><span class="built_in">sudo</span> apt-get update</div><div class="line"><span class="built_in">sudo</span> apt-get install mongodb-org</div><div class="line"><span class="built_in">sudo</span> service mongod start</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu安装mariadb]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/28/ubuntu%E5%AE%89%E8%A3%85mariadb/"/>
+    <id>http://haowaiwai.github.io/2014/08/28/ubuntu安装mariadb/</id>
+    <published>2014-08-27T16:04:36.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> python-software-properties</span></div><div class="line">sudo apt-<span class="keyword">key</span> adv <span class="comment">--recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db</span></div><div class="line">sudo <span class="keyword">add</span>-apt-repository <span class="string">'deb http://mirrors.neusoft.edu.cn/mariadb/repo/10.0/ubuntu precise main'</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> mariadb-<span class="keyword">server</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[django admin静态资源配置]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/28/django-admin%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE/"/>
+    <id>http://haowaiwai.github.io/2014/08/28/django-admin静态资源配置/</id>
+    <published>2014-08-27T16:00:13.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="django">django</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#settings.<span class="keyword">py</span></div><div class="line">STATIC_ROOT = os.path.<span class="built_in">join</span>(BASE_DIR, <span class="string">'static'</span>)</div><div class="line">#shell</div><div class="line"><span class="keyword">python</span> manage.<span class="keyword">py</span> collectstatic</div></pre></td></tr></table></figure>
+
+<h2 id="nginx">nginx</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location  ~<span class="regexp">/static/</span>  {</div><div class="line">	root   <span class="regexp">/home/haoyy/sourcecode/mysite/</span> ;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="django">django</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[更换PyPI源]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/26/%E6%9B%B4%E6%8D%A2PyPI%E6%BA%90/"/>
+    <id>http://haowaiwai.github.io/2014/08/26/更换PyPI源/</id>
+    <published>2014-08-26T14:45:25.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">## 全局 ##</span></div><div class="line">在~/.pip/pip.conf文件中添加或修改</div><div class="line">[global]</div><div class="line"><span class="preprocessor">#阿里</span></div><div class="line">index-url = http:<span class="comment">//mirrors.aliyun.com/pypi/simple/</span></div><div class="line">豆瓣</div><div class="line">index-url = http:<span class="comment">//pypi.douban.com/simple/</span></div><div class="line"><span class="preprocessor">## 临时 ##</span></div><div class="line">sudo pip install -i http:<span class="comment">//pypi.douban.com/simple/ django</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu配置nginx+django+uwsgi]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/26/ubuntu%E9%85%8D%E7%BD%AEnginx+django+uwsgi/"/>
+    <id>http://haowaiwai.github.io/2014/08/26/ubuntu配置nginx+django+uwsgi/</id>
+    <published>2014-08-26T14:10:18.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#安装ngnix</span></div><div class="line">sudo add-apt-repository ppa:nginx/stable</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="comment">#安装uwsgi</span></div><div class="line">sudo apt-get install build-essential python</div><div class="line">sudo apt-get install python-dev</div><div class="line">sudo pip install uwsgi</div><div class="line"><span class="comment">#安装django</span></div><div class="line">sudo pip install django</div><div class="line"></div><div class="line">location / {</div><div class="line">	uwsgi_pass 127.0.0.1:8888;</div><div class="line">	include uwsgi_params;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="variable">&lt;uwsgi&gt;</span></div><div class="line">	<span class="variable">&lt;socket&gt;</span>127.0.0.1:8888<span class="variable">&lt;/socket&gt;</span></div><div class="line">	<span class="variable">&lt;master&gt;</span>true<span class="variable">&lt;/master&gt;</span></div><div class="line">	<span class="variable">&lt;chdir&gt;</span>/home/haoguangyu/sourcecode/mysite<span class="variable">&lt;/chdir&gt;</span></div><div class="line">	<span class="variable">&lt;module&gt;</span>mysite.wsgi:application<span class="variable">&lt;/module&gt;</span></div><div class="line"><span class="variable">&lt;/uwsgi&gt;</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu安装HTTPie]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/16/ubuntu%E5%AE%89%E8%A3%85HTTPie/"/>
+    <id>http://haowaiwai.github.io/2014/08/16/ubuntu安装HTTPie/</id>
+    <published>2014-08-16T14:00:29.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<p>code:<a href="https://github.com/jakubroztocil/httpie" target="_blank" rel="external">https://github.com/jakubroztocil/httpie</a></p>
+<h2 id="install">install</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip <span class="operator"><span class="keyword">install</span> <span class="comment">--upgrade httpie</span></span></div></pre></td></tr></table></figure>
+
+<h2 id="cmd">cmd</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Basic auth</span></div><div class="line"><span class="keyword">http</span> -<span class="operator">a</span> username:password example.org</div><div class="line"><span class="comment">#Post data</span></div><div class="line"><span class="keyword">http</span> POST <span class="keyword">http</span>://<span class="number">192.168</span><span class="number">.9</span><span class="number">.163</span>:<span class="number">9090</span>/soap &lt; <span class="number">1.</span>xml</div><div class="line"><span class="comment">#With session</span></div><div class="line"><span class="keyword">http</span> <span class="comment">--session=user1 POST http://192.168.9.163:9090/soap &lt; 1.xml</span></div><div class="line"><span class="keyword">http</span> <span class="comment">--session=user1 POST http://192.168.9.163:9090/soap</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>code:<a href="https://github.com/jakubroztocil/httpie" target="_blank" rel="external">https://github.com/jakubroztocil/httpie</a></p>
+<h2]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[判断shell变量是否空]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/15/%E5%88%A4%E6%96%ADshell%E5%8F%98%E9%87%8F%E6%98%AF%E5%90%A6%E7%A9%BA/"/>
+    <id>http://haowaiwai.github.io/2014/08/15/判断shell变量是否空/</id>
+    <published>2014-08-15T11:44:44.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<p>make.sh 添加不在script export的变量</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$USER_CONFIG</span>"</span> = <span class="string">""</span> ]; <span class="keyword">then</span></div><div class="line">	<span class="built_in">echo</span> <span class="string">"#define USER_CONFIG \"\""</span> &gt;&gt; <span class="variable">$SWRT_INC_PATH</span>/config.h</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>make.sh 添加不在script export的变量</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[json-c example]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/15/json-c-example/"/>
+    <id>http://haowaiwai.github.io/2014/08/15/json-c-example/</id>
+    <published>2014-08-14T19:31:34.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="pkg-config_—libs_json">pkg-config —libs json</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="deletion">-L/usr/local/lib -ljson-c</span></div></pre></td></tr></table></figure>
+
+<h2 id="pkg-config_—cflags_json">pkg-config —cflags json</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"><span class="constant">I</span>/usr/local/<span class="keyword">include</span>/json-c</span></div></pre></td></tr></table></figure>
+
+<h2 id="compile">compile</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc old.<span class="built_in">c</span> -<span class="type">I</span>/usr/local/include/json-<span class="built_in">c</span> -<span class="type">L</span>/usr/local/lib -ljson-<span class="built_in">c</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="pkg-config_—libs_json">pkg-config —libs json</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[linux patch example]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/13/linux-patch-example/"/>
+    <id>http://haowaiwai.github.io/2014/08/13/linux-patch-example/</id>
+    <published>2014-08-13T14:12:01.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="cat_old-c">cat old.c</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[]) {</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="cat_new-c">cat new.c</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[]) {</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"hello"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="diff_-Naur_old-c_new-c_&gt;_001-patch">diff -Naur old.c new.c &gt; 001.patch</h2>
+<h2 id="cat_001-patch">cat 001.patch</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="header">--- old.c	2014-08-13 14:07:09.996664864 +0800</span></div><div class="line"><span class="header">+++ new.c	2014-08-13 14:06:51.932665236 +0800</span></div><div class="line"><span class="chunk">@@ -1,5 +1,6 @@</span></div><div class="line"> #include &lt;stdio.h&gt;</div><div class="line"> </div><div class="line"> int main(int argc, char* argv[]) {</div><div class="line"><span class="addition">+	printf("hello");</span></div><div class="line"> }</div></pre></td></tr></table></figure>
+
+<h2 id="patch_-p0_&lt;_001-patch">patch -p0 &lt; 001.patch</h2>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="cat_old-c">cat old.c</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2<]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[USB自动挂载]]></title>
+    <link href="http://haowaiwai.github.io/2014/08/13/USB%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/"/>
+    <id>http://haowaiwai.github.io/2014/08/13/USB自动挂载/</id>
+    <published>2014-08-12T16:51:41.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="/etc/hotplug-d/usb/10-usb">/etc/hotplug.d/usb/10-usb</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># Copyright (C) 2009 OpenWrt.org</span></div><div class="line"></div><div class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$ACTION</span>"</span> <span class="keyword">in</span></div><div class="line">	add)</div><div class="line">		<span class="comment"># update LEDs</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"############## INTO 10-usb add ###############"</span> &gt;&gt; /tmp/<span class="number">10</span>-usb.log</div><div class="line">		/sbin/inner_usbcheck start</div><div class="line">		;;</div><div class="line">	remove)</div><div class="line">		<span class="built_in">echo</span> <span class="string">"############## INTO 10-usb remove ###############"</span> &gt;&gt; /tmp/<span class="number">10</span>-usb.log</div><div class="line">		<span class="comment"># update LEDs</span></div><div class="line">		;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
+
+<h2 id="cat_/sbin/inner_usbcheck">cat /sbin/inner_usbcheck</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/sh /etc/rc.common</span></div><div class="line"><span class="comment"># Copyright (C) 2006 OpenWrt.org</span></div><div class="line">START=<span class="number">80</span></div><div class="line"></div><div class="line">mount_dir_1=<span class="string">"/tmp/mnt/log/"</span></div><div class="line"> </div><div class="line"><span class="function"><span class="title">make_dir</span></span>()</div><div class="line">{</div><div class="line">	myPath=<span class="variable">$mount_dir_1</span></div><div class="line">	<span class="keyword">if</span> [ ! <span class="operator">-d</span> <span class="string">"<span class="variable">$myPath</span>"</span> ]; <span class="keyword">then</span></div><div class="line">		mkdir -p <span class="string">"<span class="variable">$myPath</span>"</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"make dir <span class="variable">$myPath</span>"</span> &gt;&gt; /tmp/inner_usbcheck.log</div><div class="line">	<span class="keyword">fi</span></div><div class="line">}</div><div class="line"><span class="function"><span class="title">get_dev</span></span>()</div><div class="line">{</div><div class="line">	blkid |grep LOG_MAIN | awk <span class="string">'{print $1}'</span> &gt; /tmp/usb_mount.txt</div><div class="line">	<span class="keyword">while</span> <span class="built_in">read</span> line</div><div class="line">	<span class="keyword">do</span></div><div class="line">	{</div><div class="line">		<span class="built_in">echo</span> <span class="variable">${line}</span></div><div class="line">		tmp=<span class="variable">${line}</span></div><div class="line">		tmp=<span class="variable">${tmp##*dev\/}</span></div><div class="line">		tmp=<span class="variable">${tmp%%:*}</span></div><div class="line">		<span class="keyword">if</span> [ <span class="variable">$num1</span> <span class="operator">-eq</span> <span class="variable">$flag</span> ]</div><div class="line">		<span class="keyword">then</span></div><div class="line">			dev1=<span class="variable">$tmp</span></div><div class="line">			<span class="built_in">echo</span> <span class="variable">$dev1</span></div><div class="line">			flag=<span class="number">2</span></div><div class="line">		<span class="keyword">fi</span></div><div class="line">	}</div><div class="line">	<span class="keyword">done</span> &lt; /tmp/usb_mount.txt</div><div class="line">	</div><div class="line">	rm -rf /tmp/usb_mount.txt</div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">mount_dev</span></span>()</div><div class="line">{</div><div class="line">	umount /dev/<span class="variable">$dev1</span></div><div class="line">	mount /dev/<span class="variable">$dev1</span> <span class="variable">$mount_dir_1</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">start</span></span>() {</div><div class="line">	touch /tmp/usb_mount.txt</div><div class="line">	make_dir</div><div class="line">	get_dev</div><div class="line">	mount_dev</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="/etc/hotplug-d/usb/10-usb">/etc/hotplug.d/usb/10-usb</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="l]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[systemd常用命令]]></title>
+    <link href="http://haowaiwai.github.io/2014/07/11/systemd%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://haowaiwai.github.io/2014/07/11/systemd常用命令/</id>
+    <published>2014-07-11T07:38:12.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>systemd是Linux下的一种init软件，由Lennart Poettering带头开发，并在LGPL 2.1及其后续版本许可证下开源发布[2][3]。其开发目标是提供更优秀的框架以表示系统服务间的依赖关系，并依此实现系统初始化时服务的并行启动，同时达到降低Shell的系统开销的效果，最终代替现在常用的System V与BSD风格init程序。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>新命令</th>
+<th>旧命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>服务启动</em></td>
+<td>chkconfig —level 3 httpd on</td>
+<td>systemctl enable httpd.service</td>
+</tr>
+<tr>
+<td><em>服务状态</em></td>
+<td>service httpd status</td>
+<td>systemctl status httpd.service</td>
+</tr>
+<tr>
+<td><em>启动服务</em></td>
+<td>service httpd start</td>
+<td>systemctl start httpd.service</td>
+</tr>
+<tr>
+<td><em>服务列表</em></td>
+<td>chkconfig —list</td>
+<td>systemctl list-units —type=service</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>systemd是Linux下的一种init软件，由Lennart Poettering带头开发，并在LGPL 2.1及其后续版本许可证下开源发布[2][3]。其开发目标是提供更优秀的框架以表示系统服务间的依赖关系，并依此实现系统初始化时服务的并行启]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu编译安装ruby]]></title>
+    <link href="http://haowaiwai.github.io/2014/06/26/ubuntu%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85ruby/"/>
+    <id>http://haowaiwai.github.io/2014/06/26/ubuntu编译安装ruby/</id>
+    <published>2014-06-26T03:38:45.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<p>摘自<a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md" target="_blank" rel="external">https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get remove ruby1.<span class="number">8</span></div><div class="line"><span class="comment">#Download Ruby and compile it:</span></div><div class="line">mkdir /tmp/ruby && <span class="built_in">cd</span> /tmp/ruby</div><div class="line">curl --progress ftp://ftp.ruby-lang.org/pub/ruby/<span class="number">2.1</span>/ruby-<span class="number">2.1</span>.<span class="number">2</span>.tar.gz | tar xz</div><div class="line"><span class="built_in">cd</span> ruby-<span class="number">2.1</span>.<span class="number">2</span></div><div class="line">./configure --disable-install-rdoc</div><div class="line">make</div><div class="line"><span class="built_in">sudo</span> make install</div><div class="line"><span class="comment">#Install the Bundler Gem:</span></div><div class="line"><span class="built_in">sudo</span> gem install bundler --no-ri --no-rdoc</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>摘自<a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md" target="_blank" rel="external">https://gitlab]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ubuntu编译安装git]]></title>
+    <link href="http://haowaiwai.github.io/2014/06/26/ubuntu%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85git/"/>
+    <id>http://haowaiwai.github.io/2014/06/26/ubuntu编译安装git/</id>
+    <published>2014-06-26T03:32:53.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<p>摘自<a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md" target="_blank" rel="external">https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># Remove packaged Git</div><div class="line">sudo apt-get remove git-core</div><div class="line"># <span class="operator"><span class="keyword">Install</span> dependencies</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> -y libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev build-essential</div><div class="line"># Download <span class="keyword">and</span> compile <span class="keyword">from</span> source</div><div class="line">cd /tmp</div><div class="line">curl <span class="comment">--progress https://www.kernel.org/pub/software/scm/git/git-2.0.0.tar.gz | tar xz</span></div><div class="line">cd git-<span class="number">2.0</span><span class="number">.0</span>/</div><div class="line">make prefix=/usr/<span class="keyword">local</span> <span class="keyword">all</span></div><div class="line"># <span class="keyword">Install</span> <span class="keyword">into</span> /usr/<span class="keyword">local</span>/<span class="keyword">bin</span></div><div class="line">sudo make prefix=/usr/<span class="keyword">local</span> <span class="keyword">install</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>摘自<a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md" target="_blank" rel="external">https://gitlab]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[gitlab ssh clone error]]></title>
+    <link href="http://haowaiwai.github.io/2014/06/17/gitlab-ssh-clone-error/"/>
+    <id>http://haowaiwai.github.io/2014/06/17/gitlab-ssh-clone-error/</id>
+    <published>2014-06-17T07:42:27.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="详细错误">详细错误</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git<span class="decorator">@192.168.234.135's password: </span></div><div class="line">Permission denied, please <span class="keyword">try</span> again.</div><div class="line">git<span class="decorator">@192.168.234.135's password: </span></div><div class="line">Permission denied, please <span class="keyword">try</span> again.</div><div class="line">git<span class="decorator">@192.168.234.135's password: </span></div><div class="line">Permission denied (publickey,gssapi-keyex,gssapi-<span class="keyword">with</span>-mic,password).</div><div class="line">fatal: Could <span class="keyword">not</span> read <span class="keyword">from</span> remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div></pre></td></tr></table></figure>
+
+<h2 id="原因">原因</h2>
+<h3 id="git不用不能登陆">git不用不能登陆</h3>
+<p>sudo adduser —disabled-login —gecos ‘GitLab’ git</p>
+<h2 id="方法">方法</h2>
+<h3 id="添加ssh_key">添加ssh key</h3>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="详细错误">详细错误</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div ]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[修改eth0's MAC]]></title>
+    <link href="http://haowaiwai.github.io/2014/06/17/%E4%BF%AE%E6%94%B9eth0s-MAC/"/>
+    <id>http://haowaiwai.github.io/2014/06/17/修改eth0s-MAC/</id>
+    <published>2014-06-17T02:42:29.000Z</published>
+    <updated>2014-12-16T09:18:12.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ifconfig eth0 down</div><div class="line">ifconfig eth0 hw ether <span class="number">1234567890</span><span class="keyword">ab</span></div><div class="line">ifconfig eth0 <span class="number">192.168</span>.<span class="number">1.10</span> <span class="keyword">up</span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pr]]>
+    </summary>
+    
+  </entry>
+  
+</feed>

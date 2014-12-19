@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/13/ubuntubian-yi-an-zhuang-svn/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu编译安装svn</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="variable">#apr</span></div><div class="line">tar xf apr<span class="subst">-</span><span class="number">1.5</span><span class="number">.0</span><span class="built_in">.</span>tar<span class="built_in">.</span>gz</div><div class="line">cd apr<span class="subst">-</span><span class="number">1.5</span><span class="number">.0</span></div><div class="line"><span class="built_in">.</span>/configure <span class="subst">--</span>prefix<span class="subst">=</span>/usr/<span class="built_in">local</span>/apr</div><div class="line">make <span class="subst">&&</span> make install</div><div class="line"><span class="variable">#apr</span> util</div><div class="line">tar xf apr<span class="attribute">-util</span><span class="subst">-</span><span class="number">1.5</span><span class="number">.3</span><span class="built_in">.</span>tar<span class="built_in">.</span>gz</div><div class="line">cd apr<span class="attribute">-util</span><span class="subst">-</span><span class="number">1.5</span><span class="number">.3</span></div><div class="line"><span class="built_in">.</span>/configure <span class="subst">--</span>prefix<span class="subst">=</span>/usr/<span class="built_in">local</span>/apr<span class="attribute">-util</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-apr</span><span class="subst">=</span>/usr/<span class="built_in">local</span>/apr</div><div class="line">make <span class="subst">&&</span> make install</div><div class="line"><span class="variable">#scons</span></div><div class="line">tar zxvf scons<span class="subst">-</span><span class="number">2.3</span><span class="number">.1</span><span class="built_in">.</span>tar<span class="built_in">.</span>gz</div><div class="line">cd scons<span class="subst">-</span><span class="number">2.3</span><span class="number">.1</span></div><div class="line">sudo python setup<span class="built_in">.</span>py install</div><div class="line"><span class="variable">#serf</span></div><div class="line">tar jxvf serf<span class="subst">-</span><span class="number">1.3</span><span class="number">.5</span><span class="built_in">.</span>tar<span class="built_in">.</span>bz2</div><div class="line">cd serf<span class="subst">-</span><span class="number">1.3</span><span class="number">.5</span></div><div class="line">scons APR<span class="subst">=</span>/usr/<span class="built_in">local</span>/apr  APU<span class="subst">=</span>/usr/<span class="built_in">local</span>/apr<span class="attribute">-util</span></div><div class="line">sudo scons install</div><div class="line"><span class="variable">#sqlite</span></div><div class="line">tar zxvf sqlite<span class="attribute">-autoconf</span><span class="subst">-</span><span class="number">3080600.</span>tar<span class="built_in">.</span>gz </div><div class="line">cd sqlite<span class="attribute">-autoconf</span><span class="subst">-</span><span class="number">3080600</span><span class="subst">/</span></div><div class="line"><span class="built_in">.</span>/configure </div><div class="line">make</div><div class="line">sudo make install</div><div class="line"><span class="variable">#subversion</span></div><div class="line">tar jxvf subversion<span class="subst">-</span><span class="number">1.8</span><span class="number">.9</span><span class="built_in">.</span>tar<span class="built_in">.</span>bz2</div><div class="line">cd subversion<span class="subst">-</span><span class="number">1.8</span><span class="number">.9</span></div><div class="line"><span class="built_in">.</span>/configure <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-apr</span><span class="subst">=</span>/usr/<span class="built_in">local</span>/apr <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-apr</span><span class="attribute">-util</span><span class="subst">=</span>/usr/<span class="built_in">local</span>/apr<span class="attribute">-util</span> <span class="subst">--</span><span class="keyword">with</span><span class="attribute">-serf</span><span class="subst">=</span>/usr/<span class="built_in">local</span>/serf</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-13T02:29:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/07/24/tarjie-ya-suo/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>tar解压缩</title>
+        <content><![CDATA[<h2 id="解压缩">解压缩</h2>
+<p><code>tar zxvf xxx.tar.gz</code></p>
+<p><code>tar jxvf xxx.tar.bz2</code></p>
+<p><code>tar Jxvf xxx.tar.xz</code></p>
+<p><code>tar Zxvf xxx.tar.Z</code></p>
+]]></content>
+        <pubTime>2013-07-24T01:20:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/07/25/aptdai-li/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>APT代理</title>
+        <content><![CDATA[<h2 id="APT_configuration_file_method">APT configuration file method</h2>
+<p><code>gksudo gedit /etc/apt/apt.conf</code></p>
+<p><code>Acquire::http::Proxy &quot;http://yourproxyaddress:proxyport&quot;;</code></p>
+]]></content>
+        <pubTime>2013-07-25T06:44:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/05/change-gem-source/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>change gem source</title>
+        <content><![CDATA[<p>引用：<a href="http://ruby.taobao.org/" target="_blank" rel="external">http://ruby.taobao.org/</a></p>
+<h2 id="change_gem_source">change gem source</h2>
+<p><code>gem sources --remove https://rubygems.org/</code></p>
+<p><code>gem sources -a https://ruby.taobao.org/</code></p>
+<p><code>gem sources -l</code></p>
+]]></content>
+        <pubTime>2013-12-05T14:02:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/06/c-hello-world/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>c hello world</title>
+        <content><![CDATA[<figure class="highlight c"><figcaption><span>hello world</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> main()</div><div class="line">{</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"hello world"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2013-12-06T05:47:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/06/octopressxin-wen-zhang/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Octopress新文章</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">rake new_post[<span class="string">"新文章名称"</span>]</div><div class="line">rake generate</div><div class="line">git <span class="keyword">add</span> .</div><div class="line">git commit -m <span class="string">"article：Github page + Octopress"</span></div><div class="line">git <span class="keyword">push</span></div><div class="line">rake deploy</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2013-12-06T00:44:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/06/rake-version-mismatch/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>rake version mismatch</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem list rake</div><div class="line">gem <span class="operator"><span class="keyword">uninstall</span> rake</span></div><div class="line">bundle <span class="keyword">update</span>; rake <span class="operator"><span class="keyword">install</span></span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2013-12-06T01:22:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/06/sshmian-mi-ma/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>SSH免密码</title>
+        <content><![CDATA[<h2 id="SSH免密码">SSH免密码</h2>
+<pre><code>ssh-keygen -t dsa
+ssh root<span class="variable">@192</span>.<span class="number">168.0</span>.<span class="number">58</span>
+mkdir -p .ssh
+exit
+scp /root/.ssh/id_dsa.pub root<span class="variable">@192</span>.<span class="number">168.0</span>.<span class="number">58</span><span class="symbol">:/root/</span>.ssh
+ssh root<span class="variable">@192</span>.<span class="number">168.10</span>.<span class="number">58</span>
+cd .ssh
+cat id_dsa.pub &gt;authorized_keys
+exit
+</code></pre>]]></content>
+        <pubTime>2013-12-06T04:11:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/19/django-ubuntu-12-dot-04-an-zhuang-mu-lu/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>django ubuntu 12.04 安装目录</title>
+        <content><![CDATA[<p>/usr/local/lib/python2.7/dist-packages</p>
+]]></content>
+        <pubTime>2013-12-19T13:32:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/19/mysqlchang-yong-ming-ling-da-quan/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql常用命令大全</title>
+        <content><![CDATA[<h2 id="创建数据库">创建数据库</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="string">`test2`</span> <span class="keyword">DEFAULT</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci ;</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2013-12-19T13:35:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/12/19/she-zhi-mysqlyun-xu-wai-wang-fang-wen/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>设置MySQL允许外网访问</title>
+        <content><![CDATA[<h2 id="1-修改配置文件">1.修改配置文件</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="keyword">vim</span> /etc/mysql/my.<span class="keyword">cnf</span></div></pre></td></tr></table></figure>
+
+<p>把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.</p>
+<h2 id="2-登录数据库">2.登录数据库</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">mysql</span> -u root -p</div></pre></td></tr></table></figure>
+
+<p>输入密码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">mysql&gt;</span> use mysql;</span></div></pre></td></tr></table></figure>
+
+<h2 id="3-查询host">3.查询host</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">mysql&gt;</span> select user,host from user;</span></div></pre></td></tr></table></figure>
+
+<h2 id="4-创建host">4.创建host</h2>
+<p>如果没有”%”这个host值,就执行下面这两句:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">mysql&gt;</span> update user set host=<span class="string">'%'</span> where user=<span class="string">'root'</span>;</span></div><div class="line">mysql&gt; flush privileges;</div></pre></td></tr></table></figure>
+
+<h2 id="5-授权用户">5.授权用户</h2>
+<p>任意主机以用户root和密码mypwd连接到mysql服务器</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql<span class="subst">&gt;</span> GRANT <span class="literal">ALL</span> PRIVILEGES <span class="keyword">ON</span> <span class="subst">*</span><span class="built_in">.</span><span class="subst">*</span> <span class="keyword">TO</span> <span class="string">'root'</span>@<span class="string">'%'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'mypwd'</span> <span class="keyword">WITH</span> GRANT OPTION;</div><div class="line">mysql<span class="subst">&gt;</span> flush privileges;</div></pre></td></tr></table></figure>
+
+<p>IP为192.168.1.102的主机以用户myuser和密码mypwd连接到mysql服务器</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql<span class="subst">&gt;</span> GRANT <span class="literal">ALL</span> PRIVILEGES <span class="keyword">ON</span> <span class="subst">*</span><span class="built_in">.</span><span class="subst">*</span> <span class="keyword">TO</span> <span class="string">'myuser'</span>@<span class="string">'192.168.1.102'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'mypwd'</span> <span class="keyword">WITH</span> GRANT OPTION;</div><div class="line">mysql<span class="subst">&gt;</span> flush privileges;</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2013-12-19T12:01:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/03/django-admin-locale-format/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Django admin locale format</title>
+        <content><![CDATA[<p>/usr/local/lib/python2.7/dist-packages/django/conf/locale/zh_CN</p>
+]]></content>
+        <pubTime>2014-01-03T07:27:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/05/sheng-chan-8mfirmware/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>生产 8M firmware</title>
+        <content><![CDATA[<h1 id="for_8M_flash">for 8M flash</h1>
+<pre><code>rm firmware.bin
+dd <span class="variable">if=</span>tuboot.bin <span class="variable">of=</span>firmware.bin <span class="variable">bs=</span><span class="number">512</span> <span class="variable">count=</span><span class="number">512</span> <span class="variable">seek=</span><span class="number">0</span>
+<span class="comment">#128 u-boot-env</span>
+dd <span class="variable">if=</span>ap121-<span class="number">2.6</span>.<span class="number">31</span>-squashfs <span class="variable">of=</span>firmware.bin <span class="variable">bs=</span><span class="number">512</span> <span class="variable">count=</span><span class="number">6144</span> <span class="variable">seek=</span><span class="number">640</span>
+dd <span class="variable">if=</span>vmlinux.lzma.uImage <span class="variable">of=</span>firmware.bin <span class="variable">bs=</span><span class="number">512</span> <span class="variable">count=</span><span class="number">2944</span> <span class="variable">seek=</span><span class="number">6784</span>
+<span class="comment">#128 NVRAM</span>
+dd <span class="variable">if=</span>app.squashfs <span class="variable">of=</span>firmware.bin <span class="variable">bs=</span><span class="number">512</span> <span class="variable">count=</span><span class="number">3200</span> <span class="variable">seek=</span><span class="number">9856</span>
+dd <span class="variable">if=</span>app.squashfs <span class="variable">of=</span>firmware.bin <span class="variable">bs=</span><span class="number">512</span> <span class="variable">count=</span><span class="number">3200</span> <span class="variable">seek=</span><span class="number">13056</span>
+dd <span class="variable">if=</span>caldata <span class="variable">of=</span>firmware.bin <span class="variable">bs=</span><span class="number">512</span> <span class="variable">count=</span><span class="number">128</span> <span class="variable">seek=</span><span class="number">16256</span>
+</code></pre>]]></content>
+        <pubTime>2014-01-05T02:01:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/14/goagentdao-ru-zheng-shu/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>goagent导入证书</title>
+        <content><![CDATA[<p>FireFox-&gt;选项-&gt;高级-&gt;加密-&gt;查看证书-&gt;证书机构-&gt;导入证书, 选择local\ca.crt, 勾选所有项，导入。 </p>
+<p>Chrome-&gt;设置-&gt;管理证书-&gt;授权中心-&gt;导入。</p>
+]]></content>
+        <pubTime>2014-01-14T02:56:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/16/an-zhuang-gnomezhu-ti/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>安装GNOME主题</title>
+        <content><![CDATA[<h2 id="安装GNOME主题">安装GNOME主题</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo <span class="built_in">add</span>-apt-repository <span class="keyword">pp</span><span class="variable">a:tiheum</span>/equinox</div><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> install faience-theme</div><div class="line">sudo apt-<span class="built_in">get</span> install faience-icon-theme faenza-icon-theme</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-01-16T05:55:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/16/she-zhi-mysqlzi-qi-dong/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>设置mysql自启动</title>
+        <content><![CDATA[<h2 id="设置自启动">设置自启动</h2>
+<p>sudo update-rc.d -f mysql defaults</p>
+<h2 id="设置不启动">设置不启动</h2>
+<p>sudo update-rc.d -f mysql remove</p>
+]]></content>
+        <pubTime>2014-01-16T07:10:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/17/django-upload-unicodeencodeerror/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>django upload UnicodeEncodeError</title>
+        <content><![CDATA[<p><a href="https://code.djangoproject.com/wiki/django_apache_and_mod_wsgi" target="_blank" rel="external">摘自django官方文档</a></p>
+<p>If you’re taking advantage of the great Internationalization features of Django you may come across a curious problem. Namely, uploading of non-ascii filenames with the Django storage system with the default apache settings on most systems will trigger UnicodeEncodeError exceptions when calling functions like os.path(). To avoid these issues, ensure that the following lines are included in your apache envvars file (typically found in /etc/apache2/envvars).</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> LANG=<span class="string">'en_US.UTF-8'</span></div><div class="line"><span class="keyword">export</span> LC_ALL=<span class="string">'en_US.UTF-8'</span></div></pre></td></tr></table></figure>
+
+<p>This error likely wont rear its head during development on the test server as, when run from the command line, the ./manage.py script inherits the users language and locale settings.</p>
+]]></content>
+        <pubTime>2014-01-17T06:06:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/17/ntptong-bu-fu-wu-qi/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>NTP同步服务器</title>
+        <content><![CDATA[<h2 id="设置系统时间与网络时间同步">设置系统时间与网络时间同步</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ntpdate <span class="keyword">cn</span>.pool.ntp.org</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-01-17T02:56:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/01/22/centos6-dot-5pei-zhi/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS6.5配置</title>
+        <content><![CDATA[<h2 id="添加服务端口">添加服务端口</h2>
+<p>根据策略配置，服务可能只被允许运行在特定的端口号 。试图改变服务运行的端口，在不改变政策，可能导致启动失败的服务。首先查看一下 SELinux 允许 HTTP 侦听 TCP 端口，使用命令：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> yum -y install policycoreutils-python</div><div class="line"><span class="comment">#list</span></div><div class="line"><span class="built_in">sudo</span> semanage port <span class="operator">-l</span> | grep -w http_port_t</div><div class="line"><span class="comment">#add</span></div><div class="line"><span class="built_in">sudo</span> semanage port <span class="operator">-a</span> -t http_port_t -p tcp <span class="number">8888</span></div></pre></td></tr></table></figure>
+
+<h2 id="Set_Apache_environment">Set Apache environment</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gedit /etc/sysconfig/httpd</div><div class="line"><span class="keyword">export</span> LANG=<span class="string">'en_US.UTF-8'</span></div><div class="line"><span class="keyword">export</span> LC_ALL=<span class="string">'en_US.UTF-8'</span></div></pre></td></tr></table></figure>
+
+<h2 id="安装MariaDB">安装MariaDB</h2>
+<p>Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar). See “Installing MariaDB with yum” for detailed information.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># MariaDB 5.5 CentOS repository list - created 2014-01-27 02:21 UTC</span></div><div class="line"><span class="comment"># http://mariadb.org/mariadb/repositories/</span></div><div class="line">[mariadb]</div><div class="line"><span class="variable">name =</span> MariaDB</div><div class="line"><span class="variable">baseurl =</span> http://yum.mariadb.org/<span class="number">5.5</span>/centos6-amd64</div><div class="line"><span class="variable">gpgkey=</span>https://yum.mariadb.org/RPM-GPG-KEY-MariaDB</div><div class="line"><span class="variable">gpgcheck=</span><span class="number">1</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo yum <span class="operator"><span class="keyword">install</span> MariaDB-<span class="keyword">server</span> MariaDB-client</span></div><div class="line">sudo yum <span class="keyword">install</span> MySQL-python</div></pre></td></tr></table></figure>
+
+<h2 id="临时关闭SELinux">临时关闭SELinux</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">setenforce</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+
+<h2 id="彻底关闭SELinux">彻底关闭SELinux</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">/etc/selinux/config</span></div><div class="line">SELINUX=<span class="string">disabled</span></div></pre></td></tr></table></figure>
+
+<h2 id="设置服务自启动">设置服务自启动</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chkconfig <span class="comment">--list</span></div><div class="line">chkconfig mysql <span class="command"><span class="keyword">on</span></span></div><div class="line">chkconfig httpd <span class="command"><span class="keyword">on</span></span></div></pre></td></tr></table></figure>
+
+<h2 id="安装pip">安装pip</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">yum <span class="operator"><span class="keyword">install</span> python-setuptools</span></div><div class="line">easy_install pip</div><div class="line">pip <span class="keyword">install</span> Django==<span class="number">1.6</span><span class="number">.1</span></div><div class="line">pip <span class="keyword">install</span> <span class="comment">--upgrade setuptools</span></div></pre></td></tr></table></figure>
+
+<h2 id="XX_不在_sudoers_文件中。此事将被报告。">XX 不在 sudoers 文件中。此事将被报告。</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">visudo</div><div class="line">xxxx    <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>)       <span class="keyword">ALL</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-01-22T15:24:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/08/redmine-2-dot-0-not-working-with-mod-passenger/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>redmine 2.0 not working with mod_passenger</title>
+        <content><![CDATA[<p><a href="http://www.redmine.org/boards/2/topics/30624" target="_blank" rel="external">摘自redmine官方</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem <span class="operator"><span class="keyword">install</span> passenger </span></div><div class="line">sudo passenger-<span class="keyword">install</span>-apache2-<span class="keyword">module</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-08T03:37:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/14/bei-fen-mysqlku/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>备份MySQL库</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">/usr/bin/mysqldump -u &lt;username&gt;</span> -p &lt;password&gt; &lt;database&gt; | gzip &gt; <span class="regexp">/path/produce</span><span class="number">_</span>`date +%<span class="constant">Y</span>%m%d`.gz</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-14T03:03:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/19/mysqlwei-hu/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL维护</title>
+        <content><![CDATA[<h2 id="查询分区信息">查询分区信息</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="operator"><span class="keyword">explain</span> partitions <span class="keyword">select</span> * <span class="keyword">from</span> 表名;</span></div><div class="line"><span class="operator"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表名;</span></div><div class="line">#查询所在分区</div><div class="line"><span class="operator"><span class="keyword">select</span> partition_name part,partition_expression expr,partition_description descr,table_rows <span class="keyword">from</span> information_schema.partitions <span class="keyword">where</span> table_schema = <span class="keyword">schema</span>() <span class="keyword">and</span> table_name=<span class="string">'表名'</span>;</span></div><div class="line">#重新定义分区</div><div class="line"><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">partition</span> <span class="keyword">by</span> hash ( <span class="keyword">year</span>(<span class="keyword">time</span>) ) partitions 分区数;</span></div></pre></td></tr></table></figure>
+
+<h2 id="查询当前数据库用户连接情况">查询当前数据库用户连接情况</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="operator"><span class="keyword">show</span> <span class="keyword">processlist</span>;</span></div></pre></td></tr></table></figure>
+
+<h2 id="MySQL运行状态">MySQL运行状态</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="operator"><span class="keyword">show</span> <span class="keyword">status</span>;</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-19T10:22:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/19/no-module-named-wsgi/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>No module named wsgi</title>
+        <content><![CDATA[<h2 id="CentOS_django_ImportError:_No_module_named_wsgi">CentOS django ImportError: No module named wsgi</h2>
+<h3 id="错误日志">错误日志</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] SELinux policy enabled; httpd <span class="property">running</span> <span class="keyword">as</span> context unconfined_u:system_r:httpd_t:s0</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] Digest: generating secret <span class="keyword">for</span> digest authentication ...</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] Digest: done</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">47</span> <span class="number">2014</span>] [notice] Apache/<span class="number">2.2</span><span class="number">.15</span> (Unix) DAV/<span class="number">2</span> mod_wsgi/<span class="number">3.2</span> Python/<span class="number">2.6</span><span class="number">.6</span> configured <span class="comment">-- resuming normal operations</span></div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] mod_wsgi (pid=<span class="number">4709</span>): Target WSGI <span class="keyword">script</span> '/var/www/produce/produce/wsgi.py' cannot be loaded <span class="keyword">as</span> Python module.</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] mod_wsgi (pid=<span class="number">4709</span>): Exception occurred processing WSGI <span class="keyword">script</span> '/var/www/produce/produce/wsgi.py'.</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] Traceback (most recent call <span class="keyword">last</span>):</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>]   File <span class="string">"/var/www/produce/produce/wsgi.py"</span>, line <span class="number">14</span>, <span class="keyword">in</span> </div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>]     <span class="keyword">from</span> django.core.wsgi import get_wsgi_application</div><div class="line">[Wed Jan <span class="number">22</span> <span class="number">18</span>:<span class="number">43</span>:<span class="number">51</span> <span class="number">2014</span>] [<span class="keyword">error</span>] [client <span class="number">192.168</span><span class="number">.18</span><span class="number">.113</span>] ImportError: No module named wsgi</div></pre></td></tr></table></figure>
+
+<h3 id="解决方法">解决方法</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chcon -<span class="keyword">v</span> --<span class="built_in">type</span>=httpd_sys_content_t /var/www/produce/produce/wsgi.<span class="keyword">py</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-19T07:48:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/19/windows7bi-ji-ben-zuo-re-dian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>windows7笔记本做热点</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">netsh wlan <span class="operator"><span class="keyword">set</span> hostednetwork <span class="keyword">mode</span>=allow ssid=abcde <span class="keyword">key</span>=<span class="number">87654321</span></span></div><div class="line">netsh wlan <span class="keyword">start</span> hostednetwork</div><div class="line">netsh wlan <span class="keyword">stop</span> hostednetwork</div><div class="line">netsh wlan <span class="keyword">show</span> drivers</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-18T16:11:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/gitcha-kan-mou-ge-wen-jian-de-xiu-gai-li-shi/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>git查看某个文件的修改历史</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git log <span class="comment">--pretty=oneline 文件名</span></div><div class="line">git <span class="operator"><span class="keyword">show</span> <span class="number">356</span>f6def9d3fb7f3b9032ff5aa4b9110d4cca87e</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-22T05:07:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/gtk-warning-star-star-wu-fa-zai-mo-kuai-lu-jing-zhong-zhao-dao-zhu-ti-yin-qing-:-pixmap-,/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Gtk-WARNING **: 无法在模块路径中找到主题引擎：“pixmap”，</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> gtk2-<span class="keyword">engines</span>-pixbuf</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-21T16:02:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/mplayermei-you-sheng-yin/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>MPlayer没有声音</title>
+        <content><![CDATA[<h2 id="[AO_OSS]_audio_setup:_Can’t_open_audio_device_/dev/dsp:_No_such_file_or_directory">[AO OSS] audio_setup: Can’t open audio device /dev/dsp: No such file or directory</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">padsp mplayer <span class="regexp">/path/</span>to<span class="regexp">/your/</span><span class="keyword">file</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-22T09:59:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/sudo-startxqie-huan-dao-pu-tong-yong-hu-shi-wu-fa-xian-shi-tu-xing-jie-mian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>sudo startx切换到普通用户时无法显示图形界面</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown <span class="literal">user</span>:<span class="literal">user</span> .Xauthority</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-21T16:10:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/tong-guo-dai-li-xia-zai-androiddai-ma/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>通过代理下载android代码</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line"><span class="built_in">cd</span> WORKING_DIRECTORY</div><div class="line"><span class="keyword">export</span> http_proxy=<span class="string">"127.0.0.1:8087"</span></div><div class="line"><span class="keyword">export</span> https_proxy=<span class="string">"127.0.0.1:8087"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"======start repo sync======"</span></div><div class="line">~/bin/repo sync</div><div class="line"><span class="keyword">while</span> [ $? == <span class="number">1</span> ]; <span class="keyword">do</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"======sync failed, re-sync again======"</span></div><div class="line">sleep <span class="number">3</span></div><div class="line">~/bin/repo sync</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-21T16:34:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/ubuntu-update-perl/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu update Perl</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> perl -MCPAN <span class="operator">-e</span> <span class="string">'upgrade'</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-22T13:50:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/22/ubuntuming-ling-xing-jin-ru-tu-xing-jie-mian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu命令行进入图形界面</title>
+        <content><![CDATA[<h2 id="方法一">方法一</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> service lightdm start</div></pre></td></tr></table></figure>
+
+<h2 id="方法二">方法二</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">startx</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-21T16:16:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/24/huo-qu-ji-suan-ji-wai-wang-ipde-xie-fa/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>获取计算机外网ip的写法</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl <span class="operator">-s</span> http://ns1.dnspod.net:<span class="number">6666</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl ifconfig.<span class="keyword">me</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-24T10:01:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/24/linuxchang-yong-wang-luo-ming-ling/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>LINUX常用网络命令</title>
+        <content><![CDATA[<h2 id="查看当前监听80端口的程序">查看当前监听80端口的程序</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">lsof</span> <span class="tag">-i</span> <span class="pseudo">:80</span></div></pre></td></tr></table></figure>
+
+<h2 id="查看当前网卡的物理地址">查看当前网卡的物理地址</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">ifconfig</span> eth0 | head -<span class="number">1</span> | awk <span class="string">'{print <span class="variable">$5</span>}'</span></div></pre></td></tr></table></figure>
+
+<h2 id="同一个网卡增加第二个IP地址">同一个网卡增加第二个IP地址</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在网卡eth0上增加一个1.2.3.4的IP：</span></div><div class="line"><span class="title">sudo</span> ifconfig eth0:<span class="number">0</span> <span class="number">1.2.3.4</span> netmask <span class="number">255.255.255.0</span></div><div class="line"><span class="comment">#删除增加的IP：</span></div><div class="line">sudo ifconfig eth0:<span class="number">0</span> down</div></pre></td></tr></table></figure>
+
+<h2 id="立即让网络支持nat">立即让网络支持nat</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo <span class="number">1</span> | sudo tee /<span class="keyword">proc</span>/sys/net/ipv4/ip_forward</div><div class="line">sudo iptables -t nat -I <span class="type">POSTROUTING</span> -j <span class="type">MASQUERADE</span></div></pre></td></tr></table></figure>
+
+<h2 id="查看路由信息">查看路由信息</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">netstat -rn</div><div class="line"><span class="built_in">sudo</span> route -n</div></pre></td></tr></table></figure>
+
+<h2 id="增加和删除路由">增加和删除路由</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="title">sudo</span> route add -net <span class="number">192.168.0.0</span> netmask <span class="number">255.255.255.0</span> gw <span class="number">172.16.0.1</span></div><div class="line">sudo route del -net <span class="number">192.168.0.0</span> netmask <span class="number">255.255.255.0</span> gw <span class="number">172.16.0.1</span></div></pre></td></tr></table></figure>
+
+<h2 id="统计当前IP连接的个数">统计当前IP连接的个数</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">netstat -na|grep <span class="type">ESTABLISHED</span>|awk '{<span class="built_in">print</span> $<span class="number">5</span>}'|awk -<span class="type">F</span>: '{<span class="built_in">print</span> $<span class="number">1</span>}'|<span class="built_in">sort</span>|uniq -<span class="built_in">c</span>|<span class="built_in">sort</span> -r -n</div><div class="line">netstat -na|grep <span class="type">SYN</span>|awk '{<span class="built_in">print</span> $<span class="number">5</span>}'|awk -<span class="type">F</span>: '{<span class="built_in">print</span> $<span class="number">1</span>}'|<span class="built_in">sort</span>|uniq -<span class="built_in">c</span>|<span class="built_in">sort</span> -r -n</div><div class="line">netstat -ntu | awk '{<span class="built_in">print</span> $<span class="number">5</span>}' | cut -d: -f1 | <span class="built_in">sort</span> | uniq -<span class="built_in">c</span> | <span class="built_in">sort</span> -n</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-24T10:09:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/25/she-zhi-ubuntu-mo-ren-bu-qi-dong-tu-xing-jie-mian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>设置ubuntu 默认不启动图形界面</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/etc/<span class="default"><span class="keyword">default</span>/grub</span></div><div class="line"><span class="preprocessor">#增加text</span></div><div class="line"><span class="type">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash text"</span></div><div class="line"><span class="title">sudo</span> update-grub</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-25T08:42:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/02/25/vmware-easy-install-ubuntu12-dot-04-wu-fa-qie-huan-dao-tu-xing-jie-mian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Vmware Easy Install ubuntu12.04 无法切换到图形界面</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Vmware Easy Install</div><div class="line"></div><div class="line">PLEASE WAIT! VMware Tools <span class="keyword">is</span> currently being </div><div class="line">installed <span class="function_start"><span class="keyword">on</span></span> your system. Depending <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> </div><div class="line"><span class="property">version</span> <span class="keyword">of</span> Ubuntu you are installing, you may </div><div class="line"><span class="command">log</span> <span class="keyword">in</span> <span class="keyword">below</span> <span class="keyword">and</span> use <span class="keyword">the</span> system during </div><div class="line">intallation. Otherwise, please wait <span class="keyword">for</span> <span class="keyword">the</span> </div><div class="line">graphical environment <span class="keyword">to</span> <span class="command">launch</span>. Thank you.</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo mv <span class="regexp">/etc/i</span>ssue.backup <span class="regexp">/etc/i</span>ssue</div><div class="line">sudo mv <span class="regexp">/etc/</span>rc.local.backup <span class="regexp">/etc/</span>rc.local</div><div class="line">sudo mv <span class="regexp">/opt/</span>vmware-tools-installer<span class="regexp">/lightdm.conf /</span>etc<span class="regexp">/init</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-02-25T07:06:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/03/08/lightdmbu-neng-zi-qi-dong/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>lightdm不能自启动</title>
+        <content><![CDATA[<h2 id="卸载xubuntu之后，lightdm不能自启动">卸载xubuntu之后，lightdm不能自启动</h2>
+<h3 id="需要手动启动">需要手动启动</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> service lightdm start</div></pre></td></tr></table></figure>
+
+<h3 id="可能删除下面的软件">可能删除下面的软件</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install lightdm-gtk-greeter</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-03-08T10:47:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/12/octopresshe-zshbu-jian-rong/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Octopress和zsh不兼容[转]</title>
+        <content><![CDATA[<p>引用：<a href="http://fancyoung.com/blog/use-octopress-new-post-function-with-zsh/" target="_blank" rel="external">http://fancyoung.com/blog/use-octopress-new-post-function-with-zsh/</a></p>
+<p>执行：$ rake new_post[“arch-linux-reinstall-glibc.markdown”]</p>
+<p>报错：zsh: no matches found: new_post[arch-linux-reinstall-glibc]</p>
+<p>原因：zsh中若出现‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’符号，则将其识别为查找文件名的通配符</p>
+<p>快速解决：用引号括起来$ rake “new_post[arch-linux-reinstall-glibc.markdown]”</p>
+<p>彻底解决：取消zsh的通配(GLOB), 在.zshrc中加入alias rake=”noglob rake”</p>
+<p>PS：在git回滚操作git reset —soft HEAD^时出现报错： zsh: no matches found HEAD^，</p>
+<p>也为同样原因，因为^也为正则中的符号， 需要转义为git reset —soft HEAD\^。</p>
+<p>官方：<a href="https://github.com/imathis/octopress/issues/117" target="_blank" rel="external">https://github.com/imathis/octopress/issues/117</a></p>
+]]></content>
+        <pubTime>2014-04-12T13:40:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/12/ubuntu-12-dot-04an-zhuang-nodejs/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu 12.04安装nodejs</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> install <span class="keyword">python</span>-software-properties <span class="keyword">python</span> <span class="keyword">g</span>++ <span class="keyword">make</span></div><div class="line">sudo <span class="built_in">add</span>-apt-repository <span class="keyword">pp</span><span class="variable">a:chris</span>-lea/node.js</div><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> install nodejs</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-12T13:31:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/13/centosbu-shu-gitliab/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>centos部署gitlab</title>
+        <content><![CDATA[<p>下载地址：<a href="https://www.gitlab.com/downloads/" target="_blank" rel="external">https://www.gitlab.com/downloads/</a></p>
+<p>参考文档：<a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md" target="_blank" rel="external">https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md</a></p>
+<h2 id="安装">安装</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> yum install openssh-server</div><div class="line"><span class="built_in">sudo</span> yum install postfix <span class="comment"># sendmail or exim is also OK</span></div><div class="line"><span class="built_in">sudo</span> rpm -i gitlab-x.y.z_omnibus-x.el6.x86_64.rpm <span class="comment"># this is the .rpm you downloaded</span></div><div class="line"><span class="built_in">sudo</span> gitlab-ctl reconfigure</div><div class="line"><span class="built_in">sudo</span> lokkit <span class="operator">-s</span> http <span class="operator">-s</span> ssh <span class="comment"># open up the firewall for HTTP and SSH requests</span></div></pre></td></tr></table></figure>
+
+<p>查看运行状态</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> gitlab-ctl status</div></pre></td></tr></table></figure>
+
+<h2 id="升级">升级</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># <span class="operator"><span class="keyword">Stop</span> unicorn <span class="keyword">and</span> sidekiq so we can <span class="keyword">do</span> <span class="keyword">database</span> migrations</span></div><div class="line">sudo gitlab-ctl <span class="keyword">stop</span> unicorn</div><div class="line">sudo gitlab-ctl <span class="keyword">stop</span> sidekiq</div><div class="line"># <span class="keyword">Create</span> a <span class="keyword">database</span> <span class="keyword">backup</span> <span class="keyword">in</span> <span class="keyword">case</span> the <span class="keyword">upgrade</span> fails</div><div class="line">sudo gitlab-rake gitlab:<span class="keyword">backup</span>:<span class="keyword">create</span></div><div class="line"># <span class="keyword">Install</span> the latest package</div><div class="line">sudo rpm -Uvh gitlab-<span class="number">6.8</span><span class="number">.2</span>_omnibus-<span class="number">1.</span>el6.x86_64.rpm</div><div class="line"># Reconfigure GitLab (includes <span class="keyword">database</span> migrations)</div><div class="line">sudo gitlab-ctl reconfigure</div><div class="line"># <span class="keyword">Start</span> unicorn <span class="keyword">and</span> sidekiq</div><div class="line">sudo gitlab-ctl <span class="keyword">start</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-13T02:34:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/13/gsoap-openwrtjiao-cha-bian-yi-cuo-wu/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>gsoap openwrt交叉编译错误</title>
+        <content><![CDATA[<p>stdsoap2.c:(.text+0x1b04c): undefined reference to `isnan’的错误。</p>
+<p>stdsoap.h</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#  <span class="keyword">define</span> soap_isnan(n) isnan(0)</span></div></pre></td></tr></table></figure>
+
+<p>修改为 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#  <span class="keyword">define</span> soap_isnan(n) (0)</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-13T02:27:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/13/openwrt-goagent-opensslcuo-wu/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>openwrt goagent openssl错误</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">python</span>: <span class="string">md_rand.c: 316: ssleay_rand_add: Assertion `md_c[1] == md_count[1]' failed.</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-13T02:32:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/13/ubuntuan-zhuang-chrome/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu安装chrome</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wget -<span class="keyword">q</span> -O - http<span class="variable">s:</span>//<span class="keyword">dl</span>-ssl.google.<span class="keyword">com</span>/linux/linux_signing_key.pub | sudo apt-key <span class="built_in">add</span> -</div><div class="line"></div><div class="line">sudo <span class="keyword">sh</span> -<span class="keyword">c</span> <span class="string">'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" &gt;&gt; /etc/apt/sources.list.d/google.list'</span></div><div class="line"></div><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> install google-chrome-stable</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-13T02:20:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/07/24/duan-kou-ying-she/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>端口映射</title>
+        <content><![CDATA[<h2 id="DMZ全地址映射">DMZ全地址映射</h2>
+<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.2 -j SNAT --to-source 201.1.1.1</code></p>
+<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -j DNAT --to-destination 10.1.1.2</code></p>
+<h2 id="TELNET服务器映射">TELNET服务器映射</h2>
+<p><code>iptables -t nat -I POSTROUTING -s 10.1.1.3 -p tcp --sport 23 -j SNAT --to-source 201.1.1.1</code></p>
+<p><code>iptables -t nat -I PREROUTING -d 201.1.1.2 -p tcp --dport 23 -j DNAT --to-destination 10.1.1.3</code></p>
+<h2 id="查看配置">查看配置</h2>
+<p><code>iptables -t nat -L</code></p>
+]]></content>
+        <pubTime>2013-07-24T06:07:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/04/13/wgetshu-chu-dao-kong-zhi-tai/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>wget输出到控制台</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget <span class="keyword">http</span>://<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">1337</span> -O - <span class="number">2</span>&gt;/dev/<span class="constant">null</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-04-13T02:24:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/12/vire-jian-zheng-li/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>VI热键整理</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctrl+s 终止屏幕输出</div><div class="line">ctrl+q 恢复屏幕输出</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-12T10:34:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/13/qing-qi-yong-fcitx-qimpanelmian-ban-cheng-xu-,yi-bian-geng-hao-de-xiang-shou-sou-gou-shu-ru-fa/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>请启用fcitx-qimpanel面板程序，以便更好的享受搜狗输入法</title>
+        <content><![CDATA[<p>ubuntu 14.04安装搜狗输入法，重启之后提示：“请启用fcitx-qimpanel面板程序，以便更好的享受搜狗输入法”</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> fcitx -r --enable fcitx-qimpanel</div><div class="line">fcitx-qimpanel</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-13T06:23:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/13/ubuntuan-zhuang-samba/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu安装samba</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> insall samba</div><div class="line">sudo apt-<span class="built_in">get</span> install smbfs </div><div class="line">sudo apt-<span class="built_in">get</span> install <span class="built_in">system</span>-config-samba</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-13T06:17:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/14/pacmandai-li/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>pacman代理</title>
+        <content><![CDATA[<p>摘自官网：<a href="https://wiki.archlinux.org/index.php/Sudo#Environment_variables_.28Outdated.3F.29" target="_blank" rel="external">https://wiki.archlinux.org/index.php/Sudo#Environment_variables_.28Outdated.3F.29</a></p>
+<p>Environment variables<br>If you have a lot of environment variables, or you export your proxy settings via export http_proxy=”…”, when using sudo these variables do not get passed to the root account unless you run sudo with the -E option.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> -E pacman -Syu</div></pre></td></tr></table></figure>
+
+<p>The recommended way of preserving environment variables is to append them to env_keep:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/etc/sudoers</div><div class="line"><span class="constant">Defaults env_keep +</span>= <span class="string">"ftp_proxy http_proxy https_proxy no_proxy"</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-14T09:11:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/14/ubuntuan-zhuang-mysql-php-apache2/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu安装mysql php apache2</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> software-properties-common</span></div><div class="line">sudo apt-<span class="keyword">key</span> adv <span class="comment">--recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db</span></div><div class="line">sudo <span class="keyword">add</span>-apt-repository <span class="string">'deb http://mirrors.scie.in/mariadb/repo/10.0/ubuntu trusty main'</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> mariadb-<span class="keyword">server</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> apache2 libapache2-<span class="keyword">mod</span>-php5</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> php5 php5-mysql</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-14T07:57:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/15/tao-yan-de-xia-zai-e-wai-shu-ju-bu-cheng-gong-adobe-flashplugin/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>讨厌的下载额外数据不成功-adobe-flashplugin</title>
+        <content><![CDATA[<p>离线下载:adobe-flashplugin_11.2.202.359.orig.tar.gz</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> dpkg-reconfigure flashplugin-installer</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-15T03:54:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/16/armjia-gou-he-mipsjia-gou-gai-nian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ARM架构和MIPS架构概念</title>
+        <content><![CDATA[<h2 id="ARM架构">ARM架构</h2>
+<p>ARM架构，过去称作高级精简指令集机器（Advanced RISC Machine，更早称作：Acorn RISC Machine），是一个32位精简指令集（RISC）处理器架构，其广泛地使用在许多嵌入式系统设计。由于节能的特点，ARM处理器非常适用于移动通信领域，符合其主要设计目标为低成本、高性能、低耗电的特性。</p>
+<h2 id="MIPS架构概念">MIPS架构概念</h2>
+<p>MIPS架构（英语：MIPS architecture，为Microprocessor without Interlocked Pipeline Stages的缩写，亦为Millions of Instructions Per Second的相关语），是一种采取精简指令集（RISC）的处理器架构，1981年出现，由MIPS科技公司开发并授权，广泛被使用在许多电子产品、网络设备、个人娱乐装置与商业装置上。最早的MIPS架构是32位元，最新的版本已经变成64位元。</p>
+<p>来源：维基百科</p>
+]]></content>
+        <pubTime>2014-05-16T03:03:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/19/ntpfu-wu-qi-di-zhi/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>NTP服务器地址</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">server</span> <span class="number">1.</span>cn.pool.ntp.org</div><div class="line"><span class="keyword">server</span> <span class="number">0.</span>asia.pool.ntp.org</div><div class="line"><span class="keyword">server</span> <span class="number">2.</span>asia.pool.ntp.org</div></pre></td></tr></table></figure>
+
+<p>来源：<a href="http://www.pool.ntp.org/zone/cn" target="_blank" rel="external">http://www.pool.ntp.org/zone/cn</a></p>
+]]></content>
+        <pubTime>2014-05-19T01:58:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/20/hui-fu-octopress/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>恢复octopress</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone -<span class="keyword">b</span> <span class="keyword">source</span> http<span class="variable">s:</span>//github.<span class="keyword">com</span>/haowaiwai/haowaiwai.github.io.git octopress</div><div class="line"><span class="keyword">cd</span> octopress</div><div class="line">rake setup_github_pages</div><div class="line">git clone -<span class="keyword">b</span> master http<span class="variable">s:</span>//github.<span class="keyword">com</span>/haowaiwai/haowaiwai.github.io.git _deploy</div></pre></td></tr></table></figure>
+
+<p>重装的系统安装</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem <span class="operator"><span class="keyword">install</span> bundler</span></div><div class="line">rbenv rehash    # <span class="keyword">If</span> you <span class="keyword">use</span> rbenv, rehash <span class="keyword">to</span> be able <span class="keyword">to</span> run the bundle command</div><div class="line">bundle <span class="keyword">install</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-20T09:59:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/20/vikuai-jie-jian-zheng-li/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>VI快捷键整理</title>
+        <content><![CDATA[<h2 id="光标">光标</h2>
+<h3 id="跳转到文件头">跳转到文件头</h3>
+<p>gg</p>
+<h3 id="跳转到文件尾">跳转到文件尾</h3>
+<p>G</p>
+<h3 id="跳转到行首">跳转到行首</h3>
+<p>0</p>
+<h3 id="跳转到行尾">跳转到行尾</h3>
+<p>$</p>
+<h2 id="删除">删除</h2>
+<h3 id="删除一行">删除一行</h3>
+<p>dd</p>
+<h3 id="删除以当前行开始的n行">删除以当前行开始的n行</h3>
+<p>ndd</p>
+<h3 id="删除全部行">删除全部行</h3>
+<p>1,$d</p>
+<h2 id="删除一个单词/光标之后的单词剩余部分">删除一个单词/光标之后的单词剩余部分</h2>
+<p>dw</p>
+<h2 id="删除当前字符">删除当前字符</h2>
+<p>x</p>
+<h2 id="删除光标之后的该行部分">删除光标之后的该行部分</h2>
+<p>d$</p>
+<h2 id="复制">复制</h2>
+<h3 id="复制全部行">复制全部行</h3>
+<p>yG</p>
+<h2 id="查找">查找</h2>
+<h2 id="替换">替换</h2>
+<h3 id="每行行首插入字符串">每行行首插入字符串</h3>
+<p>:%s/^/your_word/</p>
+<h3 id="每行行首插入字符串-1">每行行首插入字符串</h3>
+<p>:%s/$/your_word/</p>
+<h3 id="删除每行前1个字符(“-”符号有几个就代表删除前几个字符)">删除每行前1个字符(“.”符号有几个就代表删除前几个字符)</h3>
+<p>:%s/^.//</p>
+]]></content>
+        <pubTime>2014-05-20T08:09:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/21/ubuntu-apache2-httpsda-jian/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu apache2 https搭建</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install apache2</div><div class="line"><span class="built_in">sudo</span> apt-get install openssl</div><div class="line"><span class="built_in">sudo</span> a2enmod ssl</div><div class="line"><span class="built_in">sudo</span> ln <span class="operator">-s</span> /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/<span class="number">001</span>-ssl.conf</div><div class="line"><span class="built_in">sudo</span> service apache2 restart</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-21T05:36:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/05/21/ubuntu-apache2-servername-error/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu apache2 servername error</title>
+        <content><![CDATA[<p>AH00558: apache2: Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1. Set the ‘ServerName’ directive globally to suppress this message</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo <span class="keyword">vi</span> /etc/apache2/<span class="keyword">conf</span>-available/servername.<span class="keyword">conf</span></div><div class="line">ServerName localhost</div></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> <span class="string">"ServerName localhost"</span> | sudo tee /etc/apache2/<span class="keyword">conf</span>-available/servername.<span class="keyword">conf</span></div></pre></td></tr></table></figure>
+
+<p>enable servername</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> a2enconf servername</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-05-21T06:03:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/10/%E4%BD%BF%E7%94%A8mtd%E5%8D%87%E7%BA%A7/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用mtd升级</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cd</span> /tmp</div><div class="line">tftp -<span class="keyword">gr</span> upgrade <span class="number">192.168</span>.<span class="number">9.163</span></div><div class="line">ittim_image -<span class="keyword">x</span> -<span class="keyword">k</span> /tmp/kernel.bin -<span class="keyword">r</span> /tmp/rootfs.bin -<span class="keyword">i</span> /tmp/upgrade</div><div class="line">rm upgrade</div><div class="line">#sys_env -<span class="keyword">s</span> -<span class="keyword">n</span> ccdroid_upgrade_flag -<span class="keyword">v</span> section1</div><div class="line">mtd <span class="keyword">write</span> /tmp/kernel.bin uImage</div><div class="line">rm kernel.bin</div><div class="line">mtd <span class="keyword">write</span> /tmp/rootfs.bin rootfs</div><div class="line">rm rootfs.bin</div><div class="line">#sys_env -<span class="keyword">s</span> -<span class="keyword">n</span> ccdroid_upgrade_flag -<span class="keyword">v</span> section2</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-10T13:29:51.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/12/Makefile%E8%B5%8B%E5%80%BC%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Makefile赋值区别</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="constant">x</span> = foo</div><div class="line"><span class="constant">y</span> = <span class="variable">$(x)</span> bar</div><div class="line"><span class="constant">x</span> = later</div><div class="line"></div><div class="line"><span class="constant">y</span> = later bar</div><div class="line"></div><div class="line"><span class="constant">x</span> := foo</div><div class="line"><span class="constant">y</span> := <span class="variable">$(x)</span> bar</div><div class="line"><span class="constant">x</span> := later</div><div class="line"></div><div class="line"><span class="constant">y</span> = foo bar</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-12T07:18:14.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/12/%E4%BD%BF%E7%94%A8tmux%E5%88%86%E5%B1%8F/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用tmux分屏</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#左右分屏</span></div><div class="line">ctrl+a+%</div><div class="line"><span class="preprocessor">#切换到左</span></div><div class="line">ctrl+a+h</div><div class="line"><span class="preprocessor">#切换到右</span></div><div class="line">ctrl+a+l</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-12T10:09:53.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/13/%E4%B8%B2%E5%8F%A3%E5%8D%87%E7%BA%A7/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>串口升级</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#16m no art</span></div><div class="line"><span class="keyword"><span class="common">setenv</span></span> ipaddr 192.168.9.1</div><div class="line"><span class="keyword"><span class="common">setenv</span></span> serverip 192.168.9.163</div><div class="line"><span class="keyword">tftpboot</span> 80006000 <span class="literal">all</span>.bin</div><div class="line"><span class="keyword">erase</span> 9f000000 +0xFE0000</div><div class="line"><span class="keyword">cp</span>.b 80006000 9f000000 0xFE0000</div><div class="line"><span class="comment">#16m</span></div><div class="line"><span class="keyword"><span class="common">setenv</span></span> ipaddr 192.168.9.1</div><div class="line"><span class="keyword"><span class="common">setenv</span></span> serverip 192.168.9.163</div><div class="line"><span class="keyword">tftpboot</span> 80006000 <span class="literal">all</span>.bin</div><div class="line"><span class="keyword">erase</span> 9f000000 +0x1000000</div><div class="line"><span class="keyword">cp</span>.b 80006000 9f000000 0x1000000</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-13T05:30:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/17/Tree-Node-Observer/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>Tree Node Observer</title>
+        <content><![CDATA[<h2 id="Demo_code">Demo code</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line">class Test :  public ICfmObserver , public IBootContext , public IEventObserver{</div><div class="line"><span class="title">private:</span></div><div class="line">	IContext* mContext;</div><div class="line">	ICfm* mCfm;</div><div class="line">	IEvent* mEvent;</div><div class="line">	boolean mChanged;</div><div class="line">	string new_fun1;</div><div class="line">	string old_fun1;</div><div class="line">	string new_fun3;</div><div class="line">	string old_fun3;</div><div class="line"><span class="title">public:</span></div><div class="line">	Test(IContext* ctx):ICfmObserver():IBootContext():IEventObserver() {</div><div class="line">		mContext = ctx;</div><div class="line">		mChanged = true;</div><div class="line">		if(mContext){</div><div class="line">			mCfm = mContext-&gt;cfmFactory();</div><div class="line">			mEvent = mContext-&gt;eventFactory();</div><div class="line">		}</div><div class="line">	}</div><div class="line">	~Test() {</div><div class="line">	}</div><div class="line"></div><div class="line">	status cfgChanged() {</div><div class="line">		//for example:iptables -D / iptables -A</div><div class="line">		old_fun1 = new_fun1;</div><div class="line">		old_fun3 = new_fun3;</div><div class="line">		mChanged = false;</div><div class="line">	}</div><div class="line">	</div><div class="line">	status update(string event_owner, string event, string data) {</div><div class="line">		if(event == E_CFG_APPLY){</div><div class="line">			if(mChanged){</div><div class="line">				cfgChanged();</div><div class="line">			}</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line">	status update(int id, string full_name, int opt_flag, string value) {</div><div class="line">		if(id == UID_IGD_DI_XQCALIMIT_FUN1_FUN1) {</div><div class="line">			if(new_fun1 != value) {</div><div class="line">				mChanged = true;</div><div class="line">			}</div><div class="line">		}</div><div class="line">		if(id == UID_IGD_DI_XQCALIMIT_FUN3_FUN3) {</div><div class="line">			if(new_fun3 != value) {</div><div class="line">				mChanged = true;</div><div class="line">			}</div><div class="line">		}</div><div class="line">		return s_ok;</div><div class="line">	}</div><div class="line"></div><div class="line">	status onStart() {</div><div class="line">		mCfm-&gt;registObserver(UID_IGD_DI_XQCALIMIT_FUN1_FUN1,this);</div><div class="line">		mCfm-&gt;registObserver(UID_IGD_DI_XQCALIMIT_FUN3_FUN3,this);</div><div class="line">		return s_ok;</div><div class="line">	}</div><div class="line"></div><div class="line">	status onStop() {</div><div class="line">		mCfm-&gt;unregistObserver(UID_IGD_DI_XQCALIMIT_FUN1_FUN1,this);</div><div class="line">		mCfm-&gt;unregistObserver(UID_IGD_DI_XQCALIMIT_FUN3_FUN3,this);</div><div class="line">		return s_ok;</div><div class="line">	}</div><div class="line">	status onLoad() {</div><div class="line">		mEvent-&gt;registObserver(E_CFG_APPLY,this);</div><div class="line">		return s_ok;</div><div class="line">	}</div><div class="line"></div><div class="line">	status onUnload() {</div><div class="line">		mEvent-&gt;unregistObserver(E_CFG_APPLY,this);</div><div class="line">	}</div><div class="line"></div><div class="line">	status onRun() {</div><div class="line">		return s_ok;</div><div class="line">	}</div><div class="line">}</div><div class="line"></div><div class="line">int main(int argc, char* argv[]) {</div><div class="line">	IContext *context = getContext();</div><div class="line">	if(context){</div><div class="line">		context-&gt;init(argc,argv);</div><div class="line">		ILoop *loop = context-&gt;loopFactory();</div><div class="line">		Test* cb = new Test(context);</div><div class="line"></div><div class="line">		if(cb && loop && context){</div><div class="line">			context-&gt;registBootContext(cb);</div><div class="line">			context-&gt;load();</div><div class="line">			loop-&gt;run();</div><div class="line">		}</div><div class="line">		releaseContext(context);</div><div class="line">	}</div><div class="line">	return 0;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-17T02:17:21.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/17/gitlab-ssh-clone-error/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>gitlab ssh clone error</title>
+        <content><![CDATA[<h2 id="详细错误">详细错误</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git<span class="decorator">@192.168.234.135's password: </span></div><div class="line">Permission denied, please <span class="keyword">try</span> again.</div><div class="line">git<span class="decorator">@192.168.234.135's password: </span></div><div class="line">Permission denied, please <span class="keyword">try</span> again.</div><div class="line">git<span class="decorator">@192.168.234.135's password: </span></div><div class="line">Permission denied (publickey,gssapi-keyex,gssapi-<span class="keyword">with</span>-mic,password).</div><div class="line">fatal: Could <span class="keyword">not</span> read <span class="keyword">from</span> remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div></pre></td></tr></table></figure>
+
+<h2 id="原因">原因</h2>
+<h3 id="git不用不能登陆">git不用不能登陆</h3>
+<p>sudo adduser —disabled-login —gecos ‘GitLab’ git</p>
+<h2 id="方法">方法</h2>
+<h3 id="添加ssh_key">添加ssh key</h3>
+]]></content>
+        <pubTime>2014-06-17T07:42:27.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/17/%E4%BF%AE%E6%94%B9eth0s-MAC/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>修改eth0's MAC</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ifconfig eth0 down</div><div class="line">ifconfig eth0 hw ether <span class="number">1234567890</span><span class="keyword">ab</span></div><div class="line">ifconfig eth0 <span class="number">192.168</span>.<span class="number">1.10</span> <span class="keyword">up</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-17T02:42:29.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/17/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E7%9A%84%E5%AE%8F%E5%AE%9A%E4%B9%89/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>可变参数的宏定义</title>
+        <content><![CDATA[<h2 id="Example_code">Example code</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdarg.h&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> recv(fmt,args...) do{ \</span></div><div class="line">        <span class="built_in">printf</span>((<span class="keyword">char</span>*)fmt,<span class="preprocessor">##args);\</span></div><div class="line">        systemCall((<span class="keyword">char</span>*)fmt,<span class="preprocessor">##args);\</span></div><div class="line">}<span class="keyword">while</span>(<span class="number">0</span>)</div><div class="line"><span class="preprocessor">#<span class="keyword">define</span> FILENAME "/tmp/1"</span></div><div class="line"><span class="keyword">int</span> systemCall(<span class="keyword">const</span> <span class="keyword">char</span>* fmt, ...){</div><div class="line">        <span class="keyword">char</span> buf[<span class="number">1024</span>] = {<span class="number">0</span>};</div><div class="line"></div><div class="line">        va_list argp;</div><div class="line">        va_start( argp, fmt );</div><div class="line">        vsnprintf(buf,<span class="keyword">sizeof</span>(buf)-<span class="number">1</span>,fmt,argp);</div><div class="line">        va_end( argp );</div><div class="line"></div><div class="line">        system(buf);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[]) {</div><div class="line">        recv(<span class="string">"echo \"%d\" &gt; /tmp/%d\n"</span>,<span class="number">1</span>,<span class="number">10</span>);</div><div class="line">        systemCall(<span class="string">"echo \"%d\" &gt; "</span> FILENAME,<span class="number">10</span>);</div><div class="line">        system(<span class="string">"mtd erase "</span> FILENAME);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-17T02:40:23.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/26/ubuntu%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85git/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu编译安装git</title>
+        <content><![CDATA[<p>摘自<a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md" target="_blank" rel="external">https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># Remove packaged Git</div><div class="line">sudo apt-get remove git-core</div><div class="line"># <span class="operator"><span class="keyword">Install</span> dependencies</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> -y libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev build-essential</div><div class="line"># Download <span class="keyword">and</span> compile <span class="keyword">from</span> source</div><div class="line">cd /tmp</div><div class="line">curl <span class="comment">--progress https://www.kernel.org/pub/software/scm/git/git-2.0.0.tar.gz | tar xz</span></div><div class="line">cd git-<span class="number">2.0</span><span class="number">.0</span>/</div><div class="line">make prefix=/usr/<span class="keyword">local</span> <span class="keyword">all</span></div><div class="line"># <span class="keyword">Install</span> <span class="keyword">into</span> /usr/<span class="keyword">local</span>/<span class="keyword">bin</span></div><div class="line">sudo make prefix=/usr/<span class="keyword">local</span> <span class="keyword">install</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-26T03:32:53.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/06/26/ubuntu%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85ruby/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu编译安装ruby</title>
+        <content><![CDATA[<p>摘自<a href="https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md" target="_blank" rel="external">https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get remove ruby1.<span class="number">8</span></div><div class="line"><span class="comment">#Download Ruby and compile it:</span></div><div class="line">mkdir /tmp/ruby && <span class="built_in">cd</span> /tmp/ruby</div><div class="line">curl --progress ftp://ftp.ruby-lang.org/pub/ruby/<span class="number">2.1</span>/ruby-<span class="number">2.1</span>.<span class="number">2</span>.tar.gz | tar xz</div><div class="line"><span class="built_in">cd</span> ruby-<span class="number">2.1</span>.<span class="number">2</span></div><div class="line">./configure --disable-install-rdoc</div><div class="line">make</div><div class="line"><span class="built_in">sudo</span> make install</div><div class="line"><span class="comment">#Install the Bundler Gem:</span></div><div class="line"><span class="built_in">sudo</span> gem install bundler --no-ri --no-rdoc</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-06-26T03:38:45.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/07/11/systemd%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>systemd常用命令</title>
+        <content><![CDATA[<blockquote>
+<p>systemd是Linux下的一种init软件，由Lennart Poettering带头开发，并在LGPL 2.1及其后续版本许可证下开源发布[2][3]。其开发目标是提供更优秀的框架以表示系统服务间的依赖关系，并依此实现系统初始化时服务的并行启动，同时达到降低Shell的系统开销的效果，最终代替现在常用的System V与BSD风格init程序。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>新命令</th>
+<th>旧命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>服务启动</em></td>
+<td>chkconfig —level 3 httpd on</td>
+<td>systemctl enable httpd.service</td>
+</tr>
+<tr>
+<td><em>服务状态</em></td>
+<td>service httpd status</td>
+<td>systemctl status httpd.service</td>
+</tr>
+<tr>
+<td><em>启动服务</em></td>
+<td>service httpd start</td>
+<td>systemctl start httpd.service</td>
+</tr>
+<tr>
+<td><em>服务列表</em></td>
+<td>chkconfig —list</td>
+<td>systemctl list-units —type=service</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+        <pubTime>2014-07-11T07:38:12.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/13/USB%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>USB自动挂载</title>
+        <content><![CDATA[<h2 id="/etc/hotplug-d/usb/10-usb">/etc/hotplug.d/usb/10-usb</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># Copyright (C) 2009 OpenWrt.org</span></div><div class="line"></div><div class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$ACTION</span>"</span> <span class="keyword">in</span></div><div class="line">	add)</div><div class="line">		<span class="comment"># update LEDs</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"############## INTO 10-usb add ###############"</span> &gt;&gt; /tmp/<span class="number">10</span>-usb.log</div><div class="line">		/sbin/inner_usbcheck start</div><div class="line">		;;</div><div class="line">	remove)</div><div class="line">		<span class="built_in">echo</span> <span class="string">"############## INTO 10-usb remove ###############"</span> &gt;&gt; /tmp/<span class="number">10</span>-usb.log</div><div class="line">		<span class="comment"># update LEDs</span></div><div class="line">		;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
+
+<h2 id="cat_/sbin/inner_usbcheck">cat /sbin/inner_usbcheck</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/sh /etc/rc.common</span></div><div class="line"><span class="comment"># Copyright (C) 2006 OpenWrt.org</span></div><div class="line">START=<span class="number">80</span></div><div class="line"></div><div class="line">mount_dir_1=<span class="string">"/tmp/mnt/log/"</span></div><div class="line"> </div><div class="line"><span class="function"><span class="title">make_dir</span></span>()</div><div class="line">{</div><div class="line">	myPath=<span class="variable">$mount_dir_1</span></div><div class="line">	<span class="keyword">if</span> [ ! <span class="operator">-d</span> <span class="string">"<span class="variable">$myPath</span>"</span> ]; <span class="keyword">then</span></div><div class="line">		mkdir -p <span class="string">"<span class="variable">$myPath</span>"</span></div><div class="line">		<span class="built_in">echo</span> <span class="string">"make dir <span class="variable">$myPath</span>"</span> &gt;&gt; /tmp/inner_usbcheck.log</div><div class="line">	<span class="keyword">fi</span></div><div class="line">}</div><div class="line"><span class="function"><span class="title">get_dev</span></span>()</div><div class="line">{</div><div class="line">	blkid |grep LOG_MAIN | awk <span class="string">'{print $1}'</span> &gt; /tmp/usb_mount.txt</div><div class="line">	<span class="keyword">while</span> <span class="built_in">read</span> line</div><div class="line">	<span class="keyword">do</span></div><div class="line">	{</div><div class="line">		<span class="built_in">echo</span> <span class="variable">${line}</span></div><div class="line">		tmp=<span class="variable">${line}</span></div><div class="line">		tmp=<span class="variable">${tmp##*dev\/}</span></div><div class="line">		tmp=<span class="variable">${tmp%%:*}</span></div><div class="line">		<span class="keyword">if</span> [ <span class="variable">$num1</span> <span class="operator">-eq</span> <span class="variable">$flag</span> ]</div><div class="line">		<span class="keyword">then</span></div><div class="line">			dev1=<span class="variable">$tmp</span></div><div class="line">			<span class="built_in">echo</span> <span class="variable">$dev1</span></div><div class="line">			flag=<span class="number">2</span></div><div class="line">		<span class="keyword">fi</span></div><div class="line">	}</div><div class="line">	<span class="keyword">done</span> &lt; /tmp/usb_mount.txt</div><div class="line">	</div><div class="line">	rm -rf /tmp/usb_mount.txt</div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">mount_dev</span></span>()</div><div class="line">{</div><div class="line">	umount /dev/<span class="variable">$dev1</span></div><div class="line">	mount /dev/<span class="variable">$dev1</span> <span class="variable">$mount_dir_1</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="function"><span class="title">start</span></span>() {</div><div class="line">	touch /tmp/usb_mount.txt</div><div class="line">	make_dir</div><div class="line">	get_dev</div><div class="line">	mount_dev</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-12T16:51:41.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/13/linux-patch-example/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux patch example</title>
+        <content><![CDATA[<h2 id="cat_old-c">cat old.c</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[]) {</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="cat_new-c">cat new.c</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[]) {</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"hello"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="diff_-Naur_old-c_new-c_&gt;_001-patch">diff -Naur old.c new.c &gt; 001.patch</h2>
+<h2 id="cat_001-patch">cat 001.patch</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="header">--- old.c	2014-08-13 14:07:09.996664864 +0800</span></div><div class="line"><span class="header">+++ new.c	2014-08-13 14:06:51.932665236 +0800</span></div><div class="line"><span class="chunk">@@ -1,5 +1,6 @@</span></div><div class="line"> #include &lt;stdio.h&gt;</div><div class="line"> </div><div class="line"> int main(int argc, char* argv[]) {</div><div class="line"><span class="addition">+	printf("hello");</span></div><div class="line"> }</div></pre></td></tr></table></figure>
+
+<h2 id="patch_-p0_&lt;_001-patch">patch -p0 &lt; 001.patch</h2>
+]]></content>
+        <pubTime>2014-08-13T14:12:01.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/15/json-c-example/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>json-c example</title>
+        <content><![CDATA[<h2 id="pkg-config_—libs_json">pkg-config —libs json</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="deletion">-L/usr/local/lib -ljson-c</span></div></pre></td></tr></table></figure>
+
+<h2 id="pkg-config_—cflags_json">pkg-config —cflags json</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"><span class="constant">I</span>/usr/local/<span class="keyword">include</span>/json-c</span></div></pre></td></tr></table></figure>
+
+<h2 id="compile">compile</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc old.<span class="built_in">c</span> -<span class="type">I</span>/usr/local/include/json-<span class="built_in">c</span> -<span class="type">L</span>/usr/local/lib -ljson-<span class="built_in">c</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-14T19:31:34.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/15/%E5%88%A4%E6%96%ADshell%E5%8F%98%E9%87%8F%E6%98%AF%E5%90%A6%E7%A9%BA/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>判断shell变量是否空</title>
+        <content><![CDATA[<p>make.sh 添加不在script export的变量</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$USER_CONFIG</span>"</span> = <span class="string">""</span> ]; <span class="keyword">then</span></div><div class="line">	<span class="built_in">echo</span> <span class="string">"#define USER_CONFIG \"\""</span> &gt;&gt; <span class="variable">$SWRT_INC_PATH</span>/config.h</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-15T11:44:44.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/16/ubuntu%E5%AE%89%E8%A3%85HTTPie/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu安装HTTPie</title>
+        <content><![CDATA[<p>code:<a href="https://github.com/jakubroztocil/httpie" target="_blank" rel="external">https://github.com/jakubroztocil/httpie</a></p>
+<h2 id="install">install</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip <span class="operator"><span class="keyword">install</span> <span class="comment">--upgrade httpie</span></span></div></pre></td></tr></table></figure>
+
+<h2 id="cmd">cmd</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Basic auth</span></div><div class="line"><span class="keyword">http</span> -<span class="operator">a</span> username:password example.org</div><div class="line"><span class="comment">#Post data</span></div><div class="line"><span class="keyword">http</span> POST <span class="keyword">http</span>://<span class="number">192.168</span><span class="number">.9</span><span class="number">.163</span>:<span class="number">9090</span>/soap &lt; <span class="number">1.</span>xml</div><div class="line"><span class="comment">#With session</span></div><div class="line"><span class="keyword">http</span> <span class="comment">--session=user1 POST http://192.168.9.163:9090/soap &lt; 1.xml</span></div><div class="line"><span class="keyword">http</span> <span class="comment">--session=user1 POST http://192.168.9.163:9090/soap</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-16T14:00:29.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/26/ubuntu%E9%85%8D%E7%BD%AEnginx+django+uwsgi/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu配置nginx+django+uwsgi</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#安装ngnix</span></div><div class="line">sudo add-apt-repository ppa:nginx/stable</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install nginx</div><div class="line"><span class="comment">#安装uwsgi</span></div><div class="line">sudo apt-get install build-essential python</div><div class="line">sudo apt-get install python-dev</div><div class="line">sudo pip install uwsgi</div><div class="line"><span class="comment">#安装django</span></div><div class="line">sudo pip install django</div><div class="line"></div><div class="line">location / {</div><div class="line">	uwsgi_pass 127.0.0.1:8888;</div><div class="line">	include uwsgi_params;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="variable">&lt;uwsgi&gt;</span></div><div class="line">	<span class="variable">&lt;socket&gt;</span>127.0.0.1:8888<span class="variable">&lt;/socket&gt;</span></div><div class="line">	<span class="variable">&lt;master&gt;</span>true<span class="variable">&lt;/master&gt;</span></div><div class="line">	<span class="variable">&lt;chdir&gt;</span>/home/haoguangyu/sourcecode/mysite<span class="variable">&lt;/chdir&gt;</span></div><div class="line">	<span class="variable">&lt;module&gt;</span>mysite.wsgi:application<span class="variable">&lt;/module&gt;</span></div><div class="line"><span class="variable">&lt;/uwsgi&gt;</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-26T14:10:18.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/26/%E6%9B%B4%E6%8D%A2PyPI%E6%BA%90/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>更换PyPI源</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">## 全局 ##</span></div><div class="line">在~/.pip/pip.conf文件中添加或修改</div><div class="line">[global]</div><div class="line"><span class="preprocessor">#阿里</span></div><div class="line">index-url = http:<span class="comment">//mirrors.aliyun.com/pypi/simple/</span></div><div class="line">豆瓣</div><div class="line">index-url = http:<span class="comment">//pypi.douban.com/simple/</span></div><div class="line"><span class="preprocessor">## 临时 ##</span></div><div class="line">sudo pip install -i http:<span class="comment">//pypi.douban.com/simple/ django</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-26T14:45:25.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/28/django-admin%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>django admin静态资源配置</title>
+        <content><![CDATA[<h2 id="django">django</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#settings.<span class="keyword">py</span></div><div class="line">STATIC_ROOT = os.path.<span class="built_in">join</span>(BASE_DIR, <span class="string">'static'</span>)</div><div class="line">#shell</div><div class="line"><span class="keyword">python</span> manage.<span class="keyword">py</span> collectstatic</div></pre></td></tr></table></figure>
+
+<h2 id="nginx">nginx</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location  ~<span class="regexp">/static/</span>  {</div><div class="line">	root   <span class="regexp">/home/haoyy/sourcecode/mysite/</span> ;</div><div class="line">	<span class="keyword">break</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-27T16:00:13.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/28/ubuntu%E5%AE%89%E8%A3%85mariadb/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu安装mariadb</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> python-software-properties</span></div><div class="line">sudo apt-<span class="keyword">key</span> adv <span class="comment">--recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db</span></div><div class="line">sudo <span class="keyword">add</span>-apt-repository <span class="string">'deb http://mirrors.neusoft.edu.cn/mariadb/repo/10.0/ubuntu precise main'</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> mariadb-<span class="keyword">server</span></div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-27T16:04:36.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/08/28/ubuntu%E5%AE%89%E8%A3%85mongodb/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu安装mongodb</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-key adv --keyserver hkp://keyserver.ubuntu.com:<span class="number">80</span> --recv <span class="number">7</span>F0CEB10</div><div class="line"><span class="built_in">echo</span> <span class="string">'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'</span> | <span class="built_in">sudo</span> tee /etc/apt/sources.list.d/mongodb.list</div><div class="line"><span class="built_in">sudo</span> apt-get update</div><div class="line"><span class="built_in">sudo</span> apt-get install mongodb-org</div><div class="line"><span class="built_in">sudo</span> service mongod start</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-08-27T16:04:44.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/09/03/syntax-error-word-unexpected-(expecting-)-)/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>syntax error word unexpected (expecting ) )</title>
+        <content><![CDATA[<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Wrong:</div><div class="line"></div><div class="line">target:</div><div class="line">    ifeq (foo, bar)</div><div class="line">        <span class="keyword">...</span></div><div class="line">    endif</div><div class="line">Correct:</div><div class="line"></div><div class="line">target:</div><div class="line">ifeq (foo, bar)</div><div class="line">    <span class="keyword">...</span></div><div class="line">endif</div></pre></td></tr></table></figure>
+
+<p>the conditional statements should be written without indention<br>摘自：<a href="http://stackoverflow.com/questions/4483313/make-error-for-ifeq-syntax-error-near-unexpected-token" target="_blank" rel="external">http://stackoverflow.com/questions/4483313/make-error-for-ifeq-syntax-error-near-unexpected-token</a></p>
+]]></content>
+        <pubTime>2014-09-03T12:53:21.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/09/05/vmware%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%A1%AC%E7%9B%98/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>vmware增加新硬盘</title>
+        <content><![CDATA[<h2 id="分区">分区</h2>
+<p>fdisk /dev/sdb</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">输入m</div><div class="line">输入n:<span class="built_in">add</span> <span class="operator">a</span> <span class="built_in">new</span> partition</div><div class="line">输入p:primary partition (<span class="number">1</span>-<span class="number">4</span>)</div><div class="line">输入<span class="number">1</span>:Partition (<span class="number">1</span>-<span class="number">4</span>)</div><div class="line">输入w:<span class="built_in">write</span> table <span class="built_in">to</span> disk <span class="operator">and</span> exit</div></pre></td></tr></table></figure>
+
+<h2 id="格式化">格式化</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkfs -t ext4 <span class="regexp">/dev/</span>sdb1</div></pre></td></tr></table></figure>
+
+<h2 id="挂载">挂载</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount <span class="regexp">/dev/</span>sdb1 <span class="regexp">/tmp/</span>disk2</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-09-05T15:50:22.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/09/13/sublime%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>sublime主题安装</title>
+        <content><![CDATA[<h2 id="Spacegray">Spacegray</h2>
+<p>主题主页：<a href="http://kkga.github.io/spacegray" target="_blank" rel="external">http://kkga.github.io/spacegray</a></p>
+<h3 id="安装方法">安装方法</h3>
+<ol>
+<li>Open Command Palette using menu item Tools -&gt; Command Palette… </li>
+<li>Choose Package Control: Install Package</li>
+<li>Find Theme - Spacegray and hit Enter</li>
+</ol>
+]]></content>
+        <pubTime>2014-09-12T18:35:35.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/09/16/%E6%90%AD%E5%BB%BA%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>搭建编译环境</title>
+        <content><![CDATA[<h2 id="安装samba">安装samba</h2>
+<p>sudo apt-get install samba<br>sudo apt-get install smbfs<br>sudo apt-get install system-config-samba</p>
+<h2 id="gcc降级">gcc降级</h2>
+<p>sudo apt-get install gcc-4.4 g++-4.4 g++-4.4-multilib<br>cd /usr/bin<br>sudo mv gcc gcc.bak<br>sudo ln -s gcc-4.4 gcc<br>sudo mv g++ g++.bak<br>sudo ln -s g++-4.4 g++</p>
+]]></content>
+        <pubTime>2014-09-15T18:24:25.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2014/09/28/JAVA%E5%92%8CTOMCAT%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA和TOMCAT环境变量</title>
+        <content><![CDATA[<h2 id="window平台">window平台</h2>
+<h3 id="JAVA环境变量">JAVA环境变量</h3>
+<p>1，新建JAVA_HOME=C:\Program Files\Java\jdk1.8.0<br>2，添加PATH：;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<br>3，新建CLASSPATH=.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
+<h3 id="TOMCAT环境变量">TOMCAT环境变量</h3>
+<p>1，新建CATALINA_BASE=C:\tomcat<br>2，新建CATALINA_HOME=C:\tomcat</p>
+<h2 id="linux平台">linux平台</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#编辑增加</span></div><div class="line">vi /etc/profile</div><div class="line"><span class="keyword">export</span> JAVA_HOME=/usr/java/jdk1.<span class="number">6.0</span>_23</div><div class="line"><span class="keyword">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JAVA_HOME</span>/jre/bin:<span class="variable">$PATH</span></div><div class="line"><span class="keyword">export</span> CLASSPATH=.:/usr/java/jdk1.<span class="number">6.0</span>_23/lib:/usr/java/jdk1.<span class="number">6.0</span>_23/jre/lib:<span class="variable">$CLASSPATH</span></div><div class="line"><span class="keyword">export</span> CATALINA_BASE=/usr/local/apache-tomcat-<span class="number">6.0</span>.<span class="number">29</span> </div><div class="line"><span class="keyword">export</span> CATALINA_HOME=/usr/local/apache-tomcat-<span class="number">6.0</span>.<span class="number">29</span></div><div class="line"><span class="comment">#生效</span></div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
+
+]]></content>
+        <pubTime>2014-09-28T03:03:11.000Z</pubTime>
+        
+         
+              <breadCrumb title="java" url="http://haowaiwai.github.io/tags/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://haowaiwai.github.io/2013/07/23/title/</loc>
+    <lastmod>2014-12-16T09:18:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>mac过滤</title>
+        <content><![CDATA[<h2 id="mac过滤">mac过滤</h2>
+<p><code>ebtables -D INPUT -j mac-filter</code></p>
+<p><code>ebtables -F mac-filter</code></p>
+<p><code>ebtables -X mac-filter</code></p>
+<p><code>ebtables -N mac-filter</code></p>
+<h2 id="黑名单">黑名单</h2>
+<p><code>ebtables -P mac-filter ACCEPT</code></p>
+<p><code>ebtables -I mac-filter -s mac_address -j DROP</code></p>
+<h2 id="白名单">白名单</h2>
+<p><code>ebtables -P mac-filter DROP</code></p>
+<p><code>ebtables -I mac-filter -s mac_address -j ACCEPT</code></p>
+<p><code>ebtables -I mac-filter -d wan_mac_address -j ACCEPT</code></p>
+<p><code>ebtables -I INPUT -j mac-filter</code></p>
+]]></content>
+        <pubTime>2013-07-23T13:25:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
