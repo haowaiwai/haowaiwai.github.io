@@ -50,6 +50,8 @@ curl -L http://install.ohmyz.sh | sh
 wget https://bootstrap.pypa.io/ez_setup.py -O - | python
 #服务管理
 sudo apt-get install sysv-rc-conf
+#MTU测试(1472=1500-28)
+ping 192.168.2.1 -l 1472 -f
 ```
 
 以下内容未整理
