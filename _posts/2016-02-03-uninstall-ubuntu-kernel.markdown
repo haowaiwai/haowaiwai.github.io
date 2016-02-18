@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Uninstall kernel!"
+title:  "Uninstall ubuntu kernel!"
 date:   2016-02-03 14:57:32 +0800
 categories: ubuntu linux
 ---
