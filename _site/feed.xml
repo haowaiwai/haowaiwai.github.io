@@ -4,24 +4,23 @@
     <title>haowaiwai</title>
     <description>Some useful artical about linux.
 </description>
-    <link>http://www.haowaiwai.top/</link>
-    <atom:link href="http://www.haowaiwai.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Feb 2016 19:21:23 +0800</pubDate>
-    <lastBuildDate>Thu, 18 Feb 2016 19:21:23 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 25 Feb 2018 08:47:57 +0800</pubDate>
+    <lastBuildDate>Sun, 25 Feb 2018 08:47:57 +0800</lastBuildDate>
+    <generator>Jekyll v3.7.2</generator>
     
       <item>
         <title>Uninstall ubuntu kernel!</title>
-        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-dpkg --get-selections|grep linux
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dpkg --get-selections|grep linux
 uname -a
 sudo apt-get remove ***
-dpkg --get-selections | grep deinstall | sed &#39;s/deinstall/\lpurge/&#39; | sudo dpkg --set-selections; sudo dpkg -Pa
-&lt;/code&gt;&lt;/p&gt;
+dpkg --get-selections | grep deinstall | sed 's/deinstall/\lpurge/' | sudo dpkg --set-selections; sudo dpkg -Pa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 03 Feb 2016 14:57:32 +0800</pubDate>
-        <link>http://www.haowaiwai.top/ubuntu/linux/2016/02/03/uninstall-ubuntu-kernel.html</link>
-        <guid isPermaLink="true">http://www.haowaiwai.top/ubuntu/linux/2016/02/03/uninstall-ubuntu-kernel.html</guid>
+        <link>http://localhost:4000/ubuntu/linux/2016/02/03/uninstall-ubuntu-kernel.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ubuntu/linux/2016/02/03/uninstall-ubuntu-kernel.html</guid>
         
         
         <category>ubuntu</category>
@@ -32,14 +31,13 @@ dpkg --get-selections | grep deinstall | sed &#39;s/deinstall/\lpurge/&#39; | su
     
       <item>
         <title>Uninstall federa kernel!</title>
-        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-rpm -qa | grep kernel
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rpm -qa | grep kernel
 sudo dnf remove ***
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 03 Feb 2016 14:57:32 +0800</pubDate>
-        <link>http://www.haowaiwai.top/federa/linux/2016/02/03/uninstall-federa-kernel.html</link>
-        <guid isPermaLink="true">http://www.haowaiwai.top/federa/linux/2016/02/03/uninstall-federa-kernel.html</guid>
+        <link>http://localhost:4000/federa/linux/2016/02/03/uninstall-federa-kernel.html</link>
+        <guid isPermaLink="true">http://localhost:4000/federa/linux/2016/02/03/uninstall-federa-kernel.html</guid>
         
         
         <category>federa</category>
