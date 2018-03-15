@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "linux cmd"
+date:   2018-03-15 08:57:32 +0800
+categories: linux
+---
+```
+ip route del 192.168.7.0/24 via 1.0.0.1 dev ppp0
+
+route add -host 192.168.7.1 dev ppp0
+
+ip addr add 192.168.10.100/24 dev en0
+ifconfig en0 add 192.168.10.100/24
+
+tcpdump -i eth0 '(((src host 115.47.154.235)))'
+echo "c myvpn" > /var/run/xl2tpd/l2tp-control
+xl2tpd -D -c /etc/xl2tpd/xl2tpd.conf
+ipsec auto --up ikev1
+ipsec auto --down ikev1
+
+iptables -t nat -N zone_wan_nat_ppp
+iptables -t nat -A POSTROUTING --o ppp0 -j zone_wan_nat_ppp
+iptables -t nat -F zone_wan_nat_ppp
+iptables -t nat -A zone_wan_nat_ppp -s 192.168.10.0/24 -j SNAT --to-source 192.168.7.60
+```

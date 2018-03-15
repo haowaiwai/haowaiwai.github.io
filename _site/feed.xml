@@ -6,9 +6,39 @@
 </description>
     <link>http://www.haowaiwai.top/</link>
     <atom:link href="http://www.haowaiwai.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Mar 2018 17:04:26 +0800</pubDate>
-    <lastBuildDate>Wed, 07 Mar 2018 17:04:26 +0800</lastBuildDate>
+    <pubDate>Thu, 15 Mar 2018 16:50:25 +0800</pubDate>
+    <lastBuildDate>Thu, 15 Mar 2018 16:50:25 +0800</lastBuildDate>
     <generator>Jekyll v3.7.2</generator>
+    
+      <item>
+        <title>linux cmd</title>
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ip route del 192.168.7.0/24 via 1.0.0.1 dev ppp0
+
+route add -host 192.168.7.1 dev ppp0
+
+ip addr add 192.168.10.100/24 dev en0
+ifconfig en0 add 192.168.10.100/24
+
+tcpdump -i eth0 '(((src host 115.47.154.235)))'
+echo &quot;c myvpn&quot; &amp;gt; /var/run/xl2tpd/l2tp-control
+xl2tpd -D -c /etc/xl2tpd/xl2tpd.conf
+ipsec auto --up ikev1
+ipsec auto --down ikev1
+
+iptables -t nat -N zone_wan_nat_ppp
+iptables -t nat -A POSTROUTING --o ppp0 -j zone_wan_nat_ppp
+iptables -t nat -F zone_wan_nat_ppp
+iptables -t nat -A zone_wan_nat_ppp -s 192.168.10.0/24 -j SNAT --to-source 192.168.7.60
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 15 Mar 2018 08:57:32 +0800</pubDate>
+        <link>http://www.haowaiwai.top/linux/2018/03/15/linux-cmd.html</link>
+        <guid isPermaLink="true">http://www.haowaiwai.top/linux/2018/03/15/linux-cmd.html</guid>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>2017 hot movie</title>
