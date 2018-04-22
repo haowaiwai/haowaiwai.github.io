@@ -6,9 +6,29 @@
 </description>
     <link>http://www.haowaiwai.top/</link>
     <atom:link href="http://www.haowaiwai.top/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Apr 2018 18:00:51 +0800</pubDate>
-    <lastBuildDate>Fri, 13 Apr 2018 18:00:51 +0800</lastBuildDate>
-    <generator>Jekyll v3.7.2</generator>
+    <pubDate>Sun, 22 Apr 2018 15:03:42 +0800</pubDate>
+    <lastBuildDate>Sun, 22 Apr 2018 15:03:42 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>centos gcc</title>
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo yum install centos-release-scl
+sudo yum install devtoolset-7-gcc*
+scl enable devtoolset-7 bash
+which gcc
+gcc --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sun, 15 Apr 2018 08:57:32 +0800</pubDate>
+        <link>http://www.haowaiwai.top/centos/gcc/2018/04/15/centos-gcc.html</link>
+        <guid isPermaLink="true">http://www.haowaiwai.top/centos/gcc/2018/04/15/centos-gcc.html</guid>
+        
+        
+        <category>centos</category>
+        
+        <category>gcc</category>
+        
+      </item>
     
       <item>
         <title>linux cmd</title>
