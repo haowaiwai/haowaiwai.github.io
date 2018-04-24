@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "2017 hot movie"
 date:   2018-02-25 08:57:32 +0800
 categories: 2017 movie

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "centos gcc"
 date:   2018-04-15 08:57:32 +0800
 categories: centos gcc
