@@ -51,6 +51,11 @@ yum install elasticsearch
 
 curl 'http://localhost:9200/station/request/20180825090521'
 curl 'localhost:9200/station/request/_search?pretty=true'
+
+curl -X GET "localhost:9200/station/request/_search?pretty=true" -H 'Content-Type: application/json' -d'
+{
+    "query" : { "match" : { "request.stationid" : "012345678912" }}
+}'
 </code></pre></div></div>
 
 
