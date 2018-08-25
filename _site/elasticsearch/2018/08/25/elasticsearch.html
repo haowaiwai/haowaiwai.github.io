@@ -56,6 +56,11 @@ curl -X GET "localhost:9200/station/request/_search?pretty=true" -H 'Content-Typ
 {
     "query" : { "match" : { "request.stationid" : "012345678912" }}
 }'
+
+curl -X GET "localhost:9200/station/request/_search?pretty=true" -H 'Content-Type: application/json' -d'
+{
+    "query" : { "wildcard" : { "time" : "2018082515*" }}
+}'
 </code></pre></div></div>
 
 
