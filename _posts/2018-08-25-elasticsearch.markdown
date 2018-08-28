@@ -31,5 +31,26 @@ curl -X GET "localhost:9200/station/request/_search?pretty=true" -H 'Content-Typ
 {
     "query" : { "wildcard" : { "time" : "2018082515*" }}
 }'
+
+curl -X GET "localhost:9200/station/request/_search?pretty=true" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "should": [
+        { "match": { "operator":  "station_closed" }},
+        { "wildcard": { "time": "2018082711*"  }}
+      ],
+      "minimum_should_match": 2
+    }
+  }
+}'
+
+curl -X GET "localhost:9200/station/request/_search?pretty=true" -H 'Content-Type: application/json' -d'
+{
+    "query" : {
+        "range": { "time": { "gt": "20180828140000000", "lt": "20180828150000000" } }
+    },
+    "sort": { "_id": { "order": "desc" }}
+}'
 ```
 
