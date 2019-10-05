@@ -18,7 +18,7 @@ jobs:
     - run: |
         npm install
         npm run build
-        cp ./CNAME ./dist/CNAME
+        cp ./CNAME ./dist/my-app/CNAME
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v2.4.0
