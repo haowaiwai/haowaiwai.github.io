@@ -11,20 +11,17 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: setup node
+    - name: build
       uses: actions/setup-node@v1
       with:
         node-version: '10.16'
-
-    - name: install
-      run: npm install
-
-    - name: build
-      run: npm run build
+    - run: |
+        npm install
+        npm run build
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v2.4.0
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./.vuepress/dist
+        PUBLISH_DIR: ./public
