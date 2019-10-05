@@ -1,0 +1,6 @@
+- name: Deploy
+  uses: peaceiris/actions-gh-pages@v2.4.0
+  env:
+    ACTIONS_DEPLOY_KEY: aabbcc
+    PUBLISH_BRANCH: gh-pages
+    PUBLISH_DIR: ./public
