@@ -1,3 +1,3 @@
-# Hello VuePress
+# VuePress
 ## Hello
 ### Hello
