@@ -27,4 +27,4 @@ jobs:
       env:
         ACTIONS_DEPLOY_KEY: aabbcc
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./public
+        PUBLISH_DIR: ./.vuepress/dist
